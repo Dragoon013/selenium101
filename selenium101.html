@@ -49,7 +49,7 @@
 	        <div class="slides">
 
 
-              <section>
+              <section> <!--Slide 1-->
                 <h1>Selenium 101</h1>
 
                 <p style="text-align:center">
@@ -62,7 +62,8 @@
                   </small>
                 </p>
               </section>
-              <section>
+
+              <section> <!--Slide 2-->
 					<h3>Trainer Intro</h3>
 					<p>
                       jacob has been around the block
@@ -76,36 +77,19 @@
 					</p>
 				</section>
 
-                <section>
+              <section> <!--Slide 3-->
+                <h3>Course Outline</h3>
+              </section>
+
+              <section> <!--Slide 3-->
+                <h3>Pre-Reqs</h3>
+              </section>
+
+                <section> <!--Slide 3-->
                   <h2>Introduction to Sauce Labs</h2>
                 </section>
 
-				<!-- Example of nested vertical slides
-				<section>
-					<section>
-				      <h2>What is Sauce Labs?</h2>
-						<p></p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>-->
-
-				<section>
+				<section> <!--Slide 4-->
 					<h3>What is Sauce Labs?</h3>
 					<p>
 						Press <strong>ESC</strong> to enter the slide overview.
@@ -114,25 +98,15 @@
 						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
 					</p>
 				</section>
-				<section>
-					<h3>Sauce Labs History</h3>
-					<p>
-					  <li>Founded in 2008</li>
-                      <li>cofounded by selenium dev</li>
-					</p>
-					<p>
-                      1 million code commits and cool devs
-                      <!--Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.-->
-                    </p>
-				</section>
-                <section>
+
+                <section><!--Slide 6-->
 					<h3>CD/CI Cycle - Where Saucelabs fits in</h3>
 					<p>
                       insert diagram
 					</p>
 				</section>
 
-                <section>
+                <section> <!--Slide 7-->
 					<h3>Sauce Labs Features</h3>
 					<p>
                       <li>Security</li>
@@ -142,8 +116,20 @@
 					</p>
 				</section>
 
-                <section>
-				  <h3>Sauce Labs and Selenium</h3>
+				<section><!--Slide 5-->
+					<h3>Sauce Labs History and Selenium</h3>
+					<p>
+					  <li>Founded in 2008</li>
+                      <li>cofounded by selenium dev</li>
+					</p>
+					<p>
+                      1 million code commits and cool devs
+                      <!--Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.-->
+                    </p>
+				</section>
+
+                <section> <!--Slide 8-->
+				  <h3>Selenium</h3>
 				  <p>
                     Selenium Features
                     <li>Simulate site interaction with scripts</li>
@@ -153,7 +139,7 @@
                   <aside class="notes">So how does Sauce Labs faciltate your testing? Introducing Selenium</aside>
 				</section>
 
-                <section>
+                <section> <!--Slide 9-->
 				  <h3>Local vs Sauce Labs Selenium Tests</h3>
 				  <p>
                     Local
@@ -168,7 +154,7 @@
 				</section>
 
                 <section>
-                  <section>
+                  <section> <!--Slide 10-->
                     <h3>Using Sauce Labs</h3>
 					<p>
                       <li>Security</li>
@@ -177,29 +163,29 @@
                     </p>
                   </section>
 
-                  <section>
+                  <section> <!--Slide 10.1-->
 					<h3>Dashboard</h3>
 					<p>
                       pic of dashboard
 					</p>
 				  </section>
 
-                  <section>
+                  <section> <!--Slide 10.2-->
 					<h3>Tunnels</h3>
 					<p>
                       Sauce Connect!
 					</p>
 				    </section>
 
-                    <section>
+                    <section> <!--Slide 10.3-->
 					  <h3>Account Details</h3>
 					  <p>
-                        Sauce Connect!
+                        Authorize your conenctions to Sauce Labs
 					  </p>
 				    </section>
 				</section>
 
-                <section>
+                <section> <!--Slide 11-->
 				  <h3>Documentation</h3>
 				  <p>
                     Let's take a tour of the Docs!
@@ -208,11 +194,11 @@
 				  </p>
 				</section>
 
-                <section>
+                <section> <!--Slide 12-->
                   <h2>Selenium Test Script Basics</h2>
                 </section>
 
-                <section>
+                <section> <!--Slide 13-->
 				  <h3>How Selenium Works</h3>
 				  <p>
                     <li>Client</li>
@@ -223,73 +209,84 @@
 				</section>
 
                 <section>
-				  <h3>7 Basic Steps of a Selenium Script</h3>
-				  <p>
-                    <ol>
-                      <li>Create a Webdriver Object</li>
-                      <li>Navigate to a Web Page</li>
-                      <li>Locate HTML Elements on a Web Page</li>
-                      <li>Perform an Action on HTML Elements</li>
-                      <li>Anticipate Browser Response</li>
-                      <li>Run the Test and Gather Test Results</li>
-                      <li>Conclude the Test</li>
-                    </ol>
-                  </p>
-                  <p>I'd rather have a diagram here. Pretty pictures for lyfe</p>
-                  <aside class="notes"></aside>
-				</section>
+                  <section> <!--Slide 14-->
+				    <h3>7 Basic Steps of a Selenium Script</h3>
+				    <p>
+                      <ol>
+                        <li>Create a Webdriver Object</li>
+                        <li>Navigate to a Web Page</li>
+                        <li>Locate HTML Elements on a Web Page</li>
+                        <li>Perform an Action on HTML Elements</li>
+                        <li>Anticipate Browser Response</li>
+                        <li>Run the Test and Gather Test Results</li>
+                        <li>Conclude the Test</li>
+                      </ol>
+                    </p>
+                    <p>I'd rather have a diagram here. Pretty pictures for lyfe</p>
+                    <aside class="notes"></aside>
+				  </section>
 
-                <section>
-				  <h3>Webdriver</h3>
-				  <p>
-                    <li>Creation</li>
-                    <li>Local vs Remote (Sauce Labs)</li>
-                  </p>
-                  <aside class="notes"></aside>
-				</section>
+                  <section><!--Slide 14.1-->
+				    <h3>Webdriver</h3>
+				    <p>
+                      <li>Creation</li>
+                      <li>Local vs Remote (Sauce Labs)</li>
+                    </p>
+                    <aside class="notes"></aside>
+				  </section>
 
-                <section>
-				  <h3>Locate HTML Elements on the Page</h3>
-				  <p>
-                    <li>Locator Expressions</li>
-                    <li>Finder Methods</li>
-                    <li>Locator Methods</li>
-                  </p>
-                  <aside class="notes"></aside>
-                </section>
+                  <section><!--Slide 14.2-->
+				    <h3>Navigate to a Webpage</h3>
+				    <p>
+                      <li>Creation</li>
+                      <li>Local vs Remote (Sauce Labs)</li>
+                    </p>
+                    <aside class="notes"></aside>
+				  </section>
 
-                <section>
-                  <h3>Perform an Action on a HTML Element</h3>
-				  <p>
-                  </p>
-                  <aside class="notes"></aside>
-                </section>
+                  <section> <!--Slide 14.3-->
+				    <h3>Locate HTML Elements on the Page</h3>
+				    <p>
+                      <li>Locator Expressions</li>
+                      <li>Finder Methods</li>
+                      <li>Locator Methods</li>
+                    </p>
+                    <aside class="notes"></aside>
+                  </section>
 
-                <section>
-				  <h3>Anticipate Browser Response</h3>
-				  <p>
-                    <li>Implicit Waits</li>
-                    <li>Explicit Waits</li>
-                  </p>
-                  <aside class="notes"></aside>
-                </section>
+                  <section> <!--Slide 14.4-->
+                    <h3>Perform an Action on a HTML Element</h3>
+				    <p>
+                    </p>
+                    <aside class="notes"></aside>
+                  </section>
 
-                <section>
-				  <h3>Run the Test and Record the Test Results</h3>
-				  <p>
+                  <section> <!--Slide 14.5-->
+				    <h3>Anticipate Browser Response</h3>
+				    <p>
+                      <li>Implicit Waits</li>
+                      <li>Explicit Waits</li>
+                    </p>
+                    <aside class="notes"></aside>
+                  </section>
+
+                  <section> <!--Slide 14.6-->
+				    <h3>Run the Test and Record the Test Results</h3>
+				    <p>
                     <li>Test Frameworks</li>
                     <li>Assertions</li>
                     <li>Record Test Results</li>
-                  </p>
-                  <aside class="notes"></aside>
-                </section>
+                    </p>
+                    <aside class="notes"></aside>
+                  </section>
 
-                <section>
-				  <h3>Conclude a Test</h3>
-				  <p>
-                    <li>driver.quit()</li>
-                  </p>
-                  <aside class="notes"></aside>
+                  <section> <!--Slide 14.6-->
+				    <h3>Conclude a Test</h3>
+				    <p>
+                      <li>driver.quit()</li>
+                    </p>
+                    <aside class="notes"></aside>
+                  </section>
                 </section>
 
 

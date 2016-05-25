@@ -179,22 +179,17 @@
                     Local
                     <p><ul>
                       <li>Can only test on the OS and browsers you have locally</li>
-
+                      <li>Record results</li>
                     </ul></p>
                   </div>
                   <div style="float:right;width:50%;padding-right:0px;">
                     Remote
                     <p>
                       <ul>
-                      <li>Record your tests</li>
-                    <ul>
-                      <li>Screenshots</li>
-                      <li>Video Record</li>
-                      <li>Logs</li>
-                    </ul>
-                    <li>Selenium Grid</li>
-                    <li>Parallelization</li>
-                    </ul>
+                        <li>Selenium Grid</li>
+                        <li>Parallelization</li>
+                        <li>Record results</li>
+                      </ul>
                     </p>
                   </div>
                   <aside class="notes">
@@ -218,11 +213,17 @@
                     <ul>
                       <li>Security</li>
                       <li>Seamless Integration</li>
-                      <li>Support</li>
+                      <li>Recorded Tests</li>
                     </ul>
                   </div>
                   <aside class="notes">
                     <li>Selenium Grid for rent.</li>
+                    Record your tests
+                    <ul>
+                      <li>Screenshots</li>
+                      <li>Video Record</li>
+                      <li>Logs</li>
+                    </ul>
                   </aside>
                 </section>
 
@@ -278,7 +279,7 @@
                     <p>There are actually a lot of parts that make up Selenium!</p>
 
                     <li>Selenium IDE - A firefox add-on that can create a script from a manual test, allow you to do maual testing, and debug your own test scripts.</li>
-                    <li>Selenium Client API - what we will be using today, as part of the Selenium Webdriver. It allows tests to be written in a variety of programming languages, so it enables us to write our tests in Java</li>
+                    <li>Selenium Client API - what we will be using today, as part of the Selenium Webdriver. It allows tests to be written in a variety of programming languages, so it enables us to write our tests in Java. These are the language specific bindings.</li>
                     <li>Selenium WebDriver - The Selenium WebDriver is the client that accepts the commands via the API or in the Selenium scripting language and sends those commands to a browser.</li>
                     <li>Selenium Grid - this is the Selenium Server, which allows tests to to use web browsers on other machines - so this is what Sauce Labs does for you, but on a very large scale and with a lot of options for machines and browsers - not restricted to just one version either</li>
                   </aside>
@@ -333,25 +334,14 @@
 				  </section>
 
                   <section>
-				    <h3>Webdriver</h3>
-				    <p>
-                      <li>Local</li>
+				    <h3>Local Webdriver</h3>
+
                       <pre><code class="java" data-trim contenteditable>
                           WebDriver driver = new FirefoxDriver();
 WebDriver driver = new InternetExplorerDriver();
 WebDriver driver = new ChromeDriver();
                       </code></pre>
 
-                      <li>Remote (Sauce Labs)</li>
-                      <div style="float:left; width:110%;">
-                      <pre><code class="java" data-trim contenteditable>
-                          USERNAME = "dragoon013";
-KEY = "secret";
-URL = "http://" + USERNAME + ":" + KEY + "@ondemand.saucelabs.com:80/wd/hub";
-WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
-                      </code></pre>
-                      </div>
-                    </p>
                     <aside class="notes">
                       <p>All drivers except for Firefox need an additional library or package called with the driver declaration in order to test on that browser</p>
                       <pre><code class="java" data-trim contenteditable>
@@ -365,8 +355,29 @@ WebDriver driver = new ChromeDriver();
 				  </section>
 
                   <section>
+                    <h3>Remote (Sauce Labs) WebDriver</h3>
+
+                      <pre><code class="java" data-trim contenteditable>
+                          USERNAME = "dragoon013";
+KEY = "secret";
+URL = "http://" + USERNAME + ":" + KEY +
+      "@ondemand.saucelabs.com:80/wd/hub";
+WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
+                      </code></pre>
+
+                    <p style="text-align:center;">Desired Capabilities</p>
+                    <pre><code class="java" data-trim contenteditable>
+                        DesiredCapabilities caps = DesiredCapabilities.chrome();
+           caps.setCapability("platform", "Windows XP");
+           caps.setCapability("version", "43.0");
+
+                    </code></pre>
+                  </section>
+
+
+                  <section>
                     <h3>Navigate to a Web Page</h3>
-				    <p>
+			    <p>
                       <pre>
                         <code class="java" data-trim contenteditable>
                           driver.get("http://saucelabs.github.io/training-test-page/");

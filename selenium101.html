@@ -1044,6 +1044,64 @@ throw new PendingException();
                 </section>
 
                 <section>
+                     <h3>Small, Atomic, and Autonomous Testing</h3>
+                     <p>Small</p>
+                     <ul><li>Tests should be short and succinct.</li></ul>
+                     <p>Atomic</p>
+                     <ul><li>Tests should focus on testing a single feature.</li></ul>
+                     <p>Autonomous</p>
+                     <ul><li>Tests should be able to run completely independently of other tests.</li></ul>
+                     <aside class="notes">
+
+                       <p>Short - If you have a test suite of 100 tests running concurrently on 100 VMs, then the time it will take to run the entire suite will be determined by the longest/slowest test case. Keeping your tests small ensures that your suite will run efficiently and provide you with results faster. </p>
+                       <p>Atomic - The test makes clear exactly what it is that you're testing. If the test fails, then you should also have a very clear idea of what needs to be fixed. </p>
+                       <p>Autonomous - Tests should not be dependent on the results of one test to run successfully. In addition, an autonomous test should use its own data to test against, and not create potential conflicts with other tests over the same data.  </p>
+                     </aside>
+                </section>
+
+                <section>
+
+                  <section>
+                     <h3>Types of Testing</h3>
+                     <ul>
+                       <li>Unit Testing</li>
+                       <li>Functional Testing</li>
+                       <li>Performance Testing</li>
+                     </ul>
+                     <aside class="notes">
+
+                     </aside>
+                   </section>
+
+                   <section>
+                     <h3>Unit Testing</h3>
+                     <p>Unit tests are written from a developer persepective to ensure a menthod or function performs a set of tasks.</p>
+
+                     <aside class="notes">
+                       <p>Unit testing focuses on testing very small parts of the application, going down to the basic functions and methods</p>
+                     </aside>
+                   </section>
+
+                   <section>
+                     <h3>Functional Testing</h3>
+                     <p>Functional tests are written from a user perspective to test a functionality or feature of your application.</p>
+                     <aside class="notes">
+                       <p>Functional testing is what Sauce Labs offers to help faciliate and simplify for it's users.</p>
+                     </aside>
+                   </section>
+
+                   <section>
+                     <h3>Performance Testing</h3>
+                     <p>Performance tests gauge and output performance metrics for your application.</p>
+                     <aside class="notes">
+                       <p>Performance testing serves to answer questions suchas, can your application server handle a particular load, and does it behave as expected when you push it to its limit? These types of tests are better undertaken with a testing infrastructure that has been specifically developed for performance testing, so all baseline performance metrics are well established and understood before you start the test.</p>
+                       <p>Some eaxmples of performance testing helpers (similar to sauce labs):</p>
+
+                     </aside>
+                   </section>
+                </section>
+
+                <section>
                   <section>
                     <h3>Dependencies</h3>
                     <p>Hard coding dependencies to access external account or data</p>
@@ -1088,54 +1146,6 @@ throw new PendingException();
                   </section>
                 </section>
 
-                <section>
-                   <section>
-                     <h3>Different Kinds of Tests</h3>
-                     <p>Unit Testing</p>
-                     <ul><li>Unit tests are written from a developer persepective to ensure a menthod or function performs a set of tasks.</li></ul>
-
-                     <aside class="notes">
-                       <p>Unit testing focuses on testing very small parts of the application, going down to the basic functions and methods</p>
-                     </aside>
-                   </section>
-
-                   <section>
-                     <h3>Different Kinds of Tests (2)</h3>
-                     <p>Functional Testing</p>
-                     <ul><li>Functional tests are written from a user perspective to test a functionality or feature of your application.</li></ul>
-                     <aside class="notes">
-                       <p>Functional testing is what Sauce Labs offers to help faciliate and simplify for it's users.</p>
-                     </aside>
-                   </section>
-
-                   <section>
-                     <h3>Different Kinds of Tests (3)</h3>
-                     <p>Performance Testing</p>
-                     <ul><li>Performance tests gauge and output performance metrics for your application.</li></ul>
-                     <aside class="notes">
-
-                       <p>Performance testing serves to answer questions suchas, can your application server handle a particular load, and does it behave as expected when you push it to its limit? These types of tests are better undertaken with a testing infrastructure that has been specifically developed for performance testing, so all baseline performance metrics are well established and understood before you start the test.</p>
-                       <p>Some eaxmples of performance testing helpers (similar to sauce labs):</p>
-
-                     </aside>
-                   </section>
-                </section>
-
-                   <section>
-                     <h3>Small, Atomic, and Autonomous Testing</h3>
-                     <p>Small</p>
-                     <ul><li>Tests should be short and succinct.</li></ul>
-                     <p>Atomic</p>
-                     <ul><li>Tests should focus on testing a single feature.</li></ul>
-                     <p>Autonomous</p>
-                     <ul><li>Tests should be able to run completely independently of other tests.</li></ul>
-                     <aside class="notes">
-
-                       <p>Short - If you have a test suite of 100 tests running concurrently on 100 VMs, then the time it will take to run the entire suite will be determined by the longest/slowest test case. Keeping your tests small ensures that your suite will run efficiently and provide you with results faster. </p>
-                       <p>Atomic - The test makes clear exactly what it is that you're testing. If the test fails, then you should also have a very clear idea of what needs to be fixed. </p>
-                       <p>Autonomous - Tests should not be dependent on the results of one test to run successfully. In addition, an autonomous test should use its own data to test against, and not create potential conflicts with other tests over the same data.  </p>
-                     </aside>
-                   </section>
 
                    <section>
                    <section>

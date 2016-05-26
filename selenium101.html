@@ -48,6 +48,7 @@
 
         <img src="assets/images/saucelabslogo.png" style="border:0; width:100px; height:100px; background:none; position:absolute; left:0; top:0;">
         <img id="lab_pic" src="assets/images/Laboratory2.png" style="visibility:hidden; border:0; width:200px; height:200px; background:none; position:absolute; right:0; top:0;">
+        <img id="darksauce" src="assets/images/eggs/DarkSauce.png" style="visibility:hidden; border:0; width:500px; height:500px; background:none; position:absolute;">
 
 	        <div class="slides">
 
@@ -111,8 +112,8 @@
                   <h3>Module Objectives</h3>
                   <p>This module enables you to:</p>
                   <ul>
-                    <li>Learn how Sauce Labs fits into the CI/CD Life Cycle</li>
-                    <li>Learn what Selenium is and how it is used with Sauce Labs</li>
+                    <li>Understand how Sauce Labs fits into the CI/CD Life Cycle</li>
+                    <li>Understand what Selenium is and how it is used with Sauce Labs</li>
                     <li>Use the Sauce Labs UI</li>
                   </ul>
                   <aside class="notes"></aside>
@@ -121,8 +122,8 @@
                 <section>
 				  <h3>What is Sauce Labs?</h3>
                   <p>Testing infrastructure in the cloud for web and mobile web applications.</p>
-                  <li>Selenium - Desktop and Mobile Browser Testing</li>
-                  <li>Appium - Native Mobile Application Testing</li>
+                  <li>Selenium: Desktop and Mobile Browser Testing</li>
+                  <li>Appium: Native Mobile Application Testing</li>
 
                   <aside class="notes">
                     <p>HAAS - Hardware as a service</p>
@@ -155,9 +156,10 @@
                 </section>
 
                 <section>
-					<h3>CD/CI Cycle - Where Sauce Labs fits in</h3>
-                    <img src="assets/images/sauceCI2.png" style="border:0; text-align:center; background:none;">
+					<h3>CI/CD Cycle</h3>
 
+                    <img src="assets/images/sauceCI2.png" style="border:0; text-align:center; background:none;">
+                    <p style="text-align:center;">Continuous Integration/Continuous Development</p>
                     <aside class="notes">
 
                     </aside>
@@ -212,7 +214,7 @@
 				  <ul>
                     <li>Selenium Grid</li>
                     <li>Parallelization</li>
-                    <li>Automate</li>
+                    <li>Automation</li>
                   </ul>
                   </div>
                   <div style="float:right;width:50%;padding-right:0px;">
@@ -332,7 +334,7 @@
                         <li>Locate HTML Elements on a Web Page</li>
                         <li>Perform an Action on HTML Elements</li>
                         <li>Anticipate Browser Response</li>
-                        <li>Run the Test and Gather Test Results</li>
+                        <li>Run the Test and Record the Test Results</li>
                         <li>Conclude the Test</li>
                       </ol>
                     </p>
@@ -394,7 +396,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                   </section>
 
                   <section>
-				    <h3>Locate HTML Elements on the Page</h3>
+				    <h3>Locate HTML Elements on a Web Page</h3>
 				    <p>
                       <pre>
                         <code class="java" data-trim contenteditable style="text-align:center;">
@@ -470,14 +472,14 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
 
                      <div style="float:left;width:50%;" class="centered">
                        <ul>
-                         <li>Locally, you can print or save your test results as part of your script</li>
+                         <li>Print or save your test results locally, as part of your script</li>
                          <li>Test Frameworks</li>
                          <li>Use the Sauce Labs API to send results to your Dashboard</li>
                          <ul>
                      </div>
                      <div style="float:right;width:50%;padding-right:0px;">
                        <ul style="list-style-position: outside; margin-left= 1em">
-                         <li>Record Test Results with Sauce Labs</li>
+                         <li>Record test results with Sauce Labs</li>
                          <ul>
                            <li>Logs</li>
                            <li>Screencasts</li>
@@ -490,7 +492,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                        <p> When running tests on both Sauce Labs and Locally, test results need a little extra configuration. By default, you will be able to see when a test is complete, or has "failed". But without specific test results sent back to Sauce Labs or custom made locally, then there I have no way of knowing whether a complete means a test was successful, or whether a failure means the test failed or the test wasn't written correctly.
                        </p>
                        <p>
-                         Test framworks can help us report our results back to Sauce Labs (and maybe on your own selenium grid or locally?). But out of the box with Sauce Labs, we get some core reporting/recording of test results through their screenshots, screencast of the test, and logs.
+                         Test frameworks can help us report our results back to Sauce Labs (and maybe on your own selenium grid or locally?). But out of the box with Sauce Labs, we get some core reporting/recording of test results through their screenshots, screencast of the test, and logs.
                        </p>
                        <p>need to include something here on actually running the Java test</p>
                      </aside>
@@ -620,8 +622,8 @@ WebDriver driver = new ChromeDriver();
                 <section>
                   <section>
                     <h3>Performing an Action</h3>
-                    <li>Once you have located an element, you can perform an action on it.</li><p></p>
-                    <li>Perform actions by invoking interaction methods on the WebElement object we identified earlier.</li>
+                    <li>Once you locate an element, you can perform an action on it</li><p></p>
+                    <li>Perform actions by invoking interaction methods on the WebElement object we identified earlier</li>
                     <aside class="notes">It's common to see actions occur on webelements as they are identified - but we can also store our identified element objects as variables and perform multiple actions on them through the test.</aside>
                   </section>
 
@@ -704,7 +706,7 @@ submitButton.submit();
 
                 <section>
                   <h3>Sauce Labs Identification</h3>
-                  <p>The script uses the Sauce Labs API to autheticate user and record results against that user's profile</p>
+                  <p>The script uses the Sauce Labs API to authenticate the user and record results against that user's profile</p>
 
                   <div style="float:left;width:50%;" class="centered">
                     <li>Environment Variables</li>
@@ -729,7 +731,7 @@ public static final String ACCESS_KEY = "b89b7205-3aca-4af2-a618-9bab4c7bdebd";
                 <section>
                   <section>
                     <h3>Setting the Remote WebDriver</h3>
-                    <li>Sauce Labs API Authentication</li>
+                    <p>Sauce Labs API Authentication</p>
                     <ul>
                       <li>Username</li>
                       <li>Access Code</li>
@@ -791,7 +793,7 @@ caps.setCapability("version", "43.0");
               <!-- New Sample Script to introduce-->
               <section>
                 <section>
-                  <h3>Explicit and Implicit waits</h3>
+                  <h3>Explicit and Implicit Waits</h3>
 
                   <p>Implicit Waits</p>
                   <pre>
@@ -836,7 +838,7 @@ WebElement messageElement = wait.until( ExpectedConditions.presenceOfElementLoca
                   <p>This module enables you to:</p>
                   <ul>
                     <li>Understand the use of Testing Frameworks</li>
-                    <li>Understand the difference between and assert and a verification</li>
+                    <li>Understand the difference between an assert and a verification</li>
                     <li>Use a framework to record test results in Sauce Labs</li>
                   </ul>
                   <aside class="notes"></aside>
@@ -903,8 +905,8 @@ WebElement messageElement = wait.until( ExpectedConditions.presenceOfElementLoca
                 <section>
                 <section>
                   <h3>Test Driven Development vs. Behavior Driven Development</h3>
-                  <p>TDD is where a developer writes test, and then writes code, and tests that code continuously, until the test passes.</p>
-                  <p>BDD is also a way to plan and develop code in a similar manner, but it allows teams to write scenarios and features without necessarily having technical knowledge.</p>
+                  <p>TDD: A developer writes the test, and then writes code, and tests that code continuously, until the test passes.</p>
+                  <p>BDD: A way to plan and develop code similar to TDD, but allows teams to include non-technical members when writing tests for scenarios and features</p>
                   <aside class="notes">TDD is also somewhat synonymous with "test first" development. BDD means writing tests that read like a book, almost in full sentences, so people can understand precisely what a test is trying to accomplish.</aside>
                 </section>
 
@@ -920,10 +922,10 @@ WebElement messageElement = wait.until( ExpectedConditions.presenceOfElementLoca
                   <h3>BDD Planning Example</h3>
 
                   <p>Feature: Pasta and Sauce Matchmaker</p>
-                  <p>Scenario: some sauces</p>
-                  <p>Given I have 5 different kinds of Sauce</p>
+                  <p>Scenario: Some sauces</p>
+                  <ul><p>Given I have 5 different kinds of Sauce</p>
                   <p>When I have 5 different kinds of Pasta</p>
-                  <p>Then my chef will be happy</p>
+                  <p>Then my chef will be happy</p></ul>
                 </section>
 
                 <section>
@@ -1009,7 +1011,7 @@ throw new PendingException();
                 <section>
                   <h3>Record your Results with Sauce Labs</h3>
                   <ul>
-                  <li>You can use the update_job method in the Sauce Labs REST API after the test has run.</li>
+                  <li>Use the update_job method in the Sauce Labs REST API after the test has run.</li>
                   <p></p>
                   <li>Use the Java Helper library; it will automatically send pass/fail results to Sauce Labs</li>
                   <p></p>
@@ -1037,20 +1039,18 @@ throw new PendingException();
                   <h3>Module Objectives</h3>
                   <p>This module enables you to:</p>
                   <ul>
-                    <li>Understand testing strategies that can help you set up your automated testing</li>
-                    <li>Label, name and tag your tests to faciliate searching for past tests on Sauce Labs</li>
+                    <li>Understand testing strategies for setting up automated testing</li>
+                    <li>Label, name, and tag your tests to faciliate searching for past tests on Sauce Labs</li>
                   </ul>
                   <aside class="notes"></aside>
                 </section>
 
                 <section>
                      <h3>Small, Atomic, and Autonomous Testing</h3>
-                     <p>Small</p>
-                     <ul><li>Tests should be short and succinct.</li></ul>
-                     <p>Atomic</p>
-                     <ul><li>Tests should focus on testing a single feature.</li></ul>
-                     <p>Autonomous</p>
-                     <ul><li>Tests should be able to run completely independently of other tests.</li></ul>
+                     <p>Small: Tests should be short and succinct.</p>
+                     <p>Atomic: Tests should focus on testing a single feature.</p>
+                     <p>Autonomous: Tests should be independent of other tests.</p>
+
                      <aside class="notes">
 
                        <p>Short - If you have a test suite of 100 tests running concurrently on 100 VMs, then the time it will take to run the entire suite will be determined by the longest/slowest test case. Keeping your tests small ensures that your suite will run efficiently and provide you with results faster. </p>
@@ -1092,7 +1092,7 @@ throw new PendingException();
 
                    <section>
                      <h3>Performance Testing</h3>
-                     <p>Performance tests gauge and output performance metrics for your application.</p>
+                     <p>Performance tests that gauge and output performance metrics for your application.</p>
                      <aside class="notes">
                        <p>Performance testing serves to answer questions suchas, can your application server handle a particular load, and does it behave as expected when you push it to its limit? These types of tests are better undertaken with a testing infrastructure that has been specifically developed for performance testing, so all baseline performance metrics are well established and understood before you start the test.</p>
                        <p>Some eaxmples of performance testing helpers (similar to sauce labs):</p>
@@ -1105,7 +1105,7 @@ throw new PendingException();
                   <section>
                     <h3>Dependencies</h3>
                     <p>Hard coding dependencies to access external account or data</p>
-                    <ul><li>Development and testing environments can change between the writing of your test scripts and when they run</li></ul>
+                    <ul><li>Development and testing environments may change between the writing of your test scripts and when they run</li></ul>
                     <ul><li>Security</li></ul>
                     <aside class="notes">
                       <p>We've talked about avoiding this a bit already, but there are some other dependencies for tests that need to be considered as well.</p>
@@ -1115,7 +1115,7 @@ throw new PendingException();
 
                   <section>
                     <h3>Setup</h3>
-                    <p>Setup initiates <i>prerequisite</i> tasks that need to be taken care of before your test runs, such as logging in, or dismissing a introductory pop-up.</p>
+                    <p>Setup initiates <i>prerequisite</i> tasks to be taken care of before your test runs, such as logging in, or dismissing an introductory pop-up.</p>
 
                     <p>Example:</p>
                     <pre><code class="java" data-trim contenteditable>
@@ -1152,8 +1152,8 @@ throw new PendingException();
                      <h3>Object Oriented Testing</h3>
                      <p>Page Objects</p>
                      <ul>
-                       <li>Code reuse across tests - reuse common element interactions</li>
-                     <li>Abstraction - with product change, only change one piece of code</li>
+                       <li>Code reuse across tests; reuse common element interactions</li>
+                     <li>Abstraction: With product change, only change one piece of code</li>
                      </ul>
                      <aside class="notes">
                        <p>
@@ -1186,7 +1186,7 @@ public void enterCommentText(String text){
                    </section>
 
                    <section>
-                     <h3>Page Object Example - Incorrect</h3>
+                     <h3>Page Object Example: Incorrect</h3>
 
                      <pre><code class="java" data-trim contenteditable>
                          public class Login {
@@ -1206,7 +1206,7 @@ public void enterCommentText(String text){
                    </section>
 
                    <section>
-                     <h3>Page Object Example - Correct</h3>
+                     <h3>Page Object Example: Correct</h3>
 
                      <pre><code class="java" data-trim contenteditable>
                          public class TestLogin {

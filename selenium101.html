@@ -325,7 +325,11 @@
                 <section>
                   <section>
 				    <h3>7 Basic Steps of a Selenium Script</h3>
-				    <p>
+				     <div style="position:left;float:left;">
+                    <img src="assets/images/7Steps.png" style="border:none; background:none; width:50%">
+                  </div>
+            <div style="text-align:left;float:left;width:80%;">
+              <p>
                       <ol>
                         <li>Create a Webdriver Object</li>
                         <li>Navigate to a Web Page</li>
@@ -336,6 +340,8 @@
                         <li>Conclude the Test</li>
                       </ol>
                     </p>
+            </div>
+            
                     <aside class="notes">Walk through example script - point out each step that correllates to an element</aside>
 				  </section>
 
@@ -620,8 +626,14 @@ WebDriver driver = new ChromeDriver();
                 <section>
                   <section>
                     <h3>Performing an Action</h3>
-                    <li>Once you have located an element, you can perform an action on it.</li><p></p>
+                    <div style="text-align:left;float:left;">
+                      <li>Once you have located an element, you can perform an action on it.</li><p></p>
                     <li>Perform actions by invoking interaction methods on the WebElement object we identified earlier.</li>
+      
+                  <div style="text-align:center;float:right;">
+                    <img src="assets/images/action.png" style="border:none; background:none; width:50%">
+                  </div>
+                  </div>
                     <aside class="notes">It's common to see actions occur on webelements as they are identified - but we can also store our identified element objects as variables and perform multiple actions on them through the test.</aside>
                   </section>
 

@@ -407,8 +407,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                         <li>Partial Linktext</li>
                         <li>CSS</li>
                         <li>XPath</li>
-                        <li>JavaScript</li>
-                      </div>
+                        </div>
                     </p>
                     <aside class="notes">
                       <p>There are a lot of tools out there to help you locate elements. These include but are not limited to, ________</p>
@@ -418,9 +417,13 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
 
                   <section>
                     <h3> Popular Locator Helpers</h3>
-                    <li>HTML Page Inspector</li>
-                    <li>Firebug (Firefox)</li>
-
+                    <li>Browser Developer Tools</li>
+                    <ul>
+                      <li>Inspect the DOM</li>
+                      <li>Firebug (Firefox)</li>
+                      <li>Chrome developer tools</li>
+                      <li>Internet Explorer developer tools</li>
+                    </ul>
                     <aside class="notes">
                       <p><mark>demo the page inspector on the presentation at least, or on the guinea page to find the title</mark></p>
                     </aside>
@@ -431,7 +434,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
 				    <p>
                       <pre>
                         <code class="java" data-trim contenteditable style="text-align:center;">
-                          driver.findElement(By.id("myId")).click;
+                          driver.findElement(By.id("myId")).click();
                         </code>
                       </pre>
                     </p>
@@ -691,7 +694,6 @@ submitButton.submit();
                   <li>Remote WebDriver</li>
                   <li>Sauce Labs Authentication (API)</li>
                   <li>Desired Capabilities</li>
-                  <li>Reporting Results?</li>
                   <aside class="notes"></aside>
                 </section>
 
@@ -714,7 +716,9 @@ export SAUCE_ACCESS_KEY=b89b7205-3aca-4af2-a618-9bab4c7bdebd
 public static final String ACCESS_KEY = "b89b7205-3aca-4af2-a618-9bab4c7bdebd";
                     </code></pre>
                   </div>
-                  <aside class="notes">makes tests more re-usable among other team members, doesn't run the risk of potential exposure of credentials</aside>
+                  <aside class="notes">
+                    Having environment variables with your credentials makes tests more re-usable among other team members. For example, they may be using their own credentials to log in and it doesn't run the risk of potential exposure of credentials.
+                  </aside>
                 </section>
 
                 <section>
@@ -855,15 +859,17 @@ WebElement messageElement = wait.until( ExpectedConditions.presenceOfElementLoca
 
                     <p><strong>Ruby:</strong></p>
                     <li>RSpec</li>
-                    <li>TestUnit</li>
+                    <li>Cucumber</li>
                   </div>
 
                   <div style="float:right;width:50%;padding-right:0px;">
                     <p><strong>Python:</strong></p>
-                    <li>Pytest</li>
-                    <li>Nose</li>
                     <li>Robot</li>
                     <li>UnitTest</li>
+
+                    <p><strong>JavaScript:</strong></p>
+                    <li>Protractor</li>
+                    <li>Nightwatch</li>
 
                   </div>
                   <aside class="notes">
@@ -947,6 +953,9 @@ throw new PendingException();
                     <p>Python:</p>
                     <li>Behave</li>
                     <li>Lettuce</li>
+
+                    <p>JavaScript:</p>
+                    <li>CucumberJS</li>
                   </div>
 
                   <div style="float:right;width:50%;padding-right:0px;">
@@ -972,16 +981,17 @@ throw new PendingException();
 
                 <section>
                   <section>
-                    <h3>Assertions and Verifications</h3>
-                    <p>Asserts:</p>
-<ul>
-                    <li>A testing frameork directive that assumes a value to be true, and stops the test and/or throws an error if false.</li>
-</ul>
-                    <p>Verifications:</p>
-<ul>
-                    <li>Selenium commands that makes sure an element is available on a page.</li>
+                    <h3>Asserts:</h3>
+                    <p>A testing framework directive that assumes a value to be true, and stops the test and/or throws an error if false.</p>
 
-                    </ul><aside class="notes"> The difference here lies in that with verifications, the test will still keep going, even if they are false. Most selenium scripts use a combination of these to assert that a large object exists (like the page has at least laoded) and then verifies individual key elements that are going to be tested. The logic behind this is if the site can't even load, there's no point in running the rest of the script, as that is a major dependency.</aside>
+                    <pre><code class="java" data-trim contenteditable>
+                         assertEquals(page.getUncheckedCheckBoxState(), true);
+                    </code></pre>
+
+                    <aside class="notes">
+
+                    </aside>
+
                   </section>
               <!-- New Script to introduce-->
                   <section data-state="lab">
@@ -1073,45 +1083,38 @@ throw new PendingException();
                   </section>
                 </section>
 
+                <section>
                    <section>
                      <h3>Different Kinds of Tests</h3>
+                     <p>Unit Testing</p>
+                     <ul><li>Unit tests are written from a developer persepective to ensure a menthod or function performs a set of tasks.</li></ul>
+
+                     <aside class="notes">
+                       <p>Unit testing focuses on testing very small parts of the application, going down to the basic functions and methods</p>
+                     </aside>
+                   </section>
+
+                   <section>
+                     <h3>Different Kinds of Tests (2)</h3>
                      <p>Functional Testing</p>
-                     <ul><li>Test a functionality or feature of your application's that results in a pass or a failure.</li></ul>
+                     <ul><li>Functional tests are written from a user perspective to test a functionality or feature of your application.</li></ul>
+                     <aside class="notes">
+                       <p>Functional testing is what Sauce Labs offers to help faciliate and simplify for it's users.</p>
+                     </aside>
+                   </section>
+
+                   <section>
+                     <h3>Different Kinds of Tests (3)</h3>
                      <p>Performance Testing</p>
                      <ul><li>Performance tests gauge and output performance metrics for your application.</li></ul>
                      <aside class="notes">
-                       <p>Functional testing is what Sauce Labs offers to help faciliate and simplify for it's users.</p>
+
                        <p>Performance testing serves to answer questions suchas, can your application server handle a particular load, and does it behave as expected when you push it to its limit? These types of tests are better undertaken with a testing infrastructure that has been specifically developed for performance testing, so all baseline performance metrics are well established and understood before you start the test.</p>
                        <p>Some eaxmples of performance testing helpers (similar to sauce labs):</p>
+
                      </aside>
                    </section>
-
-                   <section>
-                   <section>
-                     <h3>Retry Strategy</h3>
-                     <p>
-                       We want to make sure that our test fails because something is actually wrong.
-                     </p>
-                     <p>Retries allow us to do a context specific retry for a particular set of actions. We wouldn't want to do the whole test again!</p>
-                     <aside class="notes">
-                       <p>There will always be flaky tests, and tests that once breezed through with no problem can fail for what seems like no reason. The trick is figuring out whether a test that fails does so because it found a real problem in your app functionality, or because there was an issue with the test itself. </p>
-</aside>
-                   </section>
-
-                   <section>
-                     <h3>Retry: The Game</h3>
-                     <p>Example:</p>
-                     <p>You have a game that pops up with an alert everytime the player completes a level or dies.</p>
-                     <p>The Test:</p>
-                     <p>Your test comes back with a failure: "You have died... Again."</p>
-                     <p>The Retry:</p>
-                     <p>You can only continue the test if the player completes a level. Another retry results in a sucessful test, this time, where the playerxs did not die.</p>
-                     <aside class="notes">
-                       <p></p>
-                     </aside>
-                   </section>
-
-                   </section>
+                </section>
 
                    <section>
                      <h3>Small, Atomic, and Autonomous Testing</h3>
@@ -1174,11 +1177,11 @@ public void enterCommentText(String text){
                          public class Login {
 
     public void testLogin() {
-        selenium.type("inputBox", "testUser");
-        selenium.type("password", "my supersecret password");
-        selenium.click("sign-in");
-        selenium.waitForPageToLoad("PageWaitPeriod");
-        Assert.assertTrue(selenium.isElementPresent("compose button"),
+        driver.type("inputBox", "testUser");
+        driver.type("password", "my supersecret password");
+        driver.click("sign-in");
+        driver.waitForPageToLoad("PageWaitPeriod");
+        Assert.assertTrue(driver.isElementPresent("compose button"),
         "Login was unsuccessful");
     }
 }
@@ -1196,7 +1199,7 @@ public void enterCommentText(String text){
     public void testLogin() {
         SignInPage signInPage = new SignInPage(selenium);
         HomePage homePage = signInPage.loginValidUser("userName", "password");
-        Assert.assertTrue(selenium.isElementPresent("compose button"),
+        Assert.assertTrue(driver.isElementPresent("compose button"),
         "Login was unsuccessful");
     }
 }

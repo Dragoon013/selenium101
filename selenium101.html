@@ -235,14 +235,30 @@
                   </aside>
                 </section>
 
-                <section data-state="lab">
-                  <h3>Lab: My First Test (On Sauce Labs)</h3>
-                  <p>This is the lab with the manual test</p>
+                <section>
+                  <h3>Sauce Labs UI</h3>
+                  <img src="assets/images/SL_dash.png" style="float:center;border:none; background:none; width:100%">
                   <aside class="notes">
-                    <p>UI Topics</p>
                     <li>Dashboard</li>
                     <li>Tunnels</li>
                     <li>Account Details</li>
+                  </aside>
+                </section>
+
+                <section data-state="lab">
+                  <h3>Lab: My First Test (On Sauce Labs)</h3>
+                  <ol>
+                    <li>Log into <a href="http://saucelabs.com" target="_blank">saucelabs.com</a>.</li>
+                    <li>Click on the Manual Tests tab.</li>
+                    <li>Click on the New Manual Test Button.</li>
+                    <li>Leave the URL as is.</li>
+                    <li>Click on the Chrome symbol. Select version 50, and leave the other options where they are by default.</li>
+                    <li>Start your session!</li>
+                    <li>When the browser is ready, click on the text box and search for Sauce Labs. Click on the first link that appears.</li>
+                  </ol>
+
+                  <aside class="notes">
+
                   </aside>
 				</section>
 
@@ -518,20 +534,33 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                 <section>
                   <section data-state="lab">
                     <h3>Lab: Running the Sample Script</h3>
-                    <p>run sample script as is - need to change sample script to just run locally</p>
-                    <p>changes to sample script that need to be made:</p>
-                    <li>start the navigation </li>
+
+                    <ol>
+                      <li>Navigate to the sample script.</li>
+                      <li>Open the script in your favorite editor.</li>
+                      <li>Make a note of the website we are going to.</li>
+                      <li>Run <pre style="display:inline">./runLocal.sh</pre>.</li>
+                      <li>What did you see happen? How did it happen?</li>
+                    </ol>
                   </section>
 
                   <section data-state="lab">
-                    <h3>Lab: Running the Sample Script Part 2</h3>
-                    <p>let's change the site!</p>
+                    <h3>Lab: Change Sites</h3>
+                    <ol>
+                      <li>Open the script in your favorite editor.</li>
+                      <li>Locate and change the URL in <pre style="display:inline">driver.get("http://saucelabs.com/")</pre> to another website of your choosing.</li>
+                      <li>Run <pre style="display:inline">./runLocal.sh</pre>.</li>
+                    </ol>
+                    <aside class="notes">
+                      <p>questions?</p>
+                      <p>maybe we won't do this one.</p>
+                    </aside>
                   </section>
                 </section>
 <!-- Local Selenium Scripts Module-->
                 <section data-background="rgb(226, 35, 26)">
                   <h2>Write a Selenium Script</h2>
-                    <aside class="notes">Talk about how this section is basically one big lab - We will analyze what has been written in the script for us already, write our own additional steps, run the script, and then analyze our results</aside>
+                  <aside class="notes">Talk about how this section is basically one big lab - We will analyze what has been written in the script for us already, write our own additional steps, run the script, and then analyze our results</aside>
                 </section>
 
                 <section>
@@ -548,7 +577,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
 
                 <section>
                   <h3>Choosing a WebDriver</h3>
-                  <li>Local</li>
+
                   <pre><code class="java" data-trim contenteditable>
                       WebDriver driver = new FirefoxDriver();
 WebDriver driver = new InternetExplorerDriver();
@@ -687,20 +716,34 @@ submitButton.submit();
                   </section>
                 </section>
 
+                <section>
                 <section data-state="lab">
                   <h3>Lab: Writing Actions</h3>
-                  <p>This is the lab where we write some actions into our script to play with other elements on the page</p>
+
+                  <ol>
+                    <li>Open the script in your preferred text editor.</li>
+                    <li>If you have not done so, change the <pre style="display:inline">driver.get("URL")</pre> to <pre style="display:inline">driver.get("http://saucelabs.github.io/training-test-page/")</pre>.</li>
+                    <li>Locate the Comments textbox on the page, and send it some string values.</li>
+                    <li>Locate the send button, and click it to send your comment.</li>
+                    <li>Uncomment and fill the while loop with commands that locate and toggle the checkboxes on the page.</li>
+                  </ol>
                 </section>
 
                 <section data-state="lab">
-                  <h3>Lab: Run Script Locally</h3>
-                  <p>This is the lab with the local test</p>
-                </section>
+                  <h3>Lab: Run the Script Locally</h3>
 
+                  <pre style="display:inline">javac -cp ".:./selenium-2.53.0/selenium-java-2.53.0.jar:./selenium-2.53.0/libs/*" SampleSauceTest.java
+java -cp ".:./selenium-2.53.0/selenium-java-2.53.0.jar:./selenium-2.53.0/libs/*" SampleSauceTest
+                  </pre>
+                  <aside class="notes">
+
+                  </aside>
+                </section>
+                </section>
 <!-- Running a Selenium Script with Sauce Labs Module-->
                 <section data-background="rgb(226, 35, 26)">
                   <h2>Testing with Sauce Labs</h2>
-                  <aside class="notes"> we will finally run the script here, locally and on sauce labs, and compare the methods and dicuss the benefits of running on sauce labs</aside>
+                  <aside class="notes"> we will finally run the script on sauce labs, and compare the methods and discuss the benefits of running on sauce labs</aside>
                 </section>
 
                 <section>
@@ -763,7 +806,13 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
 
                   <section data-state="lab">
                     <h3>Lab: Remote WebDriver</h3>
-                    <p>Let's set up our script to work remotely now - add in the credentials and create a webdriver that uses the credentials and authenticates with Sauce Labs</p>
+                    <ol>
+                      <li>Open the script in your preferred editor.</li>
+                      <li>Log into <a href="http://saucelabs.com" target="_blank">saucelabs.com</a>, click on "My Account" and copy your Access Key.</li>
+                      <li>Add in the String variables with the values required to authenticate with Sauce Labs.</li>
+                      <li>Add in a String variable with the URL required to access Sauce Labs.</li>
+                      <li>Comment out the old Firefox driver and create a new RemoteWebDriver object.</li>
+                    </ol>
                   </section>
                 </section>
 
@@ -795,13 +844,26 @@ caps.setCapability("version", "43.0");
 
                 <section data-state="lab">
                   <h3>Lab: Platform Configurator</h3>
-                  <p>Let's set up our platform configurator to run our test on a Mac OS on a Chrome browser, version 43.0</p>
+                  <ol>
+                    <li>Open the script in your preferred editor.</li>
+                    <li>Create a DesiredCapabilities Chrome browser object.</li>
+                    <li>Set the platform to "Mac OS X 10.9".</li>
+                    <li>Set the version (for Chrome) to 43.0.</li>
+                  </ol>
+                  <aside class="notes">
+                    <p></p>
+                  </aside>
                 </section>
               </section>
 
               <section data-state="lab">
                 <h3>Lab: Running a Script on Sauce Labs</h3>
-                <p>This is the lab where we run the Sauce Labs ready script.</p>
+                <ol>
+                  <li>Run the script.</li>
+                  <li>Open the "Automated Tests" tab on saucelabs.com.</li>
+                  <li>What do you notice?</li>
+                  <li>What after-test options are available?</li>
+                </ol>
               </section>
 
               <!-- New Sample Script to introduce-->
@@ -834,10 +896,12 @@ WebElement messageElement = wait.until( ExpectedConditions.presenceOfElementLoca
                 </section>
 
                 <section data-state="lab">
-                  <h3>Lab: The Waiting Game</h3>
+                  <h3>Lab: Testing Waits</h3>
                   <p>Originally I had though that this lab would require a different script.But it seems like we could edit our script, or copy and edit, to go to dave's site:
-<a href="http://the-internet.herokuapp.com/dynamic_loading" target="_blank">Dynamic Loading</a> then interact with it.
+                    <a href="http://the-internet.herokuapp.com/dynamic_loading" target="_blank">Dynamic Loading</a> then interact with it.
                   </p>
+                  <li>Open the script in your preferred editor.</li>
+
                 </section>
               </section>
 
@@ -1301,6 +1365,7 @@ caps.setCapability("name","Java Remote Sample Test");
 
 		</div>
 
+      <script src="lib/js/jquery-2.2.4.min.js"></script>
       <script src="lib/js/head.min.js"></script>
 	  <script src="js/reveal.js"></script>
 
@@ -1308,7 +1373,10 @@ caps.setCapability("name","Java Remote Sample Test");
 
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: true,
+            //width: 1200,
+
+
+            controls: true,
 				progress: true,
 				history: true,
 				center: true,
@@ -1332,10 +1400,20 @@ caps.setCapability("name","Java Remote Sample Test");
 //            console.log(event.currentSlide.getAttribute("data-state"))
 // if we're on a lab slide, unhide the lab image, otherwise hide it.
 
-            if(event.currentSlide.getAttribute("data-state") === "lab") {
-            document.getElementById("lab_pic").style.visibility="visible";
+
+            if(event.currentSlide.getAttribute("data-state") === "lab"){
+                //document.getElementById("lab_pic").style.visibility="visible";
+
+
+            if(document.getElementById("lab_pic").style.visibility=="visible"){
+                document.getElementById("lab_pic").style.visibility="visible";
             }else{
-            document.getElementById("lab_pic").style.visibility="hidden";
+      $("#lab_pic").css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, 200);
+            }
+
+            }else{
+               //(document.getElementById("lab_pic").style.visibility=="hidden";
+               $("#lab_pic").css({opacity: 1.0, visibility: "hidden"}).animate({opacity: 0}, 200);
             }
 
             } );

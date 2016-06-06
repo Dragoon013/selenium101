@@ -122,14 +122,18 @@
                 <section>
 				  <h3>What is Sauce Labs?</h3>
                   <p>Testing infrastructure in the cloud for web and mobile web applications.</p>
-                  <li>Selenium: Desktop and Mobile Browser Testing</li>
-                  <li>Appium: Native Mobile Application Testing</li>
+                  <ul>
+                  <li>Web Automated Testing</li>
+                  <li>Mobile Automated Testing</li>
+                  </ul>
 
                   <aside class="notes">
-                    <p>HAAS - Hardware as a service</p>
-                    <p>IAAS - Infrastructure as a service</p>
+                    <ul>
+                      <li>Selenium: Desktop and Mobile Browser Testing</li>
+                      <li>Appium: Native Mobile Application Testing</li>
+                    </ul>
                     <p>it runs your tests on any browser and OS combination you like - have over 500 combinations thereof. (different versions)</p>
-                    <p>So Selenium can run tests on mobile browsers (selendroid), but native mobile application testing is done through appium. Appium allows you to test native apps with all of the standard controls available through a mobile device.</p>
+                    <p>So Selenium can run tests on mobile browsers (selendroid), but native or hybrid mobile application testing is done through appium. Appium allows you to test native apps with all of the standard controls available through a mobile device.</p>
                   </aside>
                 </section>
 
@@ -151,7 +155,7 @@
                       <p>
                         Sauce Labs was founded in 2008 by Jason Huggins, co-creator of Selenium (the open source standard for automated testing frameworks) and Steve Hazel, current CTO. They set out to create a cloud-based platform for automated testing to free development teams from the hassle and cost of testing so they can focus on innovating their core capabilities.
                       </p>
-                      <p>Jason was using Selenium to do browser testing, and the process of testing the apps in different browsers was taking too long. The problem was that all the testing was being done on one machine, so he split the tests onto 4 different machines, effectively running the tests in parallel, which cut the time drastically. </p>
+                      <p>Jason was using Selenium to do browser testing, and the process of testing the apps in different browsers was taking too long. The problem was that all the testing was being done on one machine, so he split the tests onto 4 different machines, effectively running the tests in parallel, which cut the time drastically. That's what started Selenium, and eventually what started Sauce Labs.</p>
                   </aside>
                 </section>
 
@@ -161,20 +165,25 @@
                     <img src="assets/images/sauceCI2.png" style="border:0; text-align:center; background:none;">
                     <p style="text-align:center;">Continuous Integration/Continuous Development</p>
                     <aside class="notes">
-
+                      <p>Sauce Labs integreates inteself into the Continuous Delivery/Continuous Integration cycle, seamlessly. Traditionally, testing and QA are bottlenecks for application delivery and release, where any problems found have to start from the beginning of the cycle, and in the end have to bed tested again. The real bottlneck though isn't what happens when a bug is found, it's the time consuming nature of writing tests for a product that is ever changing itself. It's the time it takes to perform each test, it's setting up the infrastructure that allows those tests to be run on a variety of platforms that your application runs on.</p>
+                      <p>Sauce Labs takes away those worries though. With Selenium and Appium testing, we remove the barrier of time consuming test writing, and with Sauce Labs itself, we remove the need to have a propietary infrastructure, just to run our tests. Sauce Labs provides the infrastructure for you, allowing you to test on a variety of platforms in a speedy manner. So you can focus on development, and releases, and leave the testing to Sauce Labs.</p>
                     </aside>
-
                 </section>
 
                 <section>
 				  <h3>What is Selenium?</h3>
-				  <p>Browser Automation Framework used for testing</p>
-                    <ul><li>Simulate site interaction</li>
+                  <p>Developed in 2004 by Jason Huggins at ThoughtWorks.</p>
+				  <p>Browser automation framework used for testing.</p>
+                  <ul>
+                    <li>Simulate site interaction</li>
                     <li>Automate Application Testing</li>
-                    </ul>
+                  </ul>
 
-                  <aside class="notes">So <b>how</b> does Sauce Labs faciltate your testing? Selenium is the core testing framework that Sauce Labs runs for you on a variety of Browser and OS combinations.
-                    <p>Selenium is the testing framework that provides the actual language and ability to test interations on a browser. It was started by Jason Huggins in 2004, and since then a community has grown to contribute and build to it</p>
+                  <aside class="notes">
+                    <p>History: Was developed in 2004 as an internal tool at ThoughtWorks, by Jason Huggins. It's gone through a couple stages of evolution at this point, with numerous other contributors, but it has always facilitated and simplified application testing.(Hammant, Simon Stewart, etc)</p>
+                    <p>So <b>how</b> does Sauce Labs faciltate your testing? Selenium is the core testing framework that Sauce Labs runs for you on a variety of Browser and OS combinations.</p>
+                    <p>Selenium is the testing framework that provides the actual language and ability to test interations on a browser. We use its API to write scripts in our preferred language, and then the commands in those scripts simulate interaction on a browser, either locally on your own computer, or remotely.</p>
+
                   </aside>
 				</section>
 
@@ -204,7 +213,7 @@
                     So where do I actually run my selenium scripts? Well you can always run it locally - when you run a script it can pull up a browser thats on your machines, access your application, and run the test. But then you're restricted to the OS that is actually on your machine, as well as the browser versions and types that are available for that OS as well. It would be difficult to run IE on Ubuntu!
                     <p>In order to test across browsers or OS's Selenium actually offers software - a Selenium Server - that can help you create a Selenium farm - that is, a server farm that has VMs running with all of these different possible OS and browser combinations.</p>
                     <p>But that's pretty painful and time consuming to set up and manage all on your own, not to even mention the cost of hardware.</p>
-                    <p>Sauce Labs handles all of that stuff for you. They essentially run a grid themselves and rent it out to their customers to run their Selenium and Appium tests on. </p>
+                    <p>Sauce Labs handles all of that stuff for you. They essentially run a Selenium Grid themselves and rent it out to their customers to run their Selenium and Appium tests on. </p>
                   </aside>
 				</section>
 

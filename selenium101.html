@@ -595,6 +595,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                   </aside>
                 </section>
 
+                <!--
                 <section>
                   <h3>Choosing a WebDriver</h3>
 
@@ -605,7 +606,7 @@ WebDriver driver = new ChromeDriver();
                   </pre></code>
                   <aside class="notes">So now we need to select a webdriver that we actually want to use. Let's try using the Chrome Driver now (default should have used FireFox)</aside>
                 </section>
-
+-->
                   <section>
                     <h3>Navigation Change</h3>
 
@@ -615,47 +616,48 @@ WebDriver driver = new ChromeDriver();
 
                     <aside class="notes">
                       <p>
-                        In order to navigate to a page, we need to use the get method on the driver object. The get method then takes in the URL as an argument.
-                      </p>
-                      <p>
-                        We know how to change the site that we choose to access from the previous module. We're going to change it back to that test website that we were wokring on before.
+                        We know how to change the site that we choose to access from the previous module. So let's go ahead and change it.
                       </p>
                     </aside>
                   </section>
 
                   <section>
-                <section>
-                  <h3>Identifying Elements</h3>
-                  <p>Locator Expressions are made in Key:Value pairs</p>
-                  <pre><code class="java" data-trim contenteditable>
-                      WebElement linkElement = driver.findElement(By.id("i am a link"));
-                  </code></pre>
-                  <aside class="notes"></aside>
-                </section>
+                    <section>
+                      <h3>Identifying Elements</h3>
+                      <p style="text-align:center;">Locator Expressions are made in Key:Value pairs</p>
+                      <pre><code class="java" data-trim contenteditable>
+                          WebElement linkElement = driver.findElement(By.id("i am a link"));
+                      </code></pre>
+                      <aside class="notes">
 
-                <section style="padding-left:10px;">
-                  <h3>Locator Types</h3>
-                    <p>ID</p>
+                      </aside>
+                    </section>
+
+                    <section style="padding-left:10px;">
+                      <h3>Locator Types</h3>
+                      <p>ID</p>
                       <pre>
                         <code class="java" data-trim contenteditable>
-                         driver.findElement(By.id("i_am_an_id")
+                          driver.findElement(By.id("i_am_an_id")
                         </code>
                       </pre>
 
-                    <p>Tag Name</p>
+                      <p>Tag Name</p>
                       <pre>
                         <code class="java" data-trim contenteditable>
                           driver.findElements(By.tagName("a"))
                         </code>
                       </pre>
                     <p>Text</p>
-                      <pre>
-                        <code class="java" data-trim contenteditable>
-                          driver.findElements(By.linkText("i am a link"))
-                        </code>
-                      </pre>
-
-                </section>
+                    <pre>
+                      <code class="java" data-trim contenteditable>
+                        driver.findElements(By.linkText("i am a link"))
+                      </code>
+                    </pre>
+                    <aside class="notes">
+                      <p>Notice that there is findElement and findElements. findElements will return a list of matching elements found on the page.</p>
+                    </aside>
+                    </section>
 
                 <section>
                   <h3>Locator Types continued</h3>
@@ -670,7 +672,11 @@ WebDriver driver = new ChromeDriver();
                     <code class="java" data-trim contenteditable>
                       driver.findElement(By.xpath("/html/head/title"))
                     </code>
-                    <aside class="notes"></aside>
+                    <aside class="notes">
+                      <p>For those of you who are not familiar with XPATH, it is the language used to locate nodes in an XML doc. HTML can be an implementation of XHTML (XML), so you can use XPATH to locate elements on a page. Most people use the XPATH to locate an element because the element may not have an ID or name attribute to locate it easily.
+                      </p>
+                      <p>The danger in using XPATH lies in how it finds elements, which is essentially where is the element in the hierarchy of the page. If that element moves during the development of the application, then your tests are at risk of breaking, if they XPATH. It's generally recommended to not use XPATHs unless you don't have any other choice.</p>
+                    </aside>
                 </section>
                 </section>
 

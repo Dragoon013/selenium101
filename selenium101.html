@@ -1204,7 +1204,7 @@ public void the_feeling_is(String arg1) throws Throwable {
                        <li>Performance Testing</li>
                      </ul>
                      <aside class="notes">
-
+                       <p>There are a few different kinds of testing. Sauce Labs doesn't cover them all, but it's important to know what Sauce Labs can and can't do.</p>
                      </aside>
                    </section>
 
@@ -1229,7 +1229,7 @@ public void the_feeling_is(String arg1) throws Throwable {
                      <h3>Performance Testing</h3>
                      <p>Performance tests that gauge and output performance metrics for your application.</p>
                      <aside class="notes">
-                       <p>Performance testing serves to answer questions suchas, can your application server handle a particular load, and does it behave as expected when you push it to its limit? These types of tests are better undertaken with a testing infrastructure that has been specifically developed for performance testing, so all baseline performance metrics are well established and understood before you start the test.</p>
+                       <p>Performance testing serves to answer questions such as, can your application server handle a particular load, and does it behave as expected when you push it to its limit? These types of tests are better undertaken with a testing infrastructure that has been specifically developed for performance testing, so all baseline performance metrics are well established and understood before you start the test.</p>
                        <p>Some eaxmples of performance testing helpers (similar to sauce labs):</p>
 
                      </aside>
@@ -1292,7 +1292,7 @@ public void the_feeling_is(String arg1) throws Throwable {
                      </ul>
                      <aside class="notes">
                        <p>
-                         Sometimes we interact with particular elements in our applicaiton repeatedly. The nature of applications is that they change over time as well. Instead of writing the same code for the same interacctions, we ad a level of abstraction with page objects.
+                         Sometimes we interact with particular elements in our application repeatedly. The nature of applications is that they change over time as well. Instead of writing the same code for the same interacctions, we can add a level of abstraction with page objects.
                        </p>
                      </aside>
                    </section>
@@ -1315,8 +1315,8 @@ public void enterCommentText(String text){
     setTextAreaInputValue(this.commentsTextAreaInput, text);
 }
                      </code></pre>
-                     <aside>
-
+                     <aside class="notes">
+                       <p>So in this example here, we are abtracting the locating, of the textbox, and the insertion of text into it. We're making the locating and sending it inputs all in one go, all in one object.</p>
                      </aside>
                    </section>
 
@@ -1337,7 +1337,9 @@ public void enterCommentText(String text){
 }
                      </code></pre>
 
-                     <aside class="notes"></aside>
+                     <aside class="notes">
+                       <p>This example is incorrect because it doesn't have any abstraction! Everything is done explicitly.</p>
+                     </aside>
                    </section>
 
                    <section>
@@ -1354,7 +1356,9 @@ public void enterCommentText(String text){
     }
 }
                      </code></pre>
-                     <aside class="notes"></aside>
+                     <aside class="notes">
+                       <p>This is a good example of abstraction. We've made the signin page into it's own object that we can now refer to, and do so on the next line, when we login, passing a username and password value.</p>
+                     </aside>
                    </section>
                    </section>
 

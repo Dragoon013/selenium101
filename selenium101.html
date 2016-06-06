@@ -897,16 +897,20 @@ WebElement messageElement = wait.until( ExpectedConditions.presenceOfElementLoca
 
                 <section data-state="lab">
                   <h3>Lab: Testing Waits</h3>
-
-                  <li>Open a browser and go to <a href="http://the-internet.herokuapp.com/dynamic_loading" target="_blank">http://the-internet.herokuapp.com/dynamic_loading</a>.</li>
-                  <li>Click on each example.</li>
-                  <li>What's going to happen with our test if we don't set a wait for these elements?</li>
+                  <ol>
+                    <li>Open a browser and go to <a href="http://the-internet.herokuapp.com/dynamic_loading" target="_blank">http://the-internet.herokuapp.com/dynamic_loading</a>.</li>
+                    <li>Click on each example.</li>
+                    <li>What's going to happen with our test if we don't set a wait for these elements?</li>
+                  </ol>
                 </section>
 
                 <section data-state="lab">
                   <h3>Lab: Testing Waits (cont.)</h3>
-                  <li>Open the script in your preferred editor.</li>
-                  <li>Change the script driver.get URL to <a href="http://the-internet.herokuapp.com/dynamic_loading/2" target="_blank">http://the-internet.herokuapp.com/dynamic_loading/2</a>.</li>
+                  <ol>
+                    <li>Open the script in your preferred editor.</li>
+                    <li>Change the script driver.get URL to <a href="http://the-internet.herokuapp.com/dynamic_loading/2" target="_blank">http://the-internet.herokuapp.com/dynamic_loading/2</a>.</li>
+                    <li>Write an explicit wait for a locator for the "Hello World" until it appears.</li>
+                  </ol>
                 </section>
               </section>
 
@@ -1086,7 +1090,12 @@ throw new PendingException();
               <!-- New Script to introduce-->
                   <section data-state="lab">
                     <h3>Lab: Asserting Your Greatness</h3>
-                    <p>This is the lab where we apply a simple assert</p>
+                    <ol>
+                      <li>Open the assert script in your preferred text editor.</li>
+                      <li>Add an assert that makes sure that the title of the guinea pig page is "I am a page title - Sauce Labs".</li>
+                      <li>Add an assert that makes sure that the checkbox is checked (true).</li>
+                      <li>Run the script.</li>
+                    </ol>
                   </section>
                 </section>
 
@@ -1339,7 +1348,14 @@ caps.setCapability("name","Java Remote Sample Test");
 
                      <section data-state="lab">
                        <h3>Lab: Labelling and Naming our Tests</h3>
-                       <p>This is the lab where we apply labels to our test, run it again, and see the label appear in sauce labs</p>
+                       <ol>
+
+                         <li>Add a capability to name your test.</li>
+                         <li>Add a capability to include a build number for your test.</li>
+                         <li>Add a capability to include a tag for your test.</li>
+                         <li>Run the test script.</li>
+                         <li>Open saucelabs.com. How does your test look different on the Automated Tests tab?</li>
+                       </ol>
                        <aside class="notes">There's also a way to set your own build number as well</aside>
                      </section>
                    </section>

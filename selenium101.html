@@ -784,7 +784,9 @@ java -cp ".:./selenium-2.53.0/selenium-java-2.53.0.jar:./selenium-2.53.0/libs/*"
                   <li>Remote WebDriver</li>
                   <li>Sauce Labs Authentication (API)</li>
                   <li>Desired Capabilities</li>
-                  <aside class="notes"></aside>
+                  <aside class="notes">
+                    <p>If your script is going to talk to Sauce Labs, then it needs a couple of things set first. One is the remote webdriver. This is the selenium webdriver object that facilitates commands sent to a remote browser on a selenium grid. Second, we'll need to authenticate with Sauce Labs. And lastly, we'll need to set the desired capabilities, which defines what browser and OS combination we will use.</p>
+                  </aside>
                 </section>
 
                 <section>
@@ -807,7 +809,8 @@ public static final String ACCESS_KEY = "b89b7205-3aca-4af2-a618-9bab4c7bdebd";
                     </code></pre>
                   </div>
                   <aside class="notes">
-                    Having environment variables with your credentials makes tests more re-usable among other team members. For example, they may be using their own credentials to log in and it doesn't run the risk of potential exposure of credentials.
+                    <p>One thing to consider when setting up your testing environment or suite, is to use Environment Variables for your credentials or explicitly state them in your script.</p>
+                    <p>Having environment variables with your credentials makes tests more re-usable among other team members. For example, they may be using their own credentials to log in and it doesn't run the risk of potential exposure of credentials.</p>
                   </aside>
                 </section>
 
@@ -865,7 +868,7 @@ caps.setCapability("platform", "Windows XP");
 caps.setCapability("version", "43.0");
                   </code></pre>
 
-                  <aside class="notes"> With Sauce Labs, we can set up the script to run the test on several different platforms. We aren't limited to what we have locally. If we want to indicate more platforms combinations to test on, we typically use a framework to enable that for us.</aside>
+                  <aside class="notes">Lastly, with Sauce Labs, we can set up the script to run the test on several different platforms. We aren't limited to what we have locally. If we want to indicate more platforms combinations to test on, we typically use a framework to enable that for us.</aside>
                 </section>
 
                 <section data-state="lab">
@@ -874,7 +877,7 @@ caps.setCapability("version", "43.0");
                     <li>Open the script in your preferred editor.</li>
                     <li>Create a DesiredCapabilities Chrome browser object.</li>
                     <li>Set the platform to "Mac OS X 10.9".</li>
-                    <li>Set the version (for Chrome) to 43.0.</li>
+                    <li>Set the version (for the Chrome browser) to 43.0.</li>
                   </ol>
                   <aside class="notes">
                     <p></p>
@@ -916,7 +919,6 @@ WebElement messageElement = wait.until( ExpectedConditions.presenceOfElementLoca
 
                   <aside class="notes">
 
-                    We've talked about this already, but we want to drive home the best practices here, which is to use explicit waits instead on implicit waits.
                     There are many situations in which your test script may run ahead of the website or application you're testing, resulting in timeouts and a failing test. For example, you may have a dynamic content element that, after a user clicks on it, a loading appears for five seconds. If your script isn't written in such a way as to account for that five second load time, it may fail because the next interactive element isn't available yet. The general recommended solution for this is to use explicit waits.
                   </aside>
                 </section>

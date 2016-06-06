@@ -999,8 +999,6 @@ WebElement messageElement = wait.until( ExpectedConditions.presenceOfElementLoca
                     <p>JavaScript:</p>
                     <li>Mocha</li>
                     <li>Karma</li>
-                    <li>Nightwatch</li>
-                    <li>Protractor</li>
                     <li>Jasmine</li>
 
                     <p>PHP:</p>
@@ -1014,6 +1012,9 @@ WebElement messageElement = wait.until( ExpectedConditions.presenceOfElementLoca
 
                     <p>Perl:</p>
                     <li>TestMore</li>
+
+                    <p>There are quite a few different frameworks out there. Sauce Labs has a github page with examples of scripts written using all of these frameworks.</p>
+
                   </aside>
                 </section>
 
@@ -1022,7 +1023,10 @@ WebElement messageElement = wait.until( ExpectedConditions.presenceOfElementLoca
                   <h3>Test Driven Development vs. Behavior Driven Development</h3>
                   <p>TDD: A developer writes the test, and then writes code, and tests that code continuously, until the test passes.</p>
                   <p>BDD: A way to plan and develop code similar to TDD, but allows teams to include non-technical members when writing tests for scenarios and features</p>
-                  <aside class="notes">TDD is also somewhat synonymous with "test first" development. BDD means writing tests that read like a book, almost in full sentences, so people can understand precisely what a test is trying to accomplish.</aside>
+                  <aside class="notes">
+                    <p>In the QA/Test industry, there are a couple of different ways of thinking about how to develop applications with testing in mind. One of those is TDD, where you write a test, and then write the code until the test passes. Antoher variant is to plan the same kind of testing, but on a higher level, basically written in a more colloquial manner though.</p>
+                    <p>TDD is also somewhat synonymous with "test first" development. BDD means writing tests that read like a book, almost in full sentences, so people can understand precisely what a test is trying to accomplish.</p>
+                  </aside>
                 </section>
 
                 <section>
@@ -1030,6 +1034,9 @@ WebElement messageElement = wait.until( ExpectedConditions.presenceOfElementLoca
                   <p>Sauce_counter() needs to count the number of sauces inputted</p>
                   <p>Pasta_counter() needs to count the number of pastas inputted</p>
                   <p>sNpComparer() needs to compare the counts and make sure that they are equal</p>
+                  <aside class="notes">
+                    <p>This is an example of TDD, because we have idenfitfied features of the program that need to be made, and we have a function for each one, which details very explicity what each will do.</p>
+                  </aside>
                 </section>
 
 
@@ -1041,6 +1048,10 @@ WebElement messageElement = wait.until( ExpectedConditions.presenceOfElementLoca
                   <ul><p>Given I have 5 different kinds of Sauce</p>
                   <p>When I have 5 different kinds of Pasta</p>
                   <p>Then my chef will be happy</p></ul>
+
+                  <aside class="notes">
+                    <p>This is an example of BDD, which uses the Given, When, Then, method of planning. It details the actual goals of what the application or feature needs to accomplishes, in terms of a user story, rather than explicit functions. In this method of planning, we are making sure that the end goal or the business objective will be accomplished.</p>
+                  </aside>
                 </section>
 
                 <section>
@@ -1049,23 +1060,19 @@ WebElement messageElement = wait.until( ExpectedConditions.presenceOfElementLoca
                   <pre><code class="java" data-trim contenteditable>
                       @Given("^I have (\\d+) sauces for my pasta")
 public void the_number_of_sauces(Int arg1) throws Throwable {
-// Write code here that turns the phrase above into concrete actions
-throw new PendingException();
 }
 
 @When("^I have (\\d+) kinds of pasta")
 public void the_number_of_pastas(Int arg1) throws Throwable {
-// Write code here that turns the phrase above into concrete actions
-throw new PendingException();
 }
 
 @Then("^My chef will be (.*)$")
 public void the_feeling_is(String arg1) throws Throwable {
-// Write code here that turns the phrase above into concrete actions
-throw new PendingException();
 }
                   </code></pre>
-                  <aside class="notes"></aside>
+                  <aside class="notes">
+                    <p>This is an example of using CucumberJVM, a BDD testing and code writing framework. We can see how we may write out functions for the Given, When, Then, example we filled out.</p>
+                  </aside>
                 </section>
                 </section>
 
@@ -1111,10 +1118,10 @@ throw new PendingException();
                     </code></pre>
 
                     <aside class="notes">
-
+                      <p>A common element of Selenium scripts are Asserts. Asserts come with whichever testing framwork that you have decided to work with. They generally check whether a particular value is true or not. For example, if the uncheckedboxed state returns true, then that means the assert will pass. It's basically the test itself. If an assert fails, that generally means the test has failed as well. We're going to try using asserts ourselves.</p>
                     </aside>
-
                   </section>
+
               <!-- New Script to introduce-->
                   <section data-state="lab">
                     <h3>Lab: Asserting Your Greatness</h3>
@@ -1146,10 +1153,18 @@ throw new PendingException();
 
                 <section data-state="lab">
                   <h3>Lab: Record Keeping</h3>
-                  <p>This is the lab where we shove our results into Sauce Labs (pass/fail rather than complete)</p>
+                  <ol>
+                    <li>Add the appropriate library or dependency to the imports or POM</li>
+                    <li>Write the lines that will send the right feedback to Sauce Labs</li>
+                    <li>Look in saucelabs.com.</li>
+                  </ol>
+                  <aside class="notes">
+
+                  </aside>
                 </section>
 </section>
                  <!--Best Practices Module-->
+
                  <section data-background="rgb(226, 35, 26)">
                    <h2>Testing Strategy and Best Practices</h2>
                    <aside class="notes">General best practices, testing methodology</aside>

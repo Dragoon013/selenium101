@@ -235,6 +235,7 @@
                   </div>
                   <aside class="notes">
                     <p>So why should you bother using Sauce Labs? On a basic level, they'll save you the hassle of setting up your own testing infrastructure. But they also pile on a ton of additional features as well, such as Security, and recorded tests as well. Sauce Labs provides security through it's Sauce Connect technology, which allows you host your applicaiton locally, and Sauce Labs will connect with your site remotely to run tests. It sends commands through an encrypted tunnel, ensuring that no information is leaked.</p>
+                    <p>Seamless integration refers the multitude of pltforms that Sauce integrates with, such as Jenkins, Bamboo, JIRA, and more.</p>
                     <li>Selenium Grid for rent.</li>
                     Record your tests
                     <ul>
@@ -323,9 +324,8 @@
 
                 <section>
 				  <h3>How Selenium WebDriver Works</h3>
-                  <div style="float:left;width:50%;" class="centered">
+                 <!-- <div style="float:left;width:50%;" class="centered">-->
                   <p>
-                    Local:
                     <ol>
                       <li>Write script</li>
                       <li>Run script (send commands via API)</li>
@@ -333,8 +333,8 @@
                       <li>WebDriver Client sends results back</li>
                     </ol>
                   </p>
-                  </div>
-                  <div style="float:right;width:50%;padding-right:0px;">
+
+                  <!--<div style="float:right;width:50%;padding-right:0px;">
                   <p>
                     Sauce Labs:
                     <ol>
@@ -345,32 +345,31 @@
                       <li>Test Assets Created</li>
                     </ol>
                   </p>
-                  </div>
+                  </div> -->
                   <aside class="notes">
-                    <p></p>
-
+                    <p>The only difference between how Selenium works locally or remotely is where the browser is opened to exceute the commands. Locally, the driver will just open a brwoser based off of the type driver used in the script. Remotely, in particular on Sauce Labs, the remote webdriver is used to pass the script commands along to a remote browser, whose type is set through additional commands. With Sauce Labs, you'll have the additional step of the test asset creation at the end. These are the videos, screenshots, and logs that recorded your test.</p>
                   </aside>
 				</section>
 
                 <section>
                   <section>
 				    <h3>7 Basic Steps of a Selenium Script</h3>
-				     <div style="position:left;float:left;">
-                    <img src="assets/images/7Steps.png" style="border:none; background:none; width:50%">
-                  </div>
-            <div style="text-align:left;float:left;width:80%;">
-              <p>
-                      <ol>
-                        <li>Create a Webdriver Object</li>
-                        <li>Navigate to a Web Page</li>
-                        <li>Locate HTML Elements on a Web Page</li>
-                        <li>Perform an Action on HTML Elements</li>
-                        <li>Anticipate Browser Response</li>
-                        <li>Run the Test and Record the Test Results</li>
-                        <li>Conclude the Test</li>
-                      </ol>
-                    </p>
-            </div>
+				    <div style="position:left;float:left;">
+                      <img src="assets/images/7Steps.png" style="border:none; background:none; width:50%">
+                    </div>
+                    <div style="text-align:left;float:left;width:80%;">
+                      <p>
+                        <ol>
+                          <li>Create a Webdriver Object</li>
+                          <li>Navigate to a Web Page</li>
+                          <li>Locate HTML Elements on a Web Page</li>
+                          <li>Perform an Action on HTML Elements</li>
+                          <li>Anticipate Browser Response</li>
+                          <li>Run the Test and Record the Test Results</li>
+                          <li>Conclude the Test</li>
+                        </ol>
+                      </p>
+                    </div>
 
                     <aside class="notes">Walk through example script - point out each step that correllates to an element</aside>
 				  </section>
@@ -391,7 +390,7 @@ WebDriver driver = new ChromeDriver();
 WebDriver driver = new ChromeDriver();
                       </code></pre>
 
-                      <p>It's important to note here that we would need to create a driver for each type of browser we want to connect to and test on. With Sauce Labs, we can indicate browsers and versions through desired capabilities
+                      <p>It's important to note here that we would need to create a driver for each type of browser we want to connect to and test on. With Sauce Labs, we can indicate browsers and versions through desired capabilities.
                       </p>
                     </aside>
 				  </section>
@@ -414,6 +413,10 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
            caps.setCapability("version", "43.0");
 
                     </code></pre>
+                    <aside class="notes">
+                      <p>When we test with Sauce Labs, we also need to use a remoteWebDriver, rather than indicate the driver for a particular driver.</p>
+                      <p>When we're working with Sauce Labs, it looks like a lot more set-up and information is required. But it's just authentication and indicating which browser and OS combination we want to test on.</p>
+                    </aside>
                   </section>
 
 
@@ -422,11 +425,13 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
 			    <p>
                       <pre>
                         <code class="java" data-trim contenteditable>
-                          driver.get("http://saucelabs.github.io/training-test-page/");
+                          driver.get("http://saucelabs.com/");
                         </code>
                       </pre>
                     </p>
-                    <aside class="notes"></aside>
+                <aside class="notes">
+                  <p>We need to call "get" on the webdriver in order to access the site we want to get to.</p>
+                </aside>
                   </section>
 
                   <section>
@@ -434,7 +439,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
 				    <p>
                       <pre>
                         <code class="java" data-trim contenteditable style="text-align:center;">
-                          driver.findElement(By.id("myId"));
+                          driver.findElement(By.id("ham"));
                         </code>
                       </pre>
                       <p>Identify by:</p>
@@ -452,8 +457,8 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                         </div>
                     </p>
                     <aside class="notes">
-                      <p>There are a lot of tools out there to help you locate elements. These include but are not limited to, ________</p>
-                      <p>Locator expressiions are how we locate an HTML element or elements on a page that we want to interact with. The one in our script is pretty basic, it uses a function from the API that just gets the title of the current page that the test is on. We'll look at some more advanced locators in the next module</p>
+                      <p>Locator expressions are how we locate an HTML element or elements on a page that we want to interact with. The one in our script is pretty basic, it's just finding an element on the page that has an ID name of "myID"</p>
+                      <p>We can also idenfity elements by their class name, tag name, link text, css, or xPATH. We'll take a look at using these in more detail later on.</p>
                     </aside>
                   </section>
 
@@ -468,6 +473,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                     </ul>
                     <aside class="notes">
                       <p><mark>demo the page inspector on the presentation at least, or on the guinea page to find the title</mark></p>
+                      <p>These are a few popular Locator helpers. Basically, you just need to use the standard dev tools that come with the brwoser, or that are add-ons for the browser, and they can help you ID particular elements that you want to interact with on a page.</p>
                     </aside>
                   </section>
 
@@ -476,12 +482,12 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
 				    <p>
                       <pre>
                         <code class="java" data-trim contenteditable style="text-align:center;">
-                          driver.findElement(By.id("myId")).click();
+                          driver.findElement(By.id("ham")).click();
                         </code>
                       </pre>
                     </p>
                     <aside class="notes">
-                      So our current script doesn't perform an action per se. It goes to the page, grabs the Title, and then spits it out on our command line. So the action is also the locator. We'll see later on how we can combine locating with actions, and how this is a common practice in Selenium test scripts.
+                      <p>Taking the element that we found earlier, we now want to perform an action on it. We're going to go ahead and click on it. On saucelabs.com, the "ham" id points to a drop down, so we want to make sure that drop down works when clicked.</p>
                     </aside>
                   </section>
 
@@ -497,6 +503,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                       </ul>
                     <aside class="notes">
                       <p>Tests might fail because the elements that are expected for the next step haven't loaded into the browser yet. It's good to have an explicit wait time in this case, as after a click, it can be variable how long an element could be loaded onto the page.</p>
+                      <p>For example, when we click on that drop-down that has an ID of ham, it takes time for the options on the drop down to render. We would need to set a wait in order for the action on the drop down to succeed.</p>
                       <p>While we may not have waits in our current script, we will take a look at them in a later module.</p>
                     </aside>
                   </section>
@@ -528,7 +535,6 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                        <p>
                          Test frameworks can help us report our results back to Sauce Labs (and maybe on your own selenium grid or locally?). But out of the box with Sauce Labs, we get some core reporting/recording of test results through their screenshots, screencast of the test, and logs.
                        </p>
-                       <p>need to include something here on actually running the Java test</p>
                      </aside>
                   </section>
 
@@ -539,7 +545,9 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                         driver.quit()
                       </code>
                     </pre>
-                    <aside class="notes"></aside>
+                    <aside class="notes">
+                      <p>We need to use driver.quit() in order to end the test. It should close all browser windows and end the webdriver session. If we don't use it, we can get several different errors, such as incorrect results (incomplete test), timeout errors, the webdriver session will not be closed properly and files will not be cleared off memory, which can increase the space used on your computer's hard drive.</p>
+                    </aside>
                   </section>
                 </section>
 

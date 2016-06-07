@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Sauce Laboratories - Selenium101 </title>
+		<title>Sauce Laboratories - Selenium 101 </title>
 
 		<meta name="description" content="Learn how to write and run a Selenium script locally and with Sauce Labs">
 		<meta name="author" content="Jacob Teal">
@@ -93,20 +93,13 @@
                 <div style="text-align:left;">
                     <img src="assets/images/agenda.png" style="border:none; background:none; width:80%">
                   </div>
-                <!-- <li>DIAGRAM</li>
-                <li>Introduction to Sauce Labs</li>
-                <li>Selenium Script Basics</li>
-                <li>Writing a Selenium Script</li>
-                <li>Running a Selenium Script</li>
-                <li>Best Practices</li>
--->
               </section>
 
-              <!-- Intro to SL Module-->
-                <section data-background="rgb(226, 35, 26)">
-                  <h2>Introduction to Sauce Labs and Selenium</h2>
-                   <aside class="notes">Add some different way to know it's a new module - could do a background</aside>
-                </section>
+<!-- Intro to SL Module-->
+              <section data-background="rgb(226, 35, 26)">
+                <h2>Introduction to Sauce Labs and Selenium</h2>
+                <aside class="notes">Add some different way to know it's a new module - could do a background</aside>
+              </section>
 
                 <section>
                   <h3>Module Objectives</h3>
@@ -192,7 +185,7 @@
                   <div style="float:left;width:40%;" class="centered">
                     Local
                     <p><ul>
-                      <li>Can only test on the OS and browsers you have locally</li>
+                      <li>Can only test on local OS and browsers</li>
                       <li>Record results</li>
                     </ul></p>
                   </div>
@@ -210,10 +203,10 @@
                     <img src="assets/images/localvremote.png" style="float:center;border:none; background:none; width:100%">
                   </div>
                   <aside class="notes">
-                    So where do I actually run my selenium scripts? Well you can always run it locally - when you run a script it can pull up a browser thats on your machines, access your application, and run the test. But then you're restricted to the OS that is actually on your machine, as well as the browser versions and types that are available for that OS as well. It would be difficult to run IE on Ubuntu!
-                    <p>In order to test across browsers or OS's Selenium actually offers software - a Selenium Server - that can help you create a Selenium farm - that is, a server farm that has VMs running with all of these different possible OS and browser combinations.</p>
-                    <p>But that's pretty painful and time consuming to set up and manage all on your own, not to even mention the cost of hardware.</p>
-                    <p>Sauce Labs handles all of that stuff for you. They essentially run a Selenium Grid themselves and rent it out to their customers to run their Selenium and Appium tests on. </p>
+                    So where do I actually run my selenium scripts? Well you can always run it locally; when you run a script, it pulls up a browser that's on your machine, accesses your application, and runs the test. But then you're restricted to the OS that is actually on your machine, as well as the browser versions and types that are available for that OS as well. It would be difficult to run IE on Ubuntu!
+                    <p>In order to test across browsers or OS's Selenium offers the Selenium Server. The Selenium server can help you create a Selenium farm; that is, a server farm that has VMs running with many different possible OS and browser combinations.</p>
+                    <p>But that's pretty painful and time consuming to set up and manage, not to even mention the cost of hardware.</p>
+                    <p>Sauce Labs handles all of that stuff for you. They run a Selenium Grid themselves and rent it out to their customers to run their Selenium and Appium tests on. </p>
                   </aside>
 				</section>
 
@@ -234,7 +227,7 @@
                     </ul>
                   </div>
                   <aside class="notes">
-                    <p>So why should you bother using Sauce Labs? On a basic level, they'll save you the hassle of setting up your own testing infrastructure. But they also pile on a ton of additional features as well, such as Security, and recorded tests as well. Sauce Labs provides security through it's Sauce Connect technology, which allows you host your applicaiton locally, and Sauce Labs will connect with your site remotely to run tests. It sends commands through an encrypted tunnel, ensuring that no information is leaked.</p>
+                    <p>So why should you bother using Sauce Labs? On a basic level, they'll save you the hassle of setting up your own testing infrastructure. But they also pile on a ton of additional features as well, such as Security, and recorded tests. Sauce Labs provides security through it's Sauce Connect technology, which allows you host your applicaiton locally, and Sauce Labs will connect to the local application to run your tests. It sends commands through an encrypted tunnel, ensuring that your information is protected.</p>
                     <p>Seamless integration refers the multitude of pltforms that Sauce integrates with, such as Jenkins, Bamboo, JIRA, and more.</p>
                     <li>Selenium Grid for rent.</li>
                     Record your tests
@@ -294,7 +287,9 @@
 <!--Selenium Scripts Basics Module-->
                 <section data-background="rgb(226, 35, 26)">
                   <h2>Selenium Test Script Basics</h2>
-                  <aside class="notes">We are going to take an example script and run it in the sections. We're going to walk through all of the basic steps, and point them out in the script</aside>
+                  <aside class="notes">
+                    <p>In this section, we are going to do a high level overview on the basic parts of a script. We will correlate each high level point to the part of the script that implements that particular step.</p>
+                  </aside>
                 </section>
 
                 <section>
@@ -315,10 +310,10 @@
                   <aside class="notes">
                     <p>There are actually a lot of parts that make up Selenium!</p>
 
-                    <li>Selenium IDE - A firefox add-on that can create a script from a manual test, allow you to do maual testing, and debug your own test scripts.</li>
-                    <li>Selenium Client API - what we will be using today, as part of the Selenium Webdriver. It allows tests to be written in a variety of programming languages, so it enables us to write our tests in Java. These are the language specific bindings.</li>
-                    <li>Selenium WebDriver - The Selenium WebDriver is the client that accepts the commands via the API or in the Selenium scripting language and sends those commands to a browser.</li>
-                    <li>Selenium Grid - this is the Selenium Server, which allows tests to to use web browsers on other machines - so this is what Sauce Labs does for you, but on a very large scale and with a lot of options for machines and browsers - not restricted to just one version either</li>
+                    <li>Selenium IDE: A firefox add-on that can create a script from a manual test, allow you to do maual testing, and debug your own test scripts.</li>
+                    <li>Selenium Client API: What we will be using today, as part of the Selenium Webdriver. It allows tests to be written in a variety of programming languages, so it enables us to write our tests in Java. These are the language specific bindings.</li>
+                    <li>Selenium WebDriver: The client that accepts the commands via the API or in the Selenium scripting language and sends those commands to a browser.</li>
+                    <li>Selenium Grid: This is the Selenium Server, which allows tests to to use web browsers on other machines. This is what Sauce Labs does for you, but on a very large scale and with a lot of options for machines and browsers - not restricted to just one version either.</li>
                   </aside>
 				</section>
 
@@ -375,7 +370,7 @@
 				  </section>
 
                   <section>
-				    <h3>Local Webdriver</h3>
+				    <h3>Create a Webdriver Object</h3>
 
                       <pre><code class="java" data-trim contenteditable>
                           WebDriver driver = new FirefoxDriver();
@@ -530,16 +525,16 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                        </ul>
                      </div>
                      <aside class="notes">
-                       <p> When running tests on both Sauce Labs and Locally, test results need a little extra configuration. By default, you will be able to see when a test is complete, or has "failed". But without specific test results sent back to Sauce Labs or custom made locally, then there I have no way of knowing whether a complete means a test was successful, or whether a failure means the test failed or the test wasn't written correctly.
+                       <p> When running tests on both Sauce Labs and Locally, test results need extra configuration. By default, you will be able to see when a test is complete, or has "failed". But without specific test results sent back to Sauce Labs or custom made locally, you have no way of knowing whether a complete means a test was successful, or whether a failure means the test failed or if the test wasn't written correctly.
                        </p>
                        <p>
-                         Test frameworks can help us report our results back to Sauce Labs (and maybe on your own selenium grid or locally?). But out of the box with Sauce Labs, we get some core reporting/recording of test results through their screenshots, screencast of the test, and logs.
+                         Test frameworks can help us report our results back to Sauce Labs (and on your own Selenium Grid). Through the Sauce Labs UI, we get some core reporting/recording of test results through their screenshots, screencast of the test, and logs.
                        </p>
                      </aside>
                   </section>
 
                   <section>
-				    <h3>Conclude a Test</h3>
+				    <h3>Conclude the Test</h3>
 				    <pre>
                       <code data-trim contenteditable class="java">
                         driver.quit()
@@ -685,7 +680,7 @@ WebDriver driver = new ChromeDriver();
                     <h3>Performing an Action</h3>
 
                     <div style="text-align:left;float:left;">
-                      <li>Once you have located an element, you can perform an action on it.</li><p></p>
+                      <li>Once you have locate an element, you can perform an action on it.</li><p></p>
                     <li>Perform actions by invoking interaction methods on the WebElement object we identified earlier.</li>
 
                   <div style="text-align:center;float:right;">
@@ -693,7 +688,7 @@ WebDriver driver = new ChromeDriver();
                   </div>
                   </div>
 
-                    <aside class="notes">It's common to see actions occur on webelements as they are identified - but we can also store our identified element objects as variables and perform multiple actions on them through the test.</aside>
+                    <aside class="notes">It's common to see actions occur on webelements as they are identified; we can also store our identified element objects as variables and perform multiple actions on them through the test.</aside>
                   </section>
 
                   <section>
@@ -736,8 +731,8 @@ submitButton.submit();
                     <li>SwitchTo</li>
                     <li>and more!</li>
                     <aside class="notes">
-                      <p>Switch to can be used to switch to a new windows or screens, and this include popups as wells.</p>
-                      <p>Basically, anything you can think of doing ona  web browser normally, you can tell Selenium to simulate in a test</p>
+                      <p>SwitchTo is used to switch to a new windows or screens, and this include popups as well.</p>
+                      <p>Anything you can think of doing on a web browser normally, you can tell Selenium to simulate in a test</p>
                     </aside>
                   </section>
                 </section>
@@ -769,7 +764,7 @@ java -cp ".:./selenium-2.53.0/selenium-java-2.53.0.jar:./selenium-2.53.0/libs/*"
 <!-- Running a Selenium Script with Sauce Labs Module-->
                 <section data-background="rgb(226, 35, 26)">
                   <h2>Testing with Sauce Labs</h2>
-                  <aside class="notes"> we will finally run the script on sauce labs, and compare the methods and discuss the benefits of running on sauce labs</aside>
+                  <aside class="notes"> We will finally run the script on sauce labs, compare the methods, and discuss the benefits of running on Sauce Labs</aside>
                 </section>
 
                 <section>
@@ -791,7 +786,7 @@ java -cp ".:./selenium-2.53.0/selenium-java-2.53.0.jar:./selenium-2.53.0/libs/*"
 
                 <section>
                   <h3>Sauce Labs Identification</h3>
-                  <p>The script uses the Sauce Labs API to authenticate the user and record results against that user's profile</p>
+                  <p>The script uses the Sauce Labs API to authenticate the user, and record results against that user's profile</p>
 
                   <div style="float:left;width:50%;" class="centered">
                     <li>Environment Variables</li>
@@ -817,9 +812,9 @@ public static final String ACCESS_KEY = "b89b7205-3aca-4af2-a618-9bab4c7bdebd";
                 <section>
                   <section>
                     <h3>Setting the Remote WebDriver</h3>
-                    <p>Sauce Labs API Authentication</p>
+                    <p style="text-align:center;">Sauce Labs API Authentication</p>
                     <ul>
-                      <li>Username</li>
+                      <li>Username&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li> <!--Empty spaces to get "Access code" on one line-->
                       <li>Access Code</li>
                     </ul>
                     <pre><code class="java" data-trim contenteditable>
@@ -829,7 +824,7 @@ URL = "http://" + USERNAME + ":" + KEY + "@ondemand.saucelabs.com:80/wd/hub";
 WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                     </code></pre>
                     <aside class="notes">
-                      <p>So let's go ahead and set up a RemoteWebDriver now. This is different, as the remotewebdriver calls out to a selenium grid somewhere - whether that is sauce labs or your own selenium grid, and runs the test on the remote browser/machine</p>
+                      <p>Let's set up a RemoteWebDriver now. This is different, as the remotewebdriver calls out to a selenium grid somewhere; whether that is Sauce Labs or your own selenium grid, and runs the test on the remote browser/machine.</p>
                     </aside>
                   </section>
 
@@ -945,7 +940,7 @@ WebElement messageElement = wait.until( ExpectedConditions.presenceOfElementLoca
 <!-- Introduction to Testing Frameworks-->
                 <section data-background="rgb(226, 35, 26)">
                   <h2>Introduction to Testing Frameworks</h2>
-                  <aside class="notes">We'll discuss the different testing frame works here. </aside>
+                  <aside class="notes">We discuss the different testing frame works here. </aside>
                 </section>
 
                 <section>
@@ -964,9 +959,9 @@ WebElement messageElement = wait.until( ExpectedConditions.presenceOfElementLoca
                   <p></p>
                   <p>A test automation framework is a scaffold comprised of libraries, dependecies, drivers, and helper scripts that facilitate the execution of Selenium test scripts.</p>
                   <aside class="notes">
-                    <p>Ok so what does that mean? It's essentially just a bunch of additional libraries we can use in conjunction with our script for several cases:</p>
-                    <li>Record your data - Frameworks often have, or can have a way for you to output the results of your test scripts for you, rather than writing them by hand</li>
-                    <li>Talk to external applications - you can include external libraries in your framework to talk to and send results to places like Sauce Labs</li>
+                    <p>Ok, what does that mean? It's essentially just a bunch of additional libraries we can use in conjunction with our script for several cases:</p>
+                    <li>Record your data: Frameworks often have, or can have a way for you to output the results of your test scripts for you, rather than writing them by hand</li>
+                    <li>Talk to external applications: you can include external libraries in your framework to talk to and send results to places like Sauce Labs</li>
 
                   </aside>
                 </section>
@@ -1025,7 +1020,7 @@ WebElement messageElement = wait.until( ExpectedConditions.presenceOfElementLoca
                   <p>BDD: A way to plan and develop code similar to TDD, but allows teams to include non-technical members when writing tests for scenarios and features</p>
                   <aside class="notes">
                     <p>In the QA/Test industry, there are a couple of different ways of thinking about how to develop applications with testing in mind. One of those is TDD, where you write a test, and then write the code until the test passes. Antoher variant is to plan the same kind of testing, but on a higher level, basically written in a more colloquial manner though.</p>
-                    <p>TDD is also somewhat synonymous with "test first" development. BDD means writing tests that read like a book, almost in full sentences, so people can understand precisely what a test is trying to accomplish.</p>
+                    <p>TDD is also somewhat synonymous with "test first" development. BDD means writing tests that read like a book, almost in full sentences, so teams can understand precisely what a test is trying to accomplish.</p>
                   </aside>
                 </section>
 

@@ -82,10 +82,21 @@
 					  </p>
                     </div>
 <!-- right column-->
-                    <div style="float:right;width:50%;padding-right:0px;">
-                      <img src="assets/images/trainer.png" style="border:0;background:none; left:0; top:0;">
+                    <div style="float:right;width:40%;padding-right:0px;">
+                      <img src="assets/images/starfish.png" style="border:0;background:none; left:0; top:0;">
                     </div>
 				</section>
+
+              <section>
+                <h3>Course Administration</h3>
+                <ul>
+                  <li>This session is ~3 hours long</li>
+                  <li>Slides, demonstrations and exercises</li>
+                  <li>PDF copy of the materials is available</li>
+                  <li>Ask questions at any time</li>
+                  <ul><li>Use the chat window</li></ul>
+                </ul>
+              </section>
 
               <section>
                 <h3>Agenda</h3>
@@ -98,7 +109,9 @@
 <!-- Intro to SL Module-->
               <section data-background="rgb(226, 35, 26)">
                 <h2>Introduction to Sauce Labs and Selenium</h2>
-                <aside class="notes">Add some different way to know it's a new module - could do a background</aside>
+                <aside class="notes">
+
+                </aside>
               </section>
 
                 <section>
@@ -125,8 +138,9 @@
                       <li>Selenium: Desktop and Mobile Browser Testing</li>
                       <li>Appium: Native Mobile Application Testing</li>
                     </ul>
-                    <p>it runs your tests on any browser and OS combination you like - have over 500 combinations thereof. (different versions)</p>
-                    <p>So Selenium can run tests on mobile browsers (selendroid), but native or hybrid mobile application testing is done through appium. Appium allows you to test native apps with all of the standard controls available through a mobile device.</p>
+                    <p>So what is this Sauce Labs? They describe themselves as providers and supporters of Web Automated and Mobile Automated testing.</p>
+                      <p>They support two very large open source projects, namely Selenium and Appium. Selenium is used for Desktop and mobile browser testing, while appium is used for native and hybrid application testing.</p>
+                      <p>Sauce Labs provides environments that run your Selenium or Appium tests on any browser and OS combination you like - and they have over 500 combinations thereof. (if you include the different browser versions)</p>
                   </aside>
                 </section>
 
@@ -148,7 +162,7 @@
                       <p>
                         Sauce Labs was founded in 2008 by Jason Huggins, co-creator of Selenium (the open source standard for automated testing frameworks) and Steve Hazel, current CTO. They set out to create a cloud-based platform for automated testing to free development teams from the hassle and cost of testing so they can focus on innovating their core capabilities.
                       </p>
-                      <p>Jason was using Selenium to do browser testing, and the process of testing the apps in different browsers was taking too long. The problem was that all the testing was being done on one machine, so he split the tests onto 4 different machines, effectively running the tests in parallel, which cut the time drastically. That's what started Selenium, and eventually what started Sauce Labs.</p>
+                      <p>In an interview, Jason said the inspiration for starting Sauce labs came when he was working as a QA consultant. He was using Selenium to do browser testing, and the process of testing the apps in different browsers was taking too long. The problem was that all the testing was being done on one machine, so he split the tests onto 4 different machines, effectively running the tests in parallel, which cut the time drastically. Which is precisely what Sauce Labs does today.</p>
                   </aside>
                 </section>
 
@@ -158,9 +172,10 @@
                     <img src="assets/images/sauceCI2.png" style="border:0; text-align:center; background:none;">
                     <p style="text-align:center;">Continuous Integration/Continuous Development</p>
                     <aside class="notes">
-                      <p>Sauce Labs integrates inteself into the Continuous Delivery/Continuous Integration cycle, seamlessly. Traditionally, testing and QA are bottlenecks for application delivery and release. Writing automated tests, maintaining testing infrastructure, painful manual testing, all consume huge amounts of time. The work is never done either, because the product is always changing.</p>
+                      <p>Sauce Labs' value as a time saver is apparent even in its role in Continuous Integration and Delivery. </p>
+                      <p>Traditionally, testing and QA are bottlenecks for application delivery and release. Writing automated tests, maintaining testing infrastructure, painful manual testing, all consume huge amounts of time. The work is never done either, because the product is always changing.</p>
                       <p>Sauce Labs takes away those worries though. With Selenium and Appium testing, we remove the barrier of time consuming test writing, and with Sauce Labs itself, we remove the need to have a propietary infrastructure. Sauce Labs provides the infrastructure for you, allowing you to test on a variety of platforms in a speedy manner. So you can focus on development, and releases, and leave the testing to Sauce Labs.</p>
-                      <p>Sauce Labs takes away the pain of testing, so that instead of waiting until the end of the development life cycle, you can test iteratively, as you go through each step.</p>
+                      <p>Sauce Labs reduces the pain of testing, so that instead of traditionally waiting until the end of the development life cycle to test, you can test iteratively, as you go through each step of development.</p>
                     </aside>
                 </section>
 
@@ -205,7 +220,7 @@
                   </div>
                   <aside class="notes">
                     So where do I actually run my selenium scripts? Well you can always run it locally; when you run a script, it pulls up a browser that's on your machine, accesses your application, and runs the test. But then you're restricted to the OS that is actually on your machine, as well as the browser versions and types that are available for that OS as well. It would be difficult to run IE on Ubuntu!
-                    <p>In order to test across browsers or OS's Selenium offers the Selenium Server. The Selenium server can help you create a Selenium farm; that is, a server farm that has VMs running with many different possible OS and browser combinations.</p>
+                    <p>In order to test across browsers or OS's, Selenium offers the Selenium Server. The Selenium server can help you create a Selenium farm; that is, a server farm that has VMs running with many different possible OS and browser combinations.</p>
                     <p>But that's pretty painful and time consuming to set up and manage, not to even mention the cost of hardware.</p>
                     <p>Sauce Labs handles all of that stuff for you. They run a Selenium Grid themselves and rent it out to their customers to run their Selenium and Appium tests on. </p>
                   </aside>
@@ -228,26 +243,22 @@
                     </ul>
                   </div>
                   <aside class="notes">
-                    <p>So why should you bother using Sauce Labs? On a basic level, they'll save you the hassle of setting up your own testing infrastructure. But they also pile on a ton of additional features as well, such as Security, and recorded tests. Sauce Labs provides security through it's Sauce Connect technology, which allows you host your applicaiton locally, and Sauce Labs will connect to the local application to run your tests. It sends commands through an encrypted tunnel, ensuring that your information is protected.</p>
+                    <p>If tbe Selenium grid itself isn't enough, Sauce Labs provides a whole slew of other additional features, such as security, recorded tests and integration with other tools. Sauce Labs provides security through it's Sauce Connect technology, which allows you to run tests on your locally hosted application. It sends your Selenium or appium commands through an encrypted tunnel, ensuring that your information is protected.</p>
                     <p>Seamless integration refers the multitude of pltforms that Sauce integrates with, such as Jenkins, Bamboo, JIRA, and more.</p>
-                    <li>Selenium Grid for rent.</li>
-                    Record your tests
-                    <ul>
-                      <li>Screenshots</li>
-                      <li>Video Record</li>
-                      <li>Logs</li>
-                    </ul>
+                    <p>And each test you run is recorded by default. This includes screenshots, a video recording of the entire test, as well as log files.</p>
                   </aside>
                 </section>
 
                 <section>
                   <h3>Sauce Labs UI</h3>
                   <img src="assets/images/SL_dash.png" style="float:center;border:none; background:none; width:100%">
+
                   <aside class="notes">
                     <p>Let's go ahead and take a look at Sauce Labs right now.</p>
-                    <li>Dashboard</li>
-                    <li>Tunnels</li>
-                    <li>Account Details</li>
+                    <li>Dashboard: On the dashboard, there are 3 different tabs. These help organize the kinds of tests that we run on Sauce Labs.</li>
+                    <p>We have a tab for tests that are run and labelled as builds, one for our automated tests, and one for manual tests.</p>
+                    <li>Tunnels: The tunnels tab will list out all of secure tunnels that are currently enabled and running between Sauce Labs and your local machine.</li>
+                    <li>Account Details: Lastly, our account details page is important. You can see your VM usage, as well as find your access key, which is required for authentication when using Sauce Labs. We'll go into how to use it later on.</li>
 
                   </aside>
                 </section>
@@ -274,14 +285,14 @@
 				  <p><ul>
                     Let's take a tour of the Docs!
                     <li><a href="https://wiki.saucelabs.com/display/DOCS/The+Sauce+Labs+Cookbook+Home" target="_blank">Sauce Labs Documentation</a></li>
-                    <li><a href="https://wiki.saucelabs.com/display/DOCS/Running+Automated+Website+Tests" target="_blank">Automated Website Testing with Sauce Labs</a></li>
+                    <ul><li><a href="https://wiki.saucelabs.com/display/DOCS/Running+Automated+Website+Tests" target="_blank">Automated Website Testing with Sauce Labs</a></li></ul>
                     <li><a href="http://docs.seleniumhq.org/docs/" target="_blank">Selenium Documentation</a></li>
 				  </ul></p>
                   <aside class="notes">
                     Click on each of the links, and run through each of the sites Docs
-                    <p>Show main page, blog posts for changes, tour</p>
-                    <p>Explain these are the basic steps to run an automated test</p>
-                    <p>Point out the coverage for all languages up top, then point out some key sections</p>
+                    <p>Show main page, blog posts for changes, search through the site</p>
+                    <p>If you want to learn more about running your own automated tests after the course today, feel free to take a look at the documentation page for that.</p>
+                    <p>This is the official Selenium HQ documentation, where you can find helpful information about the syntax and usage of Selenium script directives and functions. Note that there is a language preference indicator up here at the top, to help facilitate syntax in the language that you are working with.</p>
                   </aside>
 
 				</section>
@@ -289,16 +300,16 @@
                 <section data-background="rgb(226, 35, 26)">
                   <h2>Selenium Test Script Basics</h2>
                   <aside class="notes">
-                    <p>In this section, we are going to do a high level overview on the basic parts of a script. We will correlate each high level point to the part of the script that implements that particular step.</p>
                   </aside>
                 </section>
 
                 <section>
                   <h3>Module Objectives</h3>
                   <p>This module enables you to:</p>
-                  <ul><li>Understand how Selenium works</li>
-                  <li>Understand the basic components of a Selenium test script</li>
-                  <li>Run a Selenium test script locally</li>
+                  <ul>
+                    <li>Understand how Selenium works</li>
+                    <li>Understand the basic components of a Selenium test script</li>
+                    <li>Run a Selenium test script locally</li>
                   </ul>
                   <aside class="notes"></aside>
                 </section>
@@ -367,7 +378,17 @@
                       </p>
                     </div>
 
-                    <aside class="notes">Walk through example script - point out each step that correllates to an element</aside>
+                    <aside class="notes">
+                      <ol>
+                        <li>These are the 7 steps that are required to make a test script. We need to 1st create a webdriver object, which talks to your browser for you.</li>
+                        <li>Second, we will have to navigate to a web page to interact with.</li>
+                        <li>Third, we need to locate HTML elements to test.</li>
+                        <li>We run the actual test by performing actions on those found elements.</li>
+                        <li>When we perform those actions, we need to account for timing delays when rendering new elements on a page</li>
+                        <li>Sixth, we need to actually run the test, and record whether test passed or failed.</li>
+                        <li>and lastly, we need to make sure that our tests end proprely, or we can errors in our test results.</li>
+                      </ol>
+                    </aside>
 				  </section>
 
                   <section>
@@ -379,13 +400,13 @@ WebDriver driver = new InternetExplorerDriver();
 WebDriver driver = new ChromeDriver();
                       </code></pre>
 
-                    <aside class="notes">
-                      <p>All drivers except for Firefox need an additional library or package called with the driver declaration in order to test on that browser</p>
-                      <pre><code class="java" data-trim contenteditable>
+                      <aside class="notes">
+                        <p>So first, we need to make a webdriver object that will pass our commands along to the browser.</p>
+                        <p>All drivers except for Firefox need an additional library or package called with the driver declaration in order to test on that browser</p>
+                        <pre><code class="java" data-trim contenteditable>
                           System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
 WebDriver driver = new ChromeDriver();
                       </code></pre>
-
                       <p>It's important to note here that we would need to create a driver for each type of browser we want to connect to and test on. With Sauce Labs, we can indicate browsers and versions through desired capabilities.
                       </p>
                     </aside>
@@ -404,14 +425,15 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
 
                     <p style="text-align:center;">Desired Capabilities</p>
                     <pre><code class="java" data-trim contenteditable>
-                        DesiredCapabilities caps = DesiredCapabilities.chrome();
+                        DesiredCapabilities caps = new DesiredCapabilities();
            caps.setCapability("platform", "Windows XP");
+           caps.setCapability("browserName", "Chrome");
            caps.setCapability("version", "43.0");
 
                     </code></pre>
                     <aside class="notes">
-                      <p>When we test with Sauce Labs, we also need to use a remoteWebDriver, rather than indicate the driver for a particular driver.</p>
-                      <p>When we're working with Sauce Labs, it looks like a lot more set-up and information is required. But it's just authentication and indicating which browser and OS combination we want to test on.</p>
+                      <p>Speaking of Sauce Labs, when we run tests on Sauce Labs, we also need to use a remoteWebDriver, rather than indicate the driver for a particular browser.</p>
+                      <p>Don't feel daunted by the additional infomration that is required here. It's just authentication and our "Desired Capabilities", which indicate which browser and OS combination we want to test our script on.</p>
                     </aside>
                   </section>
 
@@ -426,7 +448,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                       </pre>
                     </p>
                 <aside class="notes">
-                  <p>We need to call "get" on the webdriver in order to access the site we want to get to.</p>
+                  <p>Next, we need to call "get" on the webdriver in order to access the application we want to test.</p>
                 </aside>
                   </section>
 
@@ -453,7 +475,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                         </div>
                     </p>
                     <aside class="notes">
-                      <p>Locator expressions are how we locate an HTML element or elements on a page that we want to interact with. The one in our script is pretty basic, it's just finding an element on the page that has an ID name of "myID"</p>
+                      <p>Locator expressions are how we locate an HTML element or elements on a page that we want to interact with. The one in our script is pretty basic, it's just finding an element on the page that has an ID name of "ham"</p>
                       <p>We can also idenfity elements by their class name, tag name, link text, css, or xPATH. We'll take a look at using these in more detail later on.</p>
                     </aside>
                   </section>
@@ -468,8 +490,8 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                       <li>Internet Explorer developer tools</li>
                     </ul>
                     <aside class="notes">
-                      <p><mark>demo the page inspector on the presentation at least, or on the guinea page to find the title</mark></p>
-                      <p>These are a few popular Locator helpers. Basically, you just need to use the standard dev tools that come with the brwoser, or that are add-ons for the browser, and they can help you ID particular elements that you want to interact with on a page.</p>
+                      <p><mark>demo the page inspector on the presentation at least. Find the "ham" element on saucelabs.com</mark></p>
+                      <p>These are a few popular Locator helper tools. Basically, you need to use the standard dev tools that come with the brwoser, or that are add-ons for the browser, and they can help you ID particular elements that you want to interact with on a page.</p>
                     </aside>
                   </section>
 
@@ -483,7 +505,9 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                       </pre>
                     </p>
                     <aside class="notes">
-                      <p>Taking the element that we found earlier, we now want to perform an action on it. We're going to go ahead and click on it. On saucelabs.com, the "ham" id points to a drop down, so we want to make sure that drop down works when clicked.</p>
+                      <p>Taking the element that we found earlier, we now want to perform an action on it.</p>
+                      <p>Performing an action is typically just as a easy and calling "click", or "submit", or "SendKeys". But there are other actions that require more scripting to emulate user interaction, like Hover.</p>
+                        <p>We're going to go ahead and click on it. On saucelabs.com, the "ham" id points to a drop down, so we want to make sure that drop down works when clicked.</p>
                     </aside>
                   </section>
 
@@ -498,7 +522,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                       <ul><li>A wait time set until a condition of an element (such as "selected" or "visible") becomes true.</li>
                       </ul>
                     <aside class="notes">
-                      <p>Tests might fail because the elements that are expected for the next step haven't loaded into the browser yet. It's good to have an explicit wait time in this case, as after a click, it can be variable how long an element could be loaded onto the page.</p>
+                      <p>Tests might fail because the elements that are expected for the next step haven't loaded into the browser yet. It's good to have an explicit wait time in this case, as after a click, it can be variable how long it takes for an element to be loaded.</p>
                       <p>For example, when we click on that drop-down that has an ID of ham, it takes time for the options on the drop down to render. We would need to set a wait in order for the action on the drop down to succeed.</p>
                       <p>While we may not have waits in our current script, we will take a look at them in a later module.</p>
                     </aside>
@@ -526,7 +550,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                        </ul>
                      </div>
                      <aside class="notes">
-                       <p> When running tests on both Sauce Labs and Locally, test results need extra configuration. By default, you will be able to see when a test is complete, or has "failed". But without specific test results sent back to Sauce Labs or custom made locally, you have no way of knowing whether a complete means a test was successful, or whether a failure means the test failed or if the test wasn't written correctly.
+                       <p> When running tests on both Sauce Labs and Locally, recording test results need extra configuration. By default, you will be able to see when a test is complete, or has "failed". But without specific test results sent back to Sauce Labs or custom made locally, you have no way of knowing whether a complete means a test was successful, or whether a failure means the test failed or if the test wasn't written correctly.
                        </p>
                        <p>
                          Test frameworks can help us report our results back to Sauce Labs (and on your own Selenium Grid). Through the Sauce Labs UI, we get some core reporting/recording of test results through their screenshots, screencast of the test, and logs.
@@ -542,7 +566,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                       </code>
                     </pre>
                     <aside class="notes">
-                      <p>We need to use driver.quit() in order to end the test. It should close all browser windows and end the webdriver session. If we don't use it, we can get several different errors, such as incorrect results (incomplete test), timeout errors, the webdriver session will not be closed properly and files will not be cleared off memory, which can increase the space used on your computer's hard drive.</p>
+                      <p>Lastly, We need to use driver.quit() in order to end the test. It should close all browser windows and end the webdriver session. If we don't use it, we can get several different errors, such as incorrect results (incomplete test), timeout errors, the webdriver session will not be closed properly and files will not be cleared off memory, which can increase the space used on your computer's hard drive.</p>
                     </aside>
                   </section>
                 </section>
@@ -554,7 +578,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                     <ol>
                       <li>Navigate to the java-testng-simple project.</li>
                       <li>Open SampleSauceTest.java in the src/test/java package/drop-down.</li>
-                      <li>Make a note of the website we are going to.</li>
+                      <li>Make a note of the website we are telling the driver to access.</li>
                       <li>Run the script by right-clicking on the project, go to "Run As", and then choose "Maven test".</li>
                       <li>What did you see happen? How did it happen?</li>
                       <li>Change the website to a different one of your choosing.</li>
@@ -564,7 +588,6 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
 <!-- Local Selenium Scripts Module-->
                 <section data-background="rgb(226, 35, 26)">
                   <h2>Write a Selenium Script</h2>
-                  <aside class="notes">Talk about how this section is basically one big lab - We will analyze what has been written in the script for us already, write our own additional steps, run the script, and then analyze our results</aside>
                 </section>
 
                 <section>
@@ -600,7 +623,7 @@ WebDriver driver = new ChromeDriver();
 
                     <aside class="notes">
                       <p>
-                        We know how to change the site that we choose to access from the previous module. So let's go ahead and change it.
+                        We know how to change the site that we choose to access from the previous module. So let's go ahead and change it to our training page.
                       </p>
                     </aside>
                   </section>
@@ -613,7 +636,8 @@ WebDriver driver = new ChromeDriver();
                           WebElement linkElement = driver.findElement(By.id("i am a link"));
                       </code></pre>
                       <aside class="notes">
-
+                        <p>We took a look at locating elements briefly in the pervious module, and now we have some examples on using each of the different locator types.</p>
+                        <p>Generally, we locator expressions are made in Key:Value pairs. In our example here, the key is going to ID, and we are looking for the ID with the value "I am a link"</p>
                       </aside>
                     </section>
 
@@ -639,6 +663,7 @@ WebDriver driver = new ChromeDriver();
                       </code>
                     </pre>
                     <aside class="notes">
+                      <p>We have a couple more additional examples here as well. We can find elements by tag name, for example by anchor tags, or by link text.</p>
                       <p>Notice that there is findElement and findElements. findElements will return a list of matching elements found on the page.</p>
                     </aside>
                     </section>
@@ -657,9 +682,10 @@ WebDriver driver = new ChromeDriver();
                       driver.findElement(By.xpath("/html/head/title"))
                     </code>
                     <aside class="notes">
+                      <p>Another method we have is the CSS selector, which captures the path to the html element through the CSS path and definition.</p>
                       <p>For those of you who are not familiar with XPATH, it is the language used to locate nodes in an XML doc. HTML can be an implementation of XHTML (XML), so you can use XPATH to locate elements on a page. Most people use the XPATH to locate an element because the element may not have an ID or name attribute to locate it easily.
                       </p>
-                      <p>The danger in using XPATH lies in how it finds elements, which is essentially where is the element in the hierarchy of the page. If that element moves during the development of the application, then your tests are at risk of breaking, if they XPATH. It's generally recommended to not use XPATHs unless you don't have any other choice.</p>
+                      <p>The danger in using XPATH and the CSS selector lies in how it finds elements, which is essentially <b>where</b> the element is in the hierarchy of the page. If that element moves during the development of the application, then your tests are at risk of breaking, if they XPATH. It's generally recommended to not use XPATHs unless you don't have any other choice.</p>
                     </aside>
                 </section>
                 </section>
@@ -692,7 +718,11 @@ WebDriver driver = new ChromeDriver();
 linkElement.click();
                     </code></pre>
 
-                    <aside class="notes">There are a lot of different actions out there, but click is one of the most commonly used ones.</aside>
+                    <aside class="notes">
+                      <p>For short simple test scripts, finding an element and performning an action on it right away may be the best course of action.</p>
+                      <p>But typically, we store the element so then we can use it in multiple places in the script.</p>
+                      <p>In both of these examples, we are simply finding the link id'd by "I am a link", and clicking on it.</p>
+                    </aside>
                   </section>
 
                   <section>
@@ -701,7 +731,9 @@ linkElement.click();
                         WebElement commentBox = driver.findElement(By.id("comments"));
 commentBox.sendKeys("I think this is a pretty cool training site!");
                     </code></pre>
-                    <aside class="notes">We can use sendKeys to input text into forms to test that they are editable and data input is recorded on submit</aside>
+                    <aside class="notes">
+                      <p>Another action method we can call is sendKeys. We can use sendKeys to input text into forms to make sure the fields are editable and data input is recorded on submit.</p>
+                    </aside>
                   </section>
 
                   <section>
@@ -710,7 +742,10 @@ commentBox.sendKeys("I think this is a pretty cool training site!");
                         WebElement submitButton = driver.findElement(By.id("submit"));
 submitButton.submit();
                     </code></pre>
-                    <aside class="notes"></aside>
+                    <aside class="notes">
+                      <p>And speaking of submit, we also have a submit method we can call, and here we are doing so on the button with id "submit".</p>
+                      <p>You can think of the submit like pressing the enter key.</p>
+                    </aside>
                   </section>
 
                   <section>
@@ -720,6 +755,8 @@ submitButton.submit();
                     <li>SwitchTo</li>
                     <li>and more!</li>
                     <aside class="notes">
+                      <p>There are a plethora of additional actions we can use as well. We can ue Clear to delete the contents of a field, or textbox.</p>
+                      <p>We can write a script that emulate the hovering of the mouse over an element.</p>
                       <p>SwitchTo is used to switch to a new windows or screens, and this include popups as well.</p>
                       <p>Anything you can think of doing on a web browser normally, you can tell Selenium to simulate in a test</p>
                     </aside>
@@ -848,8 +885,9 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                     <p></p>
                   </div>
                   <pre style="box-shadow:none;"><code class="java" data-trim contenteditable>
-                      DesiredCapabilities caps = DesiredCapabilities.chrome();
+                      DesiredCapabilities caps = new DesiredCapabilities();
 caps.setCapability("platform", "Windows XP");
+caps.setCapability("browserName", "Chrome");
 caps.setCapability("version", "43.0");
                   </code></pre>
 
@@ -939,7 +977,8 @@ WebElement messageElement = wait.until( ExpectedConditions.presenceOfElementLoca
 <!-- Introduction to Testing Frameworks-->
                 <section data-background="rgb(226, 35, 26)">
                   <h2>Introduction to Testing Frameworks</h2>
-                  <aside class="notes">We discuss the different testing frame works here. </aside>
+                  <aside class="notes">
+                  </aside>
                 </section>
 
                 <section>

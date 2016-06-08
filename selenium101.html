@@ -137,10 +137,10 @@
 
                       <p>
                         <pre><span class="inner-pre" style="font-size: 30px">
-  "Our purpose is to revolutionize testing
+  Our purpose is to revolutionize testing
          so that development teams
      are free to innovate and deliver
-        amazing applications—faster."</span></pre>
+        amazing applications—faster.</span></pre>
                     </p>
                       <!--Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.-->
 
@@ -158,8 +158,9 @@
                     <img src="assets/images/sauceCI2.png" style="border:0; text-align:center; background:none;">
                     <p style="text-align:center;">Continuous Integration/Continuous Development</p>
                     <aside class="notes">
-                      <p>Sauce Labs integreates inteself into the Continuous Delivery/Continuous Integration cycle, seamlessly. Traditionally, testing and QA are bottlenecks for application delivery and release, where any problems found have to start from the beginning of the cycle, and in the end have to bed tested again. The real bottlneck though isn't what happens when a bug is found, it's the time consuming nature of writing tests for a product that is ever changing itself. It's the time it takes to perform each test, it's setting up the infrastructure that allows those tests to be run on a variety of platforms that your application runs on.</p>
-                      <p>Sauce Labs takes away those worries though. With Selenium and Appium testing, we remove the barrier of time consuming test writing, and with Sauce Labs itself, we remove the need to have a propietary infrastructure, just to run our tests. Sauce Labs provides the infrastructure for you, allowing you to test on a variety of platforms in a speedy manner. So you can focus on development, and releases, and leave the testing to Sauce Labs.</p>
+                      <p>Sauce Labs integrates inteself into the Continuous Delivery/Continuous Integration cycle, seamlessly. Traditionally, testing and QA are bottlenecks for application delivery and release. Writing automated tests, maintaining testing infrastructure, painful manual testing, all consume huge amounts of time. The work is never done either, because the product is always changing.</p>
+                      <p>Sauce Labs takes away those worries though. With Selenium and Appium testing, we remove the barrier of time consuming test writing, and with Sauce Labs itself, we remove the need to have a propietary infrastructure. Sauce Labs provides the infrastructure for you, allowing you to test on a variety of platforms in a speedy manner. So you can focus on development, and releases, and leave the testing to Sauce Labs.</p>
+                      <p>Sauce Labs takes away the pain of testing, so that instead of waiting until the end of the development life cycle, you can test iteratively, as you go through each step.</p>
                     </aside>
                 </section>
 
@@ -173,7 +174,7 @@
                   </ul>
 
                   <aside class="notes">
-                    <p>History: Was developed in 2004 as an internal tool at ThoughtWorks, by Jason Huggins. It's gone through a couple stages of evolution at this point, with numerous other contributors, but it has always facilitated and simplified application testing.(Hammant, Simon Stewart, etc)</p>
+                    <p>Selenium was developed in 2004 as an internal tool at ThoughtWorks, by Jason Huggins. It's an open source product that has gone through a couple stages of evolution at this point, with numerous other contributors, but it has always facilitated and simplified application testing.(Hammant, Simon Stewart, etc)</p>
                     <p>So <b>how</b> does Sauce Labs faciltate your testing? Selenium is the core testing framework that Sauce Labs runs for you on a variety of Browser and OS combinations.</p>
                     <p>Selenium is the testing framework that provides the actual language and ability to test interations on a browser. We use its API to write scripts in our preferred language, and then the commands in those scripts simulate interaction on a browser, either locally on your own computer, or remotely.</p>
 
@@ -370,7 +371,7 @@
 				  </section>
 
                   <section>
-				    <h3>Create a Webdriver Object</h3>
+				    <h3>1. Create a Webdriver Object</h3>
 
                       <pre><code class="java" data-trim contenteditable>
                           WebDriver driver = new FirefoxDriver();
@@ -416,7 +417,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
 
 
                   <section>
-                    <h3>Navigate to a Web Page</h3>
+                    <h3>2. Navigate to a Web Page</h3>
 			    <p>
                       <pre>
                         <code class="java" data-trim contenteditable>
@@ -430,7 +431,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                   </section>
 
                   <section>
-				    <h3>Locate HTML Elements on a Web Page</h3>
+				    <h3>3. Locate HTML Elements on a Web Page</h3>
 				    <p>
                       <pre>
                         <code class="java" data-trim contenteditable style="text-align:center;">
@@ -458,7 +459,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                   </section>
 
                   <section>
-                    <h3> Popular Locator Helpers</h3>
+                    <h3>Popular Locator Helpers</h3>
                     <li>Browser Developer Tools</li>
                     <ul>
                       <li>Inspect the DOM</li>
@@ -473,7 +474,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                   </section>
 
                   <section>
-                    <h3>Perform an Action on a HTML Element</h3>
+                    <h3>4. Perform an Action on a HTML Element</h3>
 				    <p>
                       <pre>
                         <code class="java" data-trim contenteditable style="text-align:center;">
@@ -487,7 +488,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                   </section>
 
                   <section>
-				    <h3>Anticipate Browser Response</h3>
+				    <h3>5. Anticipate Browser Response</h3>
 
                     <p>Implicit Waits</p>
                     <ul>
@@ -504,7 +505,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                   </section>
 
                   <section>
-				    <h3>Run the Test and Record the Test Results</h3>
+				    <h3>6. Run the Test and Record the Test Results</h3>
 
                      <div style="float:left;width:50%;" class="centered">
                        <ul>
@@ -534,7 +535,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                   </section>
 
                   <section>
-				    <h3>Conclude the Test</h3>
+				    <h3>7. Conclude the Test</h3>
 				    <pre>
                       <code data-trim contenteditable class="java">
                         driver.quit()
@@ -546,32 +547,20 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                   </section>
                 </section>
 
-                <section>
+
                   <section data-state="lab">
                     <h3>Lab: Running the Sample Script</h3>
 
                     <ol>
-                      <li>Navigate to the sample script.</li>
-                      <li>Open the script in your favorite editor.</li>
+                      <li>Navigate to the java-testng-simple project.</li>
+                      <li>Open SampleSauceTest.java in the src/test/java package/drop-down.</li>
                       <li>Make a note of the website we are going to.</li>
-                      <li>Run <pre style="display:inline">./runLocal.sh</pre>.</li>
+                      <li>Run the script by right-clicking on the project, go to "Run As", and then choose "Maven test".</li>
                       <li>What did you see happen? How did it happen?</li>
+                      <li>Change the website to a different one of your choosing.</li>
                     </ol>
                   </section>
 
-                  <section data-state="lab">
-                    <h3>Lab: Change Sites</h3>
-                    <ol>
-                      <li>Open the script in your favorite editor.</li>
-                      <li>Locate and change the URL in <pre style="display:inline">driver.get("http://saucelabs.com/")</pre> to another website of your choosing.</li>
-                      <li>Run <pre style="display:inline">./runLocal.sh</pre>.</li>
-                    </ol>
-                    <aside class="notes">
-                      <p>questions?</p>
-                      <p>maybe we won't do this one.</p>
-                    </aside>
-                  </section>
-                </section>
 <!-- Local Selenium Scripts Module-->
                 <section data-background="rgb(226, 35, 26)">
                   <h2>Write a Selenium Script</h2>
@@ -581,8 +570,8 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                 <section>
                   <h3>Module Objectives</h3>
                   <p>This module enables you to:</p>
-                  <ul><li>Use different page actions in a Selenium test script</li>
-                  <li>Write page actions into a Selenium test script</li>
+                  <ul>
+                    <li>Use different page actions in a Selenium test script</li>
                   </ul>
                   <aside class="notes">
                     <p>Now we are going to take a look at doing a bit more with our script - We're going to take look at we can run a test that interacts with a page, rather than just check the title and return it's value.
@@ -680,7 +669,7 @@ WebDriver driver = new ChromeDriver();
                     <h3>Performing an Action</h3>
 
                     <div style="text-align:left;float:left;">
-                      <li>Once you have locate an element, you can perform an action on it.</li><p></p>
+                      <li>Once you locate an element, you can perform an action on it.</li><p></p>
                     <li>Perform actions by invoking interaction methods on the WebElement object we identified earlier.</li>
 
                   <div style="text-align:center;float:right;">
@@ -742,8 +731,8 @@ submitButton.submit();
                   <h3>Lab: Writing Actions</h3>
 
                   <ol>
-                    <li>Open the script in your preferred text editor.</li>
                     <li>If you have not done so, change the <pre style="display:inline">driver.get("URL")</pre> to <pre style="display:inline">driver.get("http://saucelabs.github.io/training-test-page/")</pre>.</li>
+                    <li>Comment out the drop-down id element locator and action.</li>
                     <li>Locate the Comments textbox on the page, and send it some string values.</li>
                     <li>Locate the send button, and click it to send your comment.</li>
                     <li>Uncomment and fill the while loop with commands that locate and toggle the checkboxes on the page.</li>
@@ -753,9 +742,11 @@ submitButton.submit();
                 <section data-state="lab">
                   <h3>Lab: Run the Script Locally</h3>
 
-                  <pre style="display:inline">javac -cp ".:./selenium-2.53.0/selenium-java-2.53.0.jar:./selenium-2.53.0/libs/*" SampleSauceTest.java
-java -cp ".:./selenium-2.53.0/selenium-java-2.53.0.jar:./selenium-2.53.0/libs/*" SampleSauceTest
-                  </pre>
+                  <ol>
+                    <li>Run the test.</li>
+                    <p> (Right click on the project -> Run As -> Maven test) </p>
+
+                  </ol>
                   <aside class="notes">
 
                   </aside>
@@ -831,7 +822,6 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                   <section data-state="lab">
                     <h3>Lab: Remote WebDriver</h3>
                     <ol>
-                      <li>Open the script in your preferred editor.</li>
                       <li>Log into <a href="http://saucelabs.com" target="_blank">saucelabs.com</a>, click on "My Account" and copy your Access Key.</li>
                       <li>Add in the String variables with the values required to authenticate with Sauce Labs.</li>
                       <li>Add in a String variable with the URL required to access Sauce Labs.</li>
@@ -869,7 +859,6 @@ caps.setCapability("version", "43.0");
                 <section data-state="lab">
                   <h3>Lab: Platform Configurator</h3>
                   <ol>
-                    <li>Open the script in your preferred editor.</li>
                     <li>Create a DesiredCapabilities Chrome browser object.</li>
                     <li>Set the platform to "Mac OS X 10.9".</li>
                     <li>Set the version (for the Chrome browser) to 43.0.</li>
@@ -928,11 +917,21 @@ WebElement messageElement = wait.until( ExpectedConditions.presenceOfElementLoca
                 </section>
 
                 <section data-state="lab">
-                  <h3>Lab: Testing Waits (cont.)</h3>
+                  <h3>Lab: Testing Waits (cont. 1)</h3>
                   <ol>
-                    <li>Open the script in your preferred editor.</li>
-                    <li>Change the script driver.get URL to <a href="http://the-internet.herokuapp.com/dynamic_loading/2" target="_blank">http://the-internet.herokuapp.com/dynamic_loading/2</a>.</li>
+                    <li>Run the java-testng-simple_waits script as is.</li>
+                    <li>Why did it fail?</li>
                     <li>Write an explicit wait for a locator for the "Hello World" until it appears.</li>
+                  </ol>
+                </section>
+
+                <section data-state="lab">
+                  <h3>Lab: Testing Waits (cont. 2)</h3>
+                  <ol>
+                    <li>Open the java-testng-simple_waits script.</li>
+                    <li>Write a wait object that waits for 10 seconds.</li>
+                    <li>Write a wait.until for the Hello World element.</li>
+                    <li>Run the script again.</li>
                   </ol>
                 </section>
               </section>
@@ -948,7 +947,7 @@ WebElement messageElement = wait.until( ExpectedConditions.presenceOfElementLoca
                   <p>This module enables you to:</p>
                   <ul>
                     <li>Understand the use of Testing Frameworks</li>
-                    <li>Understand the difference between an assert and a verification</li>
+                    <li>Understand the use of asserts</li>
                     <li>Use a framework to record test results in Sauce Labs</li>
                   </ul>
                   <aside class="notes"></aside>
@@ -1121,7 +1120,7 @@ public void the_feeling_is(String arg1) throws Throwable {
                   <section data-state="lab">
                     <h3>Lab: Asserting Your Greatness</h3>
                     <ol>
-                      <li>Open the assert script in your preferred text editor.</li>
+                      <li>Open the assert script.</li>
                       <li>Add an assert that makes sure that the title of the guinea pig page is "I am a page title - Sauce Labs".</li>
                       <li>Add an assert that makes sure that the checkbox is checked (true).</li>
                       <li>Run the script.</li>
@@ -1149,8 +1148,8 @@ public void the_feeling_is(String arg1) throws Throwable {
                 <section data-state="lab">
                   <h3>Lab: Record Keeping</h3>
                   <ol>
-                    <li>Add the appropriate library or dependency to the imports or POM</li>
-                    <li>Write the lines that will send the right feedback to Sauce Labs</li>
+                    <li>Add the appropriate library or dependency to the imports or POM to our java-testng-simple script</li>
+                    <li>Write the lines that will send the right feedback to Sauce Labs.</li>
                     <li>Look in saucelabs.com.</li>
                   </ol>
                   <aside class="notes">
@@ -1391,7 +1390,7 @@ caps.setCapability("name","Java Remote Sample Test");
                      <section data-state="lab">
                        <h3>Lab: Labelling and Naming our Tests</h3>
                        <ol>
-
+                         <li>Open the java-testng-simple script.</li>
                          <li>Add a capability to name your test.</li>
                          <li>Add a capability to include a build number for your test.</li>
                          <li>Add a capability to include a tag for your test.</li>

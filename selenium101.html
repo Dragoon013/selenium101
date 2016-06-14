@@ -91,6 +91,7 @@
                 <h3>Course Administration</h3>
                 <ul>
                   <li>This session is ~3 hours long</li>
+                  <ul><li>10 min. breaks every hour</li></ul>
                   <li>Slides, demonstrations and exercises</li>
                   <li>PDF copy of the materials is available</li>
                   <li>Ask questions at any time</li>
@@ -263,6 +264,20 @@
                   </aside>
                 </section>
 
+                <section>
+                  <h3>Manual Testing</h3>
+                  <p>The traditional method of testing applications and sites.</p>
+                  <ul>
+                    <li>Selenium IDE</li>
+                    <li>Sauce Labs Manual Tests</li>
+                  </ul>
+                  <aside class="notes">
+                    <p>Traditionally, testing was done manually, with a user just going into the application and manually clicking on elements and making sure the application didn't break.</p>
+                    <p>Selenium has a plugin for Firefox, called Selenium IDE, that allows you run a manual test in your browser, and it will record all of the actions that you make. This can help you with writing and automating your selenium scripts.</p>
+                    <p> Sauce Labs allows you to do manual tests, whether you use it to actually test your product, or to plan out what sort of tests you are going to run on your site. With the manual testing, you still get some of the great features that you get with the automated tests as well, such as the video recording, screenshots captured, and logs. </p>
+                  </aside>
+                </section>
+
                 <section data-state="lab">
                   <h3>Lab: My First Test (On Sauce Labs)</h3>
                   <ol>
@@ -276,7 +291,7 @@
                   </ol>
 
                   <aside class="notes">
-                    <p>Traditionally, testing was done manually, with a user just going into the application and manually clicking on elements and making sure nothing broke. Sauce Labs allows you to do manual tests, whether you use it to actually test your product, or to plan out what sort of tests you are going to run on your site. With the manual testing, you still get the same great features that you get with the automated tests as well, such as the video recording, screenshots captured, and logs.</p>
+                    <p>Let's go ahead and try a manual test for ourselves.</p>
                   </aside>
 				</section>
 
@@ -285,7 +300,7 @@
 				  <p><ul>
                     Let's take a tour of the Docs!
                     <li><a href="https://wiki.saucelabs.com/display/DOCS/The+Sauce+Labs+Cookbook+Home" target="_blank">Sauce Labs Documentation</a></li>
-                    <ul><li><a href="https://wiki.saucelabs.com/display/DOCS/Running+Automated+Website+Tests" target="_blank">Automated Website Testing with Sauce Labs</a></li></ul>
+                    <ul><li><a href="https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/" target="_blank">The Platform Configurator</a></li></ul>
                     <li><a href="http://docs.seleniumhq.org/docs/" target="_blank">Selenium Documentation</a></li>
 				  </ul></p>
                   <aside class="notes">
@@ -331,7 +346,6 @@
 
                 <section>
 				  <h3>How Selenium WebDriver Works</h3>
-                 <!-- <div style="float:left;width:50%;" class="centered">-->
                   <p>
                     <ol>
                       <li>Write script</li>
@@ -341,22 +355,37 @@
                     </ol>
                   </p>
 
-                  <!--<div style="float:right;width:50%;padding-right:0px;">
-                  <p>
-                    Sauce Labs:
-                    <ol>
-                      <li>Write script</li>
-                      <li>Run script (send commands via API)</li>
-                      <li>WebDriver Client sends commands to browser on remote Selenium Grid (Sauce Labs)</li>
-                      <li>WebDriver Client sends results back</li>
-                      <li>Test Assets Created</li>
-                    </ol>
-                  </p>
-                  </div> -->
                   <aside class="notes">
                     <p>The only difference between how Selenium works locally or remotely is where the browser is opened to exceute the commands. Locally, the driver will just open a brwoser based off of the type driver used in the script. Remotely, in particular on Sauce Labs, the remote webdriver is used to pass the script commands along to a remote browser, whose type is set through additional commands. With Sauce Labs, you'll have the additional step of the test asset creation at the end. These are the videos, screenshots, and logs that recorded your test.</p>
                   </aside>
 				</section>
+
+                <section>
+                  <h3>The Training Environment</h3>
+
+                  <ul>
+                    <li>ReadyTech virtual machines</li>
+                    <li>Eclipse</li>
+                    <li>Maven</li>
+                  </ul>
+
+                  <aside class="notes">
+                    <p>So before we go into the different parts we need to incldue in a script, let's talk about our training environment.</p>
+                    <p>First off, we'll be working in a VM provided by ReadyTech today. If you have any problems during the course of labs, I will be able to go into your instance and help you out. You can just notify me using the ReadyTech instance to tell me that you need help.</p>
+                    <p>We're going to be working in Eclipse today. In Eclipse, we have set up the scripts within a framework called TestNG, for Java, that allows us to run the scripts with all of the dependencies it needs very easily.</p>
+                    <p>That within that framework, there is a library, or build tool, called Maven that we are using to grab our dependencies, bundle them together, and then run our script.</p>
+                    <p>Normally, we would have to run a long command that looks like:</p>
+                    <pre><code class="java" data-trim contenteditable>
+                        javac -cp ".:./selenium-2.53.0/selenium-java-2.53.0.jar:./selenium-2.53.0/libs/*" SampleSauceTest.java
+                        java -cp ".:./selenium-2.53.0/selenium-java-2.53.0.jar:./selenium-2.53.0/libs/*" SampleSauceTest
+                    </code></pre>
+                    <p>The first line compiles the code with all of the requisite libraries and jars it needs, and then the second line runs it.</p>
+                    <p>Maven will do all of that for us, so we don't need to run an additional script to start the test script, or have to include the libraries manually in a command.</p>
+                    <p>Throughout the course today, the way we will run our tests is by using the "Maven test" command, which should compile all of our resources and dependencies together, and run it for us.</p>
+                    <p>Lastly, for those of you who may not have used Eclipse before, when you type in a line that does not have the right syntax, it will generally underline the offending line or part of the line that you need to fix, in red. If you simply hover or select that part of the line, Ecplise will give you suggestions on how to fix the problem.</p>
+
+                  </aside>
+                </section>
 
                 <section>
                   <section>
@@ -816,19 +845,19 @@ submitButton.submit();
                   <h3>Sauce Labs Identification</h3>
                   <p>The script uses the Sauce Labs API to authenticate the user, and record results against that user's profile</p>
 
-                  <div style="float:left;width:50%;" class="centered">
+                  <div style="float:left;width:100%;" class="centered">
                     <li>Environment Variables</li>
                     <pre><code class="zsh" data-trim contenteditable>
                         export SAUCE_USERNAME=dragoon013
-export SAUCE_ACCESS_KEY=b89b7205-3aca-4af2-a618-9bab4c7bdebd
+export SAUCE_ACCESS_KEY=b89rmvitnbiq3rrr09u4r90fjr
                     </code></pre>
                   </div>
 
-                  <div style="float:right;width:50%;padding-right:0px;">
+                  <div style="float:right;width:100%;padding-right:0px;">
                     <li>Explicit Variables</li>
                     <pre><code class="java" data-trim contenteditable>
                         public static final String USERNAME = "dragoon013";
-public static final String ACCESS_KEY = "b89b7205-3aca-4af2-a618-9bab4c7bdebd";
+public static final String ACCESS_KEY = "b89rmvitnbiq3rrr09u4r90fjr";
                     </code></pre>
                   </div>
                   <aside class="notes">
@@ -845,12 +874,14 @@ public static final String ACCESS_KEY = "b89b7205-3aca-4af2-a618-9bab4c7bdebd";
                       <li>Username&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li> <!--Empty spaces to get "Access code" on one line-->
                       <li>Access Code</li>
                     </ul>
+                    <div style="float:right;width:107%;padding-right:0px;">
                     <pre><code class="java" data-trim contenteditable>
                         USERNAME = "dragoon013";
 KEY = "b89b7205-3aca-4af2-a618-9bab4c7bdebd";
 URL = "http://" + USERNAME + ":" + KEY + "@ondemand.saucelabs.com:80/wd/hub";
 WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                     </code></pre>
+                    </div>
                     <aside class="notes">
                       <p>Let's set up a RemoteWebDriver now. This is different, as the remotewebdriver calls out to a selenium grid somewhere; whether that is Sauce Labs or your own selenium grid, and runs the test on the remote browser/machine.</p>
                     </aside>
@@ -930,17 +961,18 @@ caps.setCapability("version", "43.0");
                   </pre>
 
                   <p>Explicit Waits</p>
-                  <pre>
-                    <code class="java" data-trim contenteditable>
-                      import org.openqa.selenium.support.ui.ExpectedConditions;
+                  <div style="width:101%;">
+                    <pre><code class="java" data-trim contenteditable>
+                        import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 WebDriverWait wait = new WebDriverWait(driver, 10);
-WebElement messageElement = wait.until( ExpectedConditions.presenceOfElementLocated(By.id("loginResponse")) );
-                    </code>
-                  </pre>
+WebElement messageElement = wait.until(
+                            ExpectedConditions.presenceOfElementLocated(
+                            By.id("loginResponse")));
+                    </code></pre>
+                  </div>
 
                   <aside class="notes">
-
                     There are many situations in which your test script may run ahead of the website or application you're testing, resulting in timeouts and a failing test. For example, you may have a dynamic content element that, after a user clicks on it, a loading appears for five seconds. If your script isn't written in such a way as to account for that five second load time, it may fail because the next interactive element isn't available yet. The general recommended solution for this is to use explicit waits.
                   </aside>
                 </section>
@@ -1377,7 +1409,7 @@ public void enterCommentText(String text){
 
                    <section>
                      <h3>Page Object Example: Correct</h3>
-
+                     <div style="width:109%;">
                      <pre><code class="java" data-trim contenteditable>
                          public class TestLogin {
 
@@ -1389,6 +1421,8 @@ public void enterCommentText(String text){
     }
 }
                      </code></pre>
+                     </div>
+
                      <aside class="notes">
                        <p>This is a good example of abstraction. We've made the signin page into it's own object that we can now refer to, and do so on the next line, when we login, passing a username and password value.</p>
                      </aside>

@@ -868,38 +868,25 @@ public static final String ACCESS_KEY = "b89rmvitnbiq3rrr09u4r90fjr";
                 </section>
 
                 <section>
-                  <section>
-                    <h3>Setting the Remote WebDriver</h3>
-                    <p style="text-align:center;">Sauce Labs API Authentication</p>
-                    <ul>
-                      <li>Username&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li> <!--Empty spaces to get "Access code" on one line-->
-                      <li>Access Code</li>
-                    </ul>
-                    <div style="float:right;width:107%;padding-right:0px;">
+                  <h3>Setting the Remote WebDriver</h3>
+                  <p style="text-align:center;">Sauce Labs API Authentication</p>
+                  <ul>
+                    <li>Username&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li> <!--Empty spaces to get "Access code" on one line-->
+                    <li>Access Code</li>
+                  </ul>
+                  <div style="float:right;width:107%;padding-right:0px;">
                     <pre><code class="java" data-trim contenteditable>
                         USERNAME = "dragoon013";
 KEY = "b89b7205-3aca-4af2-a618-9bab4c7bdebd";
 URL = "http://" + USERNAME + ":" + KEY + "@ondemand.saucelabs.com:80/wd/hub";
 WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                     </code></pre>
-                    </div>
-                    <aside class="notes">
-                      <p>Let's set up a RemoteWebDriver now. This is different, as the remotewebdriver calls out to a selenium grid somewhere; whether that is Sauce Labs or your own selenium grid, and runs the test on the remote browser/machine.</p>
-                    </aside>
-                  </section>
-
-                  <section data-state="lab">
-                    <h3>Lab: Remote WebDriver</h3>
-                    <ol>
-                      <li>Log into <a href="http://saucelabs.com" target="_blank">saucelabs.com</a>, click on "My Account" and copy your Access Key.</li>
-                      <li>Add in the String variables with the values required to authenticate with Sauce Labs.</li>
-                      <li>Add in a String variable with the URL required to access Sauce Labs.</li>
-                      <li>Comment out the old Firefox driver and create a new RemoteWebDriver object.</li>
-                    </ol>
-                  </section>
+                  </div>
+                  <aside class="notes">
+                    <p>Let's set up a RemoteWebDriver now. This is different, as the remotewebdriver calls out to a selenium grid somewhere; whether that is Sauce Labs or your own selenium grid, and runs the test on the remote browser/machine.</p>
+                  </aside>
                 </section>
 
-              <section>
                 <section>
                   <h3>Desired Capabilities</h3> <!-- PLatform Configurator-->
                   <div style="float:left;width:50%;" class="centered">
@@ -917,30 +904,45 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                     <p></p>
                   </div>
                   <pre style="box-shadow:none;"><code class="java" data-trim contenteditable>
-                      DesiredCapabilities caps = new DesiredCapabilities();
+                      DesiredCapabilities caps = DesiredCapabilities.chrome();
 caps.setCapability("platform", "Windows XP");
-caps.setCapability("browserName", "Chrome");
 caps.setCapability("version", "43.0");
                   </code></pre>
 
-                  <aside class="notes">Lastly, with Sauce Labs, we can set up the script to run the test on several different platforms. We aren't limited to what we have locally. If we want to indicate more platforms combinations to test on, we typically use a framework to enable that for us.</aside>
-                </section>
-
-                <section data-state="lab">
-                  <h3>Lab: Platform Configurator</h3>
-                  <ol>
-                    <li>Create a DesiredCapabilities Chrome browser object.</li>
-                    <li>Set the platform to "Mac OS X 10.9".</li>
-                    <li>Set the version (for the Chrome browser) to 43.0.</li>
-                  </ol>
                   <aside class="notes">
-                    <p></p>
+
+                    <p>Lastly, with Sauce Labs, we can set up the script to run the test on several different platforms. We aren't limited to what we have locally. If we want to test on many platform combinations at once, we need to use a framework.</p>
+                    <p>In general, the desired capabilities configures the meta settings for our test, like the browser, os, and version, but also can include other Sauce Labs, or even browser specifics configurations.</p>
+                    <p>These include disabling recording features in Sauce Labs, sending custom data (in JSON), or browser proxy options. We'll take a look at some desired capabilities features we can use with Sauce Labs, later on in the course.</p>
                   </aside>
                 </section>
+
+              <section data-state="lab">
+                <h3>Lab: Sauce Labs Scripting</h3>
+                <ol>
+                  <li>Log into <a href="http://saucelabs.com" target="_blank">saucelabs.com</a>, click on "My Account" and copy your Access Key.</li>
+                  <li>Add in the String variables with the values required to authenticate with Sauce Labs.</li>
+                  <li>Add in a String variable with the URL required to access Sauce Labs.</li>
+                  <li>Comment out the old Firefox driver and create a new RemoteWebDriver object.</li>
+                </ol>
               </section>
 
               <section data-state="lab">
-                <h3>Lab: Running a Script on Sauce Labs</h3>
+                <h3>Lab: Sauce Labs Scripting (cont.)</h3>
+                <ol>
+                  <li>Go to the <a href="https://wiki.saucelabs.com/display/DOCS/Platform+Configurator" target="_blank">Platform Configurator.</a></li>
+                  <li>Select the Selenium API option.</li>
+                  <li>Select a PC device.</li>
+                  <li>Select a Windows 8 OS.</li>
+                  <li>Select a Chrome version 50.0 browser</li>
+                  <li>Copy and paste the resulting Java code into your script, at the start of the main() function.</li>
+                </ol>
+                <aside class="notes">
+                </aside>
+              </section>
+
+              <section data-state="lab">
+                <h3>Lab: Sauce Labs Scripting (cont.)</h3>
                 <ol>
                   <li>Run the script.</li>
                   <li>Open the "Automated Tests" tab on saucelabs.com.</li>

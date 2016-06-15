@@ -278,22 +278,33 @@
                   </aside>
                 </section>
 
+                <section>
                 <section data-state="lab">
-                  <h3>Lab: My First Test (On Sauce Labs)</h3>
+                  <h3>Lab 1: The First Test</h3>
                   <ol>
                     <li>Log into <a href="http://saucelabs.com" target="_blank">saucelabs.com</a>.</li>
-                    <li>Click on the Manual Tests tab.</li>
-                    <li>Click on the New Manual Test Button.</li>
+                    <li>Click the Manual Tests tab.</li>
+                    <li>Click the New Manual Test Button. A <b>New Session</b> window should appear.</li>
                     <li>Leave the URL as is.</li>
-                    <li>Click on the Chrome symbol. Select version 50, and leave the other options where they are by default.</li>
-                    <li>Start your session!</li>
-                    <li>When the browser is ready, click on the text box and search for Sauce Labs. Click on the first link that appears.</li>
+                    <li>Click the Chrome symbol. Select version 50, and leave the other options where they are by default.</li>
                   </ol>
 
                   <aside class="notes">
                     <p>Let's go ahead and try a manual test for ourselves.</p>
                   </aside>
-				</section>
+                  </section>
+
+                <section data-state="lab">
+                  <h3>Lab 1: The First Test (cont.)</h3>
+                  <ol>
+                    <li>Click Start Session!</li>
+                    <li>Conduct a search for saucelabs.com. Click on the first resulting link and confirm you can see the site.</li>
+                    <li>In the upper right corner, click <b>Stop</b>, then <b>Yes, End this Session</b>.</li>
+                    <li>From the Manual Tests page, click the Manual Session test link for the test you just performed.</li>
+                  </ol>
+                </section>
+
+                </section>
 
                 <section>
 				  <h3>Documentation</h3>
@@ -600,19 +611,30 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                   </section>
                 </section>
 
+                <section>
+                <section data-state="lab">
+                  <h3>Lab 2: Running the Sample Script</h3>
+                  <ol>
+                    <li>Open Eclipse from the desktop shortcut.</li>
+                    <li>In the package explorer left hand side panel, open java-testng-sample > src/test/java > com.yourcompany > SampleSauceTest.java.</li>
+                    <li>Make a note of the website we are telling the driver to access.</li>
+                    <li>Right click on java-testng-simple and select Run As > 9 Maven test.</li>
+                  </ol>
+                 <aside class="notes">
+                   <p>you should see a Chrome window appear, that goes to saucelabs.com. </p>
+                   <p>The control panel on the bottom of the Eclipse UI should show no errors.</p>
+                 </aside>
+                </section>
 
-                  <section data-state="lab">
-                    <h3>Lab: Running the Sample Script</h3>
-
-                    <ol>
-                      <li>Navigate to the java-testng-simple project.</li>
-                      <li>Open SampleSauceTest.java in the src/test/java package/drop-down.</li>
-                      <li>Make a note of the website we are telling the driver to access.</li>
-                      <li>Run the script by right-clicking on the project, go to "Run As", and then choose "Maven test".</li>
-                      <li>What did you see happen? How did it happen?</li>
-                      <li>Change the website to a different one of your choosing.</li>
-                    </ol>
-                  </section>
+                <section data-state="lab">
+                  <h3>Lab 2: Running the Sample Script (cont.)</h3>
+                  <ol>
+                    <li>From the driver.get line, change the website to <a href="http://docs.seleniumhq.org/" target="_blank">seleniumhq.org</a>, then click Save.</li>
+                    <li>Run the test again.</li>
+                    <li>What happened this time?</li>
+                  </ol>
+                </section>
+                </section>
 
 <!-- Local Selenium Scripts Module-->
                 <section data-background="rgb(226, 35, 26)">
@@ -795,24 +817,25 @@ submitButton.submit();
 
                 <section>
                 <section data-state="lab">
-                  <h3>Lab: Writing Actions</h3>
-
+                  <h3>Lab 3: Writing Actions</h3>
                   <ol>
+                    <li>Open SampleSauceTest.java in the java-testng-simple project.</li>
                     <li>If you have not done so, change the <pre style="display:inline">driver.get("URL")</pre> to <pre style="display:inline">driver.get("http://saucelabs.github.io/training-test-page/")</pre>.</li>
-                    <li>Comment out the drop-down id element locator and action.</li>
-                    <li>Locate the Comments textbox on the page, and send it some string values.</li>
-                    <li>Locate the send button, and click it to send your comment.</li>
-                    <li>Uncomment and fill the while loop with commands that locate and toggle the checkboxes on the page.</li>
+                    <li>Open a new Chrome browser window and open the training test page site.</li>
+                    <li>Comment out the drop-down (ham) id element locator and action.</li>
+                    <li>Right click on the Comments box, choose Inspect. Notice in the Page Inspector, that the comments box id is "comments".</li>
                   </ol>
                 </section>
 
                 <section data-state="lab">
-                  <h3>Lab: Run the Script Locally</h3>
+                  <h3>Lab 3: Writing Actions (cont.)</h3>
 
                   <ol>
-                    <li>Run the test.</li>
-                    <p> (Right click on the project -> Run As -> Maven test) </p>
-
+                    <li>In Eclipse, after <pre style="display:inline">driver.get(URL)</pre>, enter <pre style="display:inline">driver.findElement(By.id(“comments”)).sendKeys(“Hello World”);</pre> Then click Save.</li>
+                    <li>In Eclipse enter <pre style="display:inline;">driver.findElement(By.id(“<Send button id>”)).submit();</pre></li>
+                    <li>From the Sauce Labs training site in the browser, right click the Send button and choose Select </li>
+                    <li>Uncomment and fill the while loop commands that locate and toggle the checkboxes on the page (Inspect the checkboxes).</li>
+                    <li>Save and run the script!</li>
                   </ol>
                   <aside class="notes">
 
@@ -917,18 +940,34 @@ caps.setCapability("version", "43.0");
                   </aside>
                 </section>
 
-              <section data-state="lab">
-                <h3>Lab: Sauce Labs Scripting</h3>
+                <section>
+
+                  <section data-state="lab">
+                    <h3>Lab 4: Sauce Labs Scripting</h3>
+                    <ol>
+                      <li>Open the SampleSauceTest.java file in the java-testng-simple_waits project.</li>
+                      <li>Copy the global variables above the <pre style="display:inline;">main()</pre> function. Paste it into our SampleSauceTest.java in the java-testng-simple project.</li>
+                      <li>Add in your username to the USERNAME String variable.</li>
+                    </ol>
+                  </section>
+
+                  <section data-state="lab">
+                <h3>Lab 4: Sauce Labs Scripting (cont.)</h3>
                 <ol>
-                  <li>Log into <a href="http://saucelabs.com" target="_blank">saucelabs.com</a>, click on "My Account" and copy your Access Key.</li>
-                  <li>Add in the String variables with the values required to authenticate with Sauce Labs.</li>
-                  <li>Add in a String variable with the URL required to access Sauce Labs.</li>
-                  <li>Comment out the old Firefox driver and create a new RemoteWebDriver object.</li>
+                  <li>Log into <a href="http://saucelabs.com" target="_blank">saucelabs.com</a>.</li>
+                  <li>From the lower left corner, go to Username > My Account</li>
+                  <li>Scroll down to Access Key, click Show</li>
+                  <li>Enter your password, then click Authorize</li>
+                  <li>Copy your Access Key</li>
+                  <li>In Eclipse, paste your Access Key into the script for the value of the ACCESS_KEY String variable.</li>
                 </ol>
+                <aside class="notes">
+                  <p>Obtain your access key to authenticate with Sauce Labs for running remote scripts</p>
+                </aside>
               </section>
 
               <section data-state="lab">
-                <h3>Lab: Sauce Labs Scripting (cont.)</h3>
+                <h3>Lab 4: Sauce Labs Scripting (cont.)</h3>
                 <ol>
                   <li>Go to the <a href="https://wiki.saucelabs.com/display/DOCS/Platform+Configurator" target="_blank">Platform Configurator.</a></li>
                   <li>Select the Selenium API option.</li>
@@ -936,24 +975,25 @@ caps.setCapability("version", "43.0");
                   <li>Select a Windows 8 OS.</li>
                   <li>Select a Chrome version 50.0 browser</li>
                   <li>Copy and paste the resulting Java code into your script, at the start of the main() function.</li>
+                  <li>Comment out the old Chrome driver and System.setProperty() directive.</li>
+                  <li>Create a new RemoteWebDriver object: <pre style="display:inline;">WebDriver driver = new RemoteWebDriver(new URL(URL), caps);</pre></li>
                 </ol>
                 <aside class="notes">
                 </aside>
               </section>
 
               <section data-state="lab">
-                <h3>Lab: Sauce Labs Scripting (cont.)</h3>
+                <h3>Lab 4: Sauce Labs Scripting (cont.)</h3>
                 <ol>
                   <li>Run the script.</li>
                   <li>Open the "Automated Tests" tab on saucelabs.com.</li>
-                  <li>What do you notice?</li>
-                  <li>What after-test options are available?</li>
+                  <li>Click the job and view the elements of your test in the video, the logs, and the metadata</li>
                 </ol>
+              </section>
               </section>
 
               <!-- New Sample Script to introduce-->
               <section>
-                <section>
                   <h3>Explicit and Implicit Waits</h3>
 
                   <p>Implicit Waits</p>
@@ -980,31 +1020,26 @@ WebElement messageElement = wait.until(
                   </aside>
                 </section>
 
+              <section>
                 <section data-state="lab">
-                  <h3>Lab: Testing Waits</h3>
+                  <h3>Lab 5: Testing Waits</h3>
                   <ol>
                     <li>Open a browser and go to <a href="http://the-internet.herokuapp.com/dynamic_loading" target="_blank">http://the-internet.herokuapp.com/dynamic_loading</a>.</li>
-                    <li>Click on each example.</li>
-                    <li>What's going to happen with our test if we don't set a wait for these elements?</li>
+                    <li>Select Example 2: Element rendered after the fact, then click Start.</li>
+                    <li>Inspect the "Hello World" text. What is it's id?</li>
+                    <li>In Eclipse, open java-testng-simple_waits > com.yourcompany >SampleSauceTest.java.</li>
+                    <li>Note the findElement that looks for the "finish" id.</li>
+                    <li>Run the test. What happened and why?</li>
                   </ol>
                 </section>
 
                 <section data-state="lab">
-                  <h3>Lab: Testing Waits (cont. 1)</h3>
+                  <h3>Lab 5: Testing Waits (cont.)</h3>
                   <ol>
-                    <li>Run the java-testng-simple_waits script as is.</li>
-                    <li>Why did it fail?</li>
-                    <li>Write an explicit wait for a locator for the "Hello World" until it appears.</li>
-                  </ol>
-                </section>
-
-                <section data-state="lab">
-                  <h3>Lab: Testing Waits (cont. 2)</h3>
-                  <ol>
-                    <li>Open the java-testng-simple_waits script.</li>
-                    <li>Write a wait object that waits for 10 seconds.</li>
-                    <li>Write a wait.until for the Hello World element.</li>
+                    <li>Add in the Wait command for a 10 seconds wait.</li>
+                    <li>Apply the wait to the findElement for "Finish": <pre style="display:inline;">wait.until(ExpectedConditions.presenceOfElementLocated(By.id(“finish”)));</pre></li>
                     <li>Run the script again.</li>
+                    <li>Go to the Sauce Labs Dashboard and view your two tests, one with an error and the other complete.</li>
                   </ol>
                 </section>
               </section>
@@ -1194,10 +1229,11 @@ public void the_feeling_is(String arg1) throws Throwable {
                   <section data-state="lab">
                     <h3>Lab: Asserting Your Greatness</h3>
                     <ol>
-                      <li>Open the assert script.</li>
-                      <li>Add an assert that makes sure that the title of the guinea pig page is "I am a page title - Sauce Labs".</li>
-                      <li>Add an assert that makes sure that the checkbox is checked (true).</li>
-                      <li>Run the script.</li>
+                      <li>In Eclipse, go to java-testng.simple_assert > src/test/java > com.yourcompany > SampleSauceTest.java</li>
+                      <ul><li>Notice the Assert line for <pre style="display:inline;">getTitle()</pre>.</li></ul>
+                      <li>Run the test.</li>
+                      <li>What happens to the test and why?</li>
+                      <li>Change the expected value that compares against the <pre style="display:inline;">getTitle()</pre>, save, and run the test again.</li>
                     </ol>
                   </section>
                 </section>
@@ -1222,9 +1258,10 @@ public void the_feeling_is(String arg1) throws Throwable {
                 <section data-state="lab">
                   <h3>Lab: Record Keeping</h3>
                   <ol>
-                    <li>Add the appropriate library or dependency to the imports or POM to our java-testng-simple script</li>
-                    <li>Write the lines that will send the right feedback to Sauce Labs.</li>
-                    <li>Look in saucelabs.com.</li>
+                    <li>In Eclipse, go to java.testng-simpleSL-report > src/test/java > com.yourcompany > SampleSauceTest.java</li>
+                    <li>Notice the String id of the session from Sauce Labs, the Sauce Labs API object, and the pass criteria statement</li>
+                    <li>Run the test.</li>
+                    <li>In the refreshed Sauce Labs Dashboard, notice the changes in how the pass criteria appear</li>
                   </ol>
                   <aside class="notes">
 
@@ -1466,7 +1503,7 @@ caps.setCapability("name","Java Remote Sample Test");
                      <section data-state="lab">
                        <h3>Lab: Labelling and Naming our Tests</h3>
                        <ol>
-                         <li>Open the java-testng-simple script.</li>
+                         <li>In Eclipse, open java.testng-simple > com.yourcompany >SampleSauceTest.java</li>
                          <li>Add a capability to name your test.</li>
                          <li>Add a capability to include a build number for your test.</li>
                          <li>Add a capability to include a tag for your test.</li>

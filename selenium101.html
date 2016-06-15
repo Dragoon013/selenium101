@@ -50,6 +50,10 @@
         <img id="lab_pic" src="assets/images/Laboratory2.png" style="visibility:hidden; border:0; width:200px; height:200px; background:none; position:absolute; right:0; top:0;">
         <img id="darksauce" src="assets/images/eggs/DarkSauce.png" style="visibility:hidden; border:0; width:500px; height:500px; background:none; position:absolute;">
 
+        <div class="footer">
+          <font size="1">© Copyright 2016 by ServiceRocket, Inc | Confidential | Prepared for Sauce Labs</font>
+        </div>
+
 	        <div class="slides">
 
               <section data-background="rgb(226, 35, 26)">
@@ -821,9 +825,10 @@ submitButton.submit();
                   <ol>
                     <li>Open SampleSauceTest.java in the java-testng-simple project.</li>
                     <li>If you have not done so, change the <pre style="display:inline">driver.get("URL")</pre> to <pre style="display:inline">driver.get("http://saucelabs.github.io/training-test-page/")</pre>.</li>
-                    <li>Open a new Chrome browser window and open the training test page site.</li>
                     <li>Comment out the drop-down (ham) id element locator and action.</li>
+                    <li>Open a new Chrome browser window and open the training test page site.</li>
                     <li>Right click on the Comments box, choose Inspect. Notice in the Page Inspector, that the comments box id is "comments".</li>
+
                   </ol>
                 </section>
 
@@ -832,9 +837,9 @@ submitButton.submit();
 
                   <ol>
                     <li>In Eclipse, after <pre style="display:inline">driver.get(URL)</pre>, enter <pre style="display:inline">driver.findElement(By.id(“comments”)).sendKeys(“Hello World”);</pre> Then click Save.</li>
-                    <li>In Eclipse enter <pre style="display:inline;">driver.findElement(By.id(“<Send button id>”)).submit();</pre></li>
-                    <li>From the Sauce Labs training site in the browser, right click the Send button and choose Select </li>
-                    <li>Uncomment and fill the while loop commands that locate and toggle the checkboxes on the page (Inspect the checkboxes).</li>
+                    <li>Go back to the training page. Right click on the "send" button, choose Inspect. Notice in the Page Inspector, that the send button id is "submit".</li>
+                    <li>In Eclipse enter <pre style="display:inline;">driver.findElement(By.id("submit")).submit();</pre></li>
+                    <li>Uncomment and fill the while loop commands that locate and toggle <b>both</b> the checkboxes on the page (Inspect the checkboxes).</li>
                     <li>Save and run the script!</li>
                   </ol>
                   <aside class="notes">
@@ -1028,6 +1033,7 @@ WebElement messageElement = wait.until(
                     <li>Select Example 2: Element rendered after the fact, then click Start.</li>
                     <li>Inspect the "Hello World" text. What is it's id?</li>
                     <li>In Eclipse, open java-testng-simple_waits > com.yourcompany >SampleSauceTest.java.</li>
+                    <li>Fill in the global variables with your Sauce Labs username and access key.</li>
                     <li>Note the findElement that looks for the "finish" id.</li>
                     <li>Run the test. What happened and why?</li>
                   </ol>
@@ -1211,7 +1217,6 @@ public void the_feeling_is(String arg1) throws Throwable {
                   </aside>
                 </section>
 
-                <section>
                   <section>
                     <h3>Asserts:</h3>
                     <p>A testing framework directive that assumes a value to be true, and stops the test and/or throws an error if false.</p>
@@ -1227,18 +1232,16 @@ public void the_feeling_is(String arg1) throws Throwable {
 
               <!-- New Script to introduce-->
                   <section data-state="lab">
-                    <h3>Lab: Asserting Your Greatness</h3>
+                    <h3>Lab 6: Asserting Your Greatness</h3>
                     <ol>
                       <li>In Eclipse, go to java-testng.simple_assert > src/test/java > com.yourcompany > SampleSauceTest.java</li>
                       <ul><li>Notice the Assert line for <pre style="display:inline;">getTitle()</pre>.</li></ul>
                       <li>Run the test.</li>
-                      <li>What happens to the test and why?</li>
-                      <li>Change the expected value that compares against the <pre style="display:inline;">getTitle()</pre>, save, and run the test again.</li>
+                      <li>Notice the output in the Eclipse console. What happens to the test and why?</li>
+                      <li>Correct the expected value that compares against the <pre style="display:inline;">getTitle()</pre>, save, and run the test again.</li>
                     </ol>
                   </section>
-                </section>
 
-                <section>
                 <section>
                   <h3>Record your Results with Sauce Labs</h3>
                   <ul>
@@ -1256,7 +1259,7 @@ public void the_feeling_is(String arg1) throws Throwable {
                 </section>
 
                 <section data-state="lab">
-                  <h3>Lab: Record Keeping</h3>
+                  <h3>Lab 7: Record Keeping</h3>
                   <ol>
                     <li>In Eclipse, go to java.testng-simpleSL-report > src/test/java > com.yourcompany > SampleSauceTest.java</li>
                     <li>Notice the String id of the session from Sauce Labs, the Sauce Labs API object, and the pass criteria statement</li>
@@ -1264,10 +1267,10 @@ public void the_feeling_is(String arg1) throws Throwable {
                     <li>In the refreshed Sauce Labs Dashboard, notice the changes in how the pass criteria appear</li>
                   </ol>
                   <aside class="notes">
-
+                    <p>move the .quit() function above the api call, so that way, if the api call fails, then the test won't fail.</p>
                   </aside>
                 </section>
-</section>
+
                  <!--Best Practices Module-->
 
                  <section data-background="rgb(226, 35, 26)">
@@ -1482,7 +1485,6 @@ public void enterCommentText(String text){
                      </aside>
                    </section>
 
-                   <section>
                      <section>
                        <h3>Label Your Tests</h3>
                        <p>
@@ -1501,7 +1503,7 @@ caps.setCapability("name","Java Remote Sample Test");
                      </section>
 
                      <section data-state="lab">
-                       <h3>Lab: Labelling and Naming our Tests</h3>
+                       <h3>Lab 8: Labelling and Naming our Tests</h3>
                        <ol>
                          <li>In Eclipse, open java.testng-simple > com.yourcompany >SampleSauceTest.java</li>
                          <li>Add a capability to name your test.</li>
@@ -1512,7 +1514,6 @@ caps.setCapability("name","Java Remote Sample Test");
                        </ol>
                        <aside class="notes">There's also a way to set your own build number as well</aside>
                      </section>
-                   </section>
 
                  <section data-background="rgb(226, 35, 26)">
                    <h2>Additional Resources</h2>

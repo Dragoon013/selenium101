@@ -78,10 +78,7 @@
                       <strong>Jacob Teal</strong>
                       <p>Technology Consultant</p>
                       <p>B.A. Computational Mathematics</p>
-                      <p>Previous (and current) Work:</p>
-                      <li>Atlassian</li>
-                      <li>NGINX</li>
-                      <li>New Relic</li>
+                      <p>Email: jacob.teal@servicerocket.com</p>
 
 					  </p>
                     </div>
@@ -627,7 +624,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                   <h3>Lab 2: Running the Sample Script</h3>
                   <ol>
                     <li>Open Eclipse from the desktop shortcut.</li>
-                    <li>In the package explorer left hand side panel, open java-testng-sample > src/test/java > com.yourcompany > SampleSauceTest.java.</li>
+                    <li>In the package explorer left hand side panel, open java-testng-simple > src/test/java > com.yourcompany > SampleSauceTest.java.</li>
                     <li>Make a note of the website we are telling the driver to access.</li>
                     <li>Right click on java-testng-simple and select Run As > 9 Maven test.</li>
                   </ol>
@@ -1365,15 +1362,16 @@ public void the_feeling_is(String arg1) throws Throwable {
 
                   <section>
                     <h3>Setup</h3>
-                    <p>Setup initiates <i>prerequisite</i> tasks to be taken care of before your test runs, such as logging in, or dismissing an introductory pop-up.</p>
+                    <p>Setup initiates <i>prerequisite</i> tasks to be taken care of before your test runs, usually setting the capabilities, configuring additional browser parameters, and more.</p>
 
                     <p>Example:</p>
                     <pre><code class="java" data-trim contenteditable>
                         public void setupLogin() {
 
-    driver.findElement(By.id("loginID")).sendKeys("username");
-    driver.findElement(By.id("password")).sendKeys("password");
-    driver.findElement(By.id("Button")).click();
+    DesiredCapabilities caps = new DesiredCapabilities();
+    caps.setCapability("platform", "Windows XP");
+    caps.setCapability("browserName", "Chrome");
+    caps.setCapability("version", "43.0");
 }
                     </code></pre>
 
@@ -1387,9 +1385,15 @@ public void the_feeling_is(String arg1) throws Throwable {
                     <p>The teardown function includes <i>Post requisite</i> tasks that need to occur, like closing the browser, logging out, or terminating the remote session.</p>
                     <p>Example:</p>
                     <pre><code class="java" data-trim contenteditable>
-                        public void tearDown() throws Exception {
+                        public void tearDown(boolean testTrue) throws Exception {
 
     webDriver.get().quit();
+
+    if (testTrue)) {
+        r.jobPassed(id);
+    } else {
+        r.jobFailed(id);
+    }
 }
                     </code></pre>
                     <aside class="notes"></aside>

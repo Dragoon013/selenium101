@@ -100,6 +100,33 @@
               </section>
 
               <section>
+                  <h3>The Training Environment</h3>
+
+                  <ul>
+                    <li>ReadyTech virtual machines</li>
+                    <li>Eclipse</li>
+                    <li>Maven</li>
+                  </ul>
+
+                  <aside class="notes">
+                    <p>So before we go into the different parts we need to incldue in a script, let's talk about our training environment.</p>
+                    <p>First off, we'll be working in a VM provided by ReadyTech today. If you have any problems during the course of labs, I will be able to go into your instance and help you out. You can just notify me using the ReadyTech instance to tell me that you need help.</p>
+                    <p>We're also going to be working in Eclipse today. In Eclipse, we have set up the scripts within a framework called TestNG, for Java, that allows us to run the scripts with all of the dependencies it needs very easily.</p>
+                    <p>That within that framework, there is a library, or build tool, called Maven that we are using to grab our dependencies, bundle them together, and then run our script.</p>
+                    <p>Normally, we would have to run a long command that looks like:</p>
+                    <pre><code class="java" data-trim contenteditable>
+                        javac -cp ".:./selenium-2.53.0/selenium-java-2.53.0.jar:./selenium-2.53.0/libs/*" SampleSauceTest.java
+                        java -cp ".:./selenium-2.53.0/selenium-java-2.53.0.jar:./selenium-2.53.0/libs/*" SampleSauceTest
+                    </code></pre>
+                    <p>The first line compiles the code with all of the requisite libraries and jars it needs, and then the second line runs it.</p>
+                    <p>Maven will do all of that for us, so we don't need to run an additional script to start the test script, or have to include the libraries manually in a command.</p>
+                    <p>Throughout the course today, the way we will run our tests is by using the "Maven test" command, which should compile all of our resources and dependencies together, and run it for us.</p>
+                    <p>Lastly, for those of you who may not have used Eclipse before, when you type in a line that does not have the right syntax, it will generally underline the offending line or part of the line that you need to fix, in red. If you simply hover or select that part of the line, Ecplise will give you suggestions on how to fix the problem.</p>
+
+                  </aside>
+                </section>
+
+              <section>
                 <h3>Agenda</h3>
 
                 <div style="text-align:left;">
@@ -244,7 +271,7 @@
                     </ul>
                   </div>
                   <aside class="notes">
-                    <p>If tbe Selenium grid itself isn't enough, Sauce Labs provides a whole slew of other additional features, such as security, recorded tests and integration with other tools. Sauce Labs provides security through it's Sauce Connect technology, which allows you to run tests on your locally hosted application. It sends your Selenium or appium commands through an encrypted tunnel, ensuring that your information is protected.</p>
+                    <p>If tbe Selenium grid itself isn't enough, Sauce Labs provides a whole slew of other additional features, such as security, recorded tests and integration with other tools. Sauce Labs provides security through it's Sauce Connect technology, which allows you to run tests on your localhost applications. It sends your Selenium or appium commands through a proxy server, ensuring that your information is protected.</p>
                     <p>Seamless integration refers the multitude of pltforms that Sauce integrates with, such as Jenkins, Bamboo, JIRA, and more.</p>
                     <p>And each test you run is recorded by default. This includes screenshots, a video recording of the entire test, as well as log files.</p>
                   </aside>
@@ -294,8 +321,9 @@
 				  <p><ul>
                     Let's take a tour of the Docs!
                     <li><a href="https://wiki.saucelabs.com/display/DOCS/The+Sauce+Labs+Cookbook+Home" target="_blank">Sauce Labs Documentation</a></li>
-                    <ul><li><a href="https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/" target="_blank">The Platform Configurator</a></li></ul>
                     <li><a href="http://docs.seleniumhq.org/docs/" target="_blank">Selenium Documentation</a></li>
+                    <li><a href="https://github.com/saucelabs-sample-scripts" target="_blank">Sauce Labs Sample Test Scripts</a></li>
+                    <li><a href="https://github.com/saucelabs-sample-test-frameworks" target="_blank">Sauce Labs Sample Test Frameworks</a></li>
 				  </ul></p>
                   <aside class="notes">
                     Click on each of the links, and run through each of the sites Docs
@@ -353,33 +381,6 @@
                     <p>The only difference between how Selenium works locally or remotely is where the browser is opened to exceute the commands. Locally, the driver will just open a brwoser based off of the type driver used in the script. Remotely, in particular on Sauce Labs, the remote webdriver is used to pass the script commands along to a remote browser, whose type is set through additional commands. With Sauce Labs, you'll have the additional step of the test asset creation at the end. These are the videos, screenshots, and logs that recorded your test.</p>
                   </aside>
 				</section>
-
-                <section>
-                  <h3>The Training Environment</h3>
-
-                  <ul>
-                    <li>ReadyTech virtual machines</li>
-                    <li>Eclipse</li>
-                    <li>Maven</li>
-                  </ul>
-
-                  <aside class="notes">
-                    <p>So before we go into the different parts we need to incldue in a script, let's talk about our training environment.</p>
-                    <p>First off, we'll be working in a VM provided by ReadyTech today. If you have any problems during the course of labs, I will be able to go into your instance and help you out. You can just notify me using the ReadyTech instance to tell me that you need help.</p>
-                    <p>We're going to be working in Eclipse today. In Eclipse, we have set up the scripts within a framework called TestNG, for Java, that allows us to run the scripts with all of the dependencies it needs very easily.</p>
-                    <p>That within that framework, there is a library, or build tool, called Maven that we are using to grab our dependencies, bundle them together, and then run our script.</p>
-                    <p>Normally, we would have to run a long command that looks like:</p>
-                    <pre><code class="java" data-trim contenteditable>
-                        javac -cp ".:./selenium-2.53.0/selenium-java-2.53.0.jar:./selenium-2.53.0/libs/*" SampleSauceTest.java
-                        java -cp ".:./selenium-2.53.0/selenium-java-2.53.0.jar:./selenium-2.53.0/libs/*" SampleSauceTest
-                    </code></pre>
-                    <p>The first line compiles the code with all of the requisite libraries and jars it needs, and then the second line runs it.</p>
-                    <p>Maven will do all of that for us, so we don't need to run an additional script to start the test script, or have to include the libraries manually in a command.</p>
-                    <p>Throughout the course today, the way we will run our tests is by using the "Maven test" command, which should compile all of our resources and dependencies together, and run it for us.</p>
-                    <p>Lastly, for those of you who may not have used Eclipse before, when you type in a line that does not have the right syntax, it will generally underline the offending line or part of the line that you need to fix, in red. If you simply hover or select that part of the line, Ecplise will give you suggestions on how to fix the problem.</p>
-
-                  </aside>
-                </section>
 
                 <section>
                   <section>
@@ -809,6 +810,7 @@ submitButton.submit();
                   </ol>
                   <aside class="notes">
                     <p>Make sure you let the students know that they should watch you do it, then follow the steps themselves, after you show them.</p>
+                    <p>Make a point of the fact that they can use the training web page them selves when they are trying out new scripts with selenium.</p>
                   </aside>
                 </section>
 
@@ -1538,7 +1540,7 @@ caps.setCapability("name","Java Remote Sample Test");
 
                  <section>
                    <h3>Q&A</h3>
-                   <li>Insert link to survey</li>
+                   <li><a href="http://bit.ly/28NgER3" target="_blank">Survey!</a></li>
                    <li>Support: <a href="mailto:help@saucelabs.com" target="_top">help@saucelabs.com</a></li>
                    <aside class="notes"></aside>
                  </section>

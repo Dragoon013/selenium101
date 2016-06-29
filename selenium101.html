@@ -648,20 +648,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                   </aside>
                 </section>
 
-                <!--
                 <section>
-                  <h3>Choosing a WebDriver</h3>
-
-                  <pre><code class="java" data-trim contenteditable>
-                      WebDriver driver = new FirefoxDriver();
-WebDriver driver = new InternetExplorerDriver();
-WebDriver driver = new ChromeDriver();
-                  </pre></code>
-                  <aside class="notes">So now we need to select a webdriver that we actually want to use. Let's try using the Chrome Driver now (default should have used FireFox)</aside>
-                </section>
--->
-
-                  <section>
                     <section>
                       <h3>Identifying Elements</h3>
                       <p style="text-align:center;">Locator Expressions are made in Key:Value pairs</p>
@@ -669,8 +656,8 @@ WebDriver driver = new ChromeDriver();
                           WebElement linkElement = driver.findElement(By.id("i am a link"));
                       </code></pre>
                       <aside class="notes">
-                        <p>We took a look at locating elements briefly in the pervious module, and now we have some examples on using each of the different locator types.</p>
-                        <p>Generally, we locator expressions are made in Key:Value pairs. In our example here, the key is going to ID, and we are looking for the ID with the value "I am a link"</p>
+                        <p>We took a look at locating elements briefly in the pervious module, and now we have some examples on using some of the different locator types.</p>
+                        <p>Generally, locator expressions are made in Key:Value pairs. In our example here, the key is going to ID, and we are looking for the ID with the value "I am a link"</p>
                       </aside>
                     </section>
 

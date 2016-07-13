@@ -182,10 +182,10 @@
 
                       <p>
                         <pre><span class="inner-pre" style="font-size: 30px">
-  Our purpose is to revolutionize testing
+  "Our purpose is to revolutionize testing
          so that development teams
      are free to innovate and deliver
-        amazing applications—faster.</span></pre>
+        amazing applications—faster".</span></pre>
                     </p>
                       <!--Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.-->
 
@@ -232,7 +232,7 @@
                   <div style="float:left;width:40%;" class="centered">
                     Local
                     <p><ul>
-                      <li>Can only test on local OS and browsers</li>
+                      <li>Test on local OS and browsers only</li>
                       <li>Record results</li>
                     </ul></p>
                   </div>
@@ -296,7 +296,7 @@
 
                 <section>
                   <h3>Manual Testing</h3>
-                  <p>The traditional method of testing applications and sites.</p>
+                  <p>The traditional method of testing applications and sites</p>
                   <ul>
                     <li>Testing Locally</li>
                     <li>Sauce Labs Manual Tests</li>
@@ -611,7 +611,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                   <ol>
                     <li>Open Eclipse from the desktop shortcut.</li>
                     <li>In the package explorer left hand side panel, open java-testng-simple > src/test/java > com.yourcompany > SampleSauceTest.java.</li>
-                    <li>Make a note of the website we are telling the driver to access.</li>
+                    <li>Make a note of the website we tell the driver to access.</li>
                     <li>Right click on java-testng-simple and select Run As > 9 Maven test.</li>
                   </ol>
                  <aside class="notes">
@@ -718,8 +718,8 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                     <h3>Performing an Action</h3>
 
                     <div style="text-align:left;float:left;">
-                      <li>Once you locate an element, you can perform an action on it.</li><p></p>
-                    <li>Perform actions by invoking interaction methods on the WebElement object we identified earlier.</li>
+                      <li>Once you locate an element, you can perform an action on it</li><p></p>
+                    <li>Perform actions by invoking interaction methods on the WebElement object we identified earlier</li>
 
                   <div style="text-align:center;float:right;">
                     <img src="assets/images/action.png" style="border:none; background:none; width:50%">
@@ -923,7 +923,7 @@ caps.setCapability("version", "43.0");
                   <section data-state="lab">
                     <h3>Lab 3: Sauce Labs Scripting</h3>
                     <ol>
-                      <li>Open the SampleSauceTest.java file in the java-testng-simple_waits project.</li>
+                      <li>Open the Sauce Reporting script in the Reporting project.</li>
                       <li>Copy the global variables above the <pre style="display:inline;">main()</pre> function. Paste it into our SampleSauceTest.java in the java-testng-simple project.</li>
                       <li>Add in your username to the USERNAME String variable.</li>
                     </ol>
@@ -968,7 +968,7 @@ caps.setCapability("version", "43.0");
                 <h3>Lab 3: Sauce Labs Scripting (cont.)</h3>
                 <ol>
                   <li>Run the script.</li>
-                  <li>Open the "Automated Tests" tab on saucelabs.com.</li>
+                  <li>Open the Automated Tests tab on saucelabs.com.</li>
                   <li>Click the job and view the elements of your test in the video, the logs, and the metadata</li>
                 </ol>
               </section>
@@ -1214,7 +1214,7 @@ public void the_feeling_is(String arg1) throws Throwable {
                   <section data-state="lab">
                     <h3>Lab 5: Asserting Your Greatness</h3>
                     <ol>
-                      <li>In Eclipse, go to java-testng.simple_assert > src/test/java > com.yourcompany > SampleSauceTest.java</li>
+                      <li>In Eclipse, go to java-testng.simple_assert > src/test/java > com.yourcompany > SampleAssertTest.java</li>
                       <ul><li>Notice the Assert line for <pre style="display:inline;">getTitle()</pre>.</li></ul>
                       <li>Run the test.</li>
                       <li>Notice the output in the Eclipse console. What happens to the test and why?</li>
@@ -1225,7 +1225,7 @@ public void the_feeling_is(String arg1) throws Throwable {
                 <section>
                   <h3>Record your Results with Sauce Labs</h3>
                   <ul>
-                  <li>Use the update_job method in the Sauce Labs REST API after the test has run.</li>
+                  <li>Use the update_job method in the Sauce Labs REST API after the test runs</li>
                   <p></p>
                   <li>Use the Java Helper library; it will automatically send pass/fail results to Sauce Labs</li>
                   <p></p>
@@ -1242,23 +1242,23 @@ public void the_feeling_is(String arg1) throws Throwable {
                 <section data-state="lab">
                   <h3>Lab 6: Record Keeping</h3>
                   <ol>
-                    <li>In Eclipse, go to java.testng-simpleSL-report > src/test/java > com.yourcompany > SampleSauceTest.java</li>
-                    <li>Notice the String id of the session from Sauce Labs, the Sauce Labs API object, and the pass criteria statement.</li>
-                    <li>Run the test.</li>
-                    <li>In the refreshed Sauce Labs Dashboard, notice the changes in how the pass criteria appear.</li>
+                    <li>In Eclipse, go to java.testng-simpleSL-report > src/test/java > com.yourcompany > ReportingTest.java</li>
+                    <li>Notice the String id of the session from Sauce Labs, the Sauce Labs API object, and the pass criteria statement</li>
+                    <li>Run the test</li>
+                    <li>In the refreshed Sauce Labs Dashboard, notice the changes in how the pass criteria appear</li>
                   </ol>
                   <aside class="notes">
-                    <p>move the .quit() function above the api call, so that way, if the api call fails, then the test won't fail.</p>
+                    <p>move the .quit() function above the api call, so that way, if the api call fails, then the test won't fail</p>
                   </aside>
                 </section>
 
                 <section data-state="lab">
                   <h3>Lab 6: Record Keeping (cont.)</h3>
                   <ol>
-                    <li>Go back in Eclipse to the script.</li>
-                    <li>Change the if statement so that the test will fail.</li>
-                    <li>Run the test.</li>
-                    <li>In the refreshed Sauce Labs Dashboard, notice the indications for a failed test in the UI.</li>
+                    <li>Go back in Eclipse to the script</li>
+                    <li>Change the if statement so that the test will fail</li>
+                    <li>Run the test</li>
+                    <li>In the refreshed Sauce Labs Dashboard, notice the indications for a failed test in the UI</li>
                   </ol>
                   <aside class="notes">
                   </aside>
@@ -1283,7 +1283,7 @@ public void the_feeling_is(String arg1) throws Throwable {
 
                 <section>
                      <h3>Small, Atomic, and Autonomous Testing</h3>
-                     <p>Small: Tests should be short and succinct.</p>
+                     <p>Small: Tests should be short and succinct</p>
                      <p>Atomic: Tests should focus on testing a single feature.</p>
                      <p>Autonomous: Tests should be independent of other tests.</p>
 
@@ -1475,9 +1475,9 @@ public void enterCommentText(String text){
                    <section>
                      <h3>Parallelization</h3>
                      <p>Avoid dependencies between tests</p>
-                     <ul><li>If you chain tests together, when one at the top fails, then they will all fail.</li></ul>
+                     <ul><li>If you chain tests together, when one at the top fails, then they will all fail</li></ul>
                      <p>Use Frameworks</p>
-                     <ul><li>Frameworks include helpful libraries and functionality that can help you make the most of parallelization.</li></ul>
+                     <ul><li>Frameworks include helpful libraries and functionality that can help you make the most of parallelization</li></ul>
                      <aside class="notes">
                        <p>Running tests in parallel is the secret Sauce for accelerating your development process and creating a continuous integration/continuous delivery pipeline.</p>
                        <p>One of the main features that Sauce Labs offers is parallelization, the ability to run serveral scripts at once on a variety of platforms. Since tests and commands are sent remotely, these tests take longer to run individually, but with parallelization, we can run them all at once. That is, we can start them all at the same time, which cuts down on the total time tests would normally take, saving time and money for your teams and business.</p>
@@ -1505,11 +1505,11 @@ caps.setCapability("name","Java Remote Sample Test");
                      <section data-state="lab">
                        <h3>Lab 7: Labelling and Naming our Tests</h3>
                        <ol>
-                         <li>In Eclipse, open java.testng-simple > com.yourcompany >SampleSauceTest.java</li>
-                         <li>Add a capability to name your test.</li>
-                         <li>Add a capability to include a build number for your test.</li>
-                         <li>Add a capability to include a tag for your test.</li>
-                         <li>Run the test script.</li>
+                         <li>In Eclipse, open jjava.testng-simple > com.yourcompany >SampleSRCTest.java</li>
+                         <li>Add a capability to name your test</li>
+                         <li>Add a capability to include a build number for your test</li>
+                         <li>Add a capability to include a tag for your test</li>
+                         <li>Run the test script</li>
                          <li>Open saucelabs.com. How does your test look different on the Automated Tests tab?</li>
                        </ol>
                        <aside class="notes">There's also a way to set your own build number as well</aside>

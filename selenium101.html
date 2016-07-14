@@ -1160,7 +1160,7 @@ public void the_feeling_is(String arg1) throws Throwable {
 }
                   </code></pre>
                   <aside class="notes">
-                    <p>This is an example of using CucumberJVM, a BDD testing and code writing framework. We can see how we may write out functions for the Given, When, Then, example we filled out.</p>
+                    <p>This is an example of BDD using CucumberJVM, a BDD testing and code writing framework. We can see how we may write out functions for the Given, When, Then, example we filled out.</p>
                   </aside>
                 </section>
                 </section>
@@ -1197,6 +1197,7 @@ public void the_feeling_is(String arg1) throws Throwable {
                   </aside>
                 </section>
 
+                <section>
                   <section>
                     <h3>Asserts:</h3>
                     <p>A testing framework directive that assumes a value to be true, and stops the test and/or throws an error if false.</p>
@@ -1209,6 +1210,29 @@ public void the_feeling_is(String arg1) throws Throwable {
                       <p>A common element of Selenium scripts are Asserts. Asserts come with whichever testing framwork that you have decided to work with. They generally check whether a particular value is true or not. For example, if the uncheckedboxed state returns true, then that means the assert will pass. It's basically the test itself. If an assert fails, that generally means the test has failed as well. We're going to try using asserts ourselves.</p>
                     </aside>
                   </section>
+      <section>
+                    <h3>Assert Functions</h3>
+                    <div style="float:left;width:50%;" class="centered">
+                      <ul>
+                      <li>assertEquals</li>
+                      <li>assertNull</li>
+                      <li>assertSame</li>
+                      </ul>
+                    </div>
+
+                    <div style="float:right;width:40%;padding-right:0px;">
+                      <ul>
+                        <li>assertThrows</li>
+                        <li>assertTrue</li>
+                        <li>assertEqualsNoOrder</li>
+                      </ul>
+                    </div>
+                    <aside class="notes">
+                      <p>There are a lot of different kinds of assertion checks that you can make. All asserts will cause a test to fail, if the check or comparison returns false. Assert equals will compare two object's values. assertNull will assert the value of an object is null. assertSame will assert two objects are the same object. and so on.</p>
+                      <p>You find the full information on using asserts (with the testNG java framework) here: <a href="http://testng.org/javadocs/org/testng/Assert.html" target="_blank">assertion class details</a></p>
+                    </aside>
+                  </section>
+                </section>
 
               <!-- New Script to introduce-->
                   <section data-state="lab">

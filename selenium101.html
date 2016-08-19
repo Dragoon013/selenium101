@@ -476,13 +476,15 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                   </section>
 
                   <section>
-				    <h3>3. Locate HTML Elements on a Web Page</h3>
-				    <p>
+		    <h3>3. Locate HTML Elements on a Web Page</h3>
+		    <p>
+		      <div style="width:135%; position:relative; right:150px;">
                       <pre>
                         <code class="java" data-trim contenteditable style="text-align:center;">
-                          driver.findElement(By.id("ham"));
+                          driver.findElement(By.xpath("//*[@id=\"site-header\"]/div[3]/div/div/div[3]/div/span/button"));
                         </code>
                       </pre>
+		      </div>
                       <p>Identify by:</p>
                       <div style="float:left;width:50%;" class="centered">
                         <li>ID</li>
@@ -498,7 +500,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                         </div>
                     </p>
                     <aside class="notes">
-                      <p>Locator expressions are how we locate an HTML element or elements on a page that we want to interact with. The one in our script is pretty basic, it's just finding an element on the page that has an ID name of "ham"</p>
+                      <p>Locator expressions are how we locate an HTML element or elements on a page that we want to interact with. The one in our script is a little advanced, it's finding an element through it's xpath, which is essentially where it sits in the hierarchy of the html.</p>
                       <p>We can also idenfity elements by their class name, tag name, link text, css, or xPATH. We'll take a look at using these in more detail later on.</p>
                       <p>DEMO: now toggle a breakpoint at this line in the script, and step through.</p>
                     </aside>
@@ -514,24 +516,24 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                       <li>Internet Explorer developer tools</li>
                     </ul>
                     <aside class="notes">
-                      <p><mark>demo the page inspector on the presentation at least. Find the "ham" element on saucelabs.com</mark></p>
+                      <p><mark>demo the page inspector on the presentation at least. Find the xpath of the search button element on saucelabs.com</mark></p>
                       <p>These are a few popular Locator helper tools. Basically, you need to use the standard dev tools that come with the brwoser, or that are add-ons for the browser, and they can help you ID particular elements that you want to interact with on a page.</p>
                     </aside>
                   </section>
 
                   <section>
                     <h3>4. Perform an Action on a HTML Element</h3>
-				    <p>
+		    <p>
                       <pre>
                         <code class="java" data-trim contenteditable style="text-align:center;">
-                          driver.findElement(By.id("ham")).click();
+                          driver.findElement(By.name("q")).sendKeys("Hi");
                         </code>
                       </pre>
                     </p>
                     <aside class="notes">
                       <p>Taking the element that we found earlier, we now want to perform an action on it.</p>
                       <p>Performing an action is typically just as a easy and calling "click", or "submit", or "SendKeys". But there are other actions that require more scripting to emulate user interaction, like Hover.</p>
-                      <p>We're going to go ahead and click on it. On saucelabs.com, the "ham" id points to a drop down, so we want to make sure that drop down works when clicked.</p>
+                      <p>We're going to go ahead and click on our search button, to make sure that it works.</p>
                       <p>DEMO: now toggle a breakpoint at this line in the script, and step through.</p>
                     </aside>
                   </section>
@@ -548,7 +550,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                       </ul>
                     <aside class="notes">
                       <p>Tests might fail because the elements that are expected for the next step haven't loaded into the browser yet. It's good to have an explicit wait time in this case, as after a click, it can be variable how long it takes for an element to be loaded.</p>
-                      <p>For example, when we click on that drop-down that has an ID of ham, it takes time for the options on the drop down to render. We would need to set a wait in order for the action on the drop down to succeed.</p>
+                      <p>For example, when we click on that saerch button, it takes time for the dropdown to appear. If your test fails after clicking on the button, you may consider placing a wait until the element that appeas after the click is fully rendered.</p>
                       <p>While we may not have waits in our current script, we will take a look at them in a later module.</p>
                       <p>DEMO: now toggle a breakpoint at this line in the script, and step through.</p>
                     </aside>
@@ -787,7 +789,7 @@ submitButton.submit();
                   <ol>
                     <li>Open SampleSauceTest.java in the java-testng-simple project.</li>
                     <li>If you have not done so, change the <pre style="display:inline">driver.get("URL")</pre> to <pre style="display:inline">driver.get("http://saucelabs.github.io/training-test-page/")</pre>.</li>
-                    <li>Comment out the drop-down (ham) id element locator and action.</li>
+                    <li>Comment out the xpath and name element locator and corresponding action(s).</li>
                     <li>Open a new Chrome browser window and open the training test page site.</li>
                     <li>Right click on the Comments box, choose Inspect. Notice in the Page Inspector, that the comments box id is "comments".</li>
 
@@ -1003,7 +1005,7 @@ WebElement messageElement = wait.until(
                     <li>Open a browser and go to <a href="http://the-internet.herokuapp.com/dynamic_loading" target="_blank">http://the-internet.herokuapp.com/dynamic_loading</a>.</li>
                     <li>Select Example 2: Element rendered after the fact, then click Start.</li>
                     <li>Inspect the "Hello World" text. What is it's id?</li>
-                    <li>In Eclipse, open java-testng-simple_waits > com.yourcompany >SampleSauceTest.java.</li>
+                    <li>In Eclipse, open java-testng-simple_waits > src/test/java > com.yourcompany >SampleSauceWaits.java.</li>
                     <li>Fill in the global variables with your Sauce Labs username and access key.</li>
                     <li>Note the findElement that looks for the "finish" id.</li>
                     <li>Run the test. What happened and why?</li>
@@ -1232,7 +1234,7 @@ public void the_feeling_is(String arg1) throws Throwable {
                   <section data-state="lab">
                     <h3>Lab 5: Asserting Your Greatness</h3>
                     <ol>
-                      <li>In Eclipse, go to java-testng.simple_assert > src/test/java > com.yourcompany > SampleAssertTest.java</li>
+                      <li>In Eclipse, go to java-testng-simple_assert > src/test/java > com.yourcompany > SampleSauceAssert.java</li>
                       <ul><li>Notice the Assert line for <pre style="display:inline;">getTitle()</pre>.</li></ul>
                       <li>Run the test.</li>
                       <li>Notice the output in the Eclipse console. What happens to the test and why?</li>
@@ -1260,7 +1262,7 @@ public void the_feeling_is(String arg1) throws Throwable {
                 <section data-state="lab">
                   <h3>Lab 6: Record Keeping</h3>
                   <ol>
-                    <li>In Eclipse, go to java.testng-simpleSL-report > src/test/java > com.yourcompany > ReportingTest.java</li>
+                    <li>In Eclipse, go to java-testng-simpleSL-report > src/test/java > com.yourcompany > SampleSauceReportScript.java</li>
                     <li>Notice the String id of the session from Sauce Labs, the Sauce Labs API object, and the pass criteria statement</li>
                     <li>Run the test</li>
                     <li>In the refreshed Sauce Labs Dashboard, notice the changes in how the pass criteria appear</li>
@@ -1523,7 +1525,7 @@ caps.setCapability("name","Java Remote Sample Test");
                      <section data-state="lab">
                        <h3>Lab 7: Labelling and Naming our Tests</h3>
                        <ol>
-                         <li>In Eclipse, open jjava.testng-simple > com.yourcompany >SampleSRCTest.java</li>
+                         <li>In Eclipse, open java-testng-simple > com.yourcompany > SampleSauceScript.java</li>
                          <li>Add a capability to name your test</li>
                          <li>Add a capability to include a build number for your test</li>
                          <li>Add a capability to include a tag for your test</li>

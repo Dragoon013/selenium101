@@ -68,7 +68,7 @@
               </section>
 
               <section>
-					<h3>Trainer Intro</h3>
+		<h3>Trainer Intro</h3>
 <!-- left column-->
                     <div style="float:left;width:50%;" class="centered">
                       <p>
@@ -82,7 +82,7 @@
                     <div style="float:right;width:40%;padding-right:0px;">
                       <img src="assets/images/starfish.png" style="border:0;background:none; left:0; top:0;">
                     </div>
-				</section>
+	      </section>
 
               <section>
                 <h3>Course Administration</h3>
@@ -151,7 +151,7 @@
                 </section>
 
                 <section>
-				  <h3>What is Sauce Labs?</h3>
+		  <h3>What is Sauce Labs?</h3>
                   <p>Testing infrastructure in the cloud for web and mobile web applications.</p>
                   <ul>
                   <li>Web Automated Testing</li>
@@ -170,19 +170,16 @@
                 </section>
 
                 <section>
-					<h3>Sauce Labs History</h3>
-
-					  <p>Founded in 2008, by Steven Hazel, John Dunham, and Jason Huggins (Co-creator of Selenium).</p>
-
-                      <p>
-                        <pre><span class="inner-pre" style="font-size: 30px">
+		  <h3>Sauce Labs History</h3>
+		  <p>Founded in 2008, by Steven Hazel, John Dunham, and Jason Huggins (Co-creator of Selenium).</p>
+		  <p>
+                    <pre><span class="inner-pre" style="font-size: 30px">
   "Our purpose is to revolutionize testing
          so that development teams
      are free to innovate and deliver
         amazing applications—faster".</span></pre>
                     </p>
                       <!--Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.-->
-
                     <aside class="notes">
                       <p>
                         Sauce Labs was founded in 2008 by Jason Huggins, co-creator of Selenium (the open source standard for automated testing frameworks) and Steve Hazel, current CTO. They set out to create a cloud-based platform for automated testing to free development teams from the hassle and cost of testing so they can focus on innovating their core capabilities.
@@ -192,8 +189,7 @@
                 </section>
 
                 <section>
-					<h3>CI/CD Cycle</h3>
-
+		  <h3>CI/CD Cycle</h3>
                     <img src="assets/images/sauceCI2.png" style="border:0; text-align:center; background:none;">
                     <p style="text-align:center;">Continuous Integration/Continuous Development</p>
                     <aside class="notes">
@@ -205,7 +201,7 @@
                 </section>
 
                 <section>
-				  <h3>What is Selenium?</h3>
+		  <h3>What is Selenium?</h3>
                   <p>Developed in 2004 by Jason Huggins at ThoughtWorks.</p>
 				  <p>Browser automation framework used for testing.</p>
                   <ul>
@@ -219,10 +215,10 @@
                     <p>Selenium is the testing framework that provides the actual language and ability to test interations on a browser. We use its API to write scripts in our preferred language, and then the commands in those scripts simulate interaction on a browser, either locally on your own computer, or remotely.</p>
 
                   </aside>
-				</section>
+		</section>
 
                 <section>
-				  <h3>Local vs Remote Selenium Tests</h3>
+		  <h3>Local vs Remote Selenium Tests</h3>
                   <div style="float:left;width:40%;" class="centered">
                     Local
                     <p><ul>
@@ -249,7 +245,7 @@
                     <p>But that's pretty painful and time consuming to set up and manage, not to even mention the cost of hardware.</p>
                     <p>Sauce Labs handles all of that stuff for you. They run a Selenium Grid themselves and rent it out to their customers to run their Selenium and Appium tests on. </p>
                   </aside>
-				</section>
+		</section>
 
                 <section>
                   <h3>Using Sauce Labs</h3>
@@ -655,7 +651,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                           WebElement linkElement = driver.findElement(By.id("i am a link"));
                       </code></pre>
                       <aside class="notes">
-                        <p>We took a look at locating elements briefly in the pervious module, and now we have some examples on using some of the different locator types.</p>
+                        <p>We took a look at locating elements briefly in the previous module, and now we have some examples on using some of the different locator types.</p>
                         <p>Generally, locator expressions are made in Key:Value pairs. In our example here, the key is going to ID, and we are looking for the ID with the value "I am a link"</p>
                       </aside>
                     </section>
@@ -1047,7 +1043,7 @@ WebElement messageElement = wait.until(
                 <section>
                   <h3>What is a Testing Framework?</h3>
                   <p></p>
-                  <p>A test automation framework is a scaffold comprised of libraries, dependecies, drivers, and helper scripts that facilitate the execution of Selenium test scripts.</p>
+                  <p>A test automation framework is a scaffold comprised of libraries, dependencies, drivers, and helper scripts that facilitate the execution of Selenium test scripts.</p>
                   <aside class="notes">
                     <p>Ok, what does that mean? It's essentially just a bunch of additional libraries we can use in conjunction with our script for several cases:</p>
                     <li>Record your data: Frameworks often have, or can have a way for you to output the results of your test scripts for you, rather than writing them by hand</li>
@@ -1331,7 +1327,7 @@ public void the_feeling_is(String arg1) throws Throwable {
 
                    <section>
                      <h3>Unit Testing</h3>
-                     <p>Unit tests are written from a developer persepective to ensure a menthod or function performs a set of tasks.</p>
+                     <p>Unit tests are written from a developer persepective to ensure a method or function performs a set of tasks.</p>
 
                      <aside class="notes">
                        <p>Unit testing focuses on testing very small parts of the application, going down to the basic functions and methods</p>
@@ -1358,17 +1354,23 @@ public void the_feeling_is(String arg1) throws Throwable {
                 </section>
 
                 <section>
-                  <section>
-                    <h3>Dependencies</h3>
-                    <p>Hard coding dependencies to access external account or data</p>
-                    <ul><li>Development and testing environments may change between the writing of your test scripts and when they run</li></ul>
-                    <ul><li>Security</li></ul>
-                    <aside class="notes">
-                      <p>We've talked about avoiding this a bit already, but there are some other dependencies for tests that need to be considered as well.</p>
-                      <p>Security we've talked about as well, we don't want to have a history of our credentials in a git history for example.</p>
-                    </aside>
-                  </section>
-
+		  <section>
+		    <h3>Test Dependencies</h3>
+		    <ul>
+		      <li>Hard coding dependencies to access external account or data</li>
+		      <li>Test Set-Up</li>
+		      <li>Test Teardown</li>
+		    </ul>
+		    <aside class="notes">
+		      <p>We've talked about avoiding this a bit already, but there are some other dependencies for tests that need to be considered as well.</p>
+		      <p>Security we've talked about as well, we don't want to have a history of our credentials in a git history for example.</p>
+		      <ul>
+			<li>Development and testing environments may change between the writing of your test scripts and when they run</li>
+			<li>Security</li>
+		      </ul>
+		    </aside>
+		  </section>
+		  
                   <section>
                     <h3>Setup</h3>
                     <p>Setup initiates <i>prerequisite</i> tasks to be taken care of before your test runs, usually setting the capabilities, configuring additional browser parameters, and more.</p>
@@ -1409,8 +1411,7 @@ public void the_feeling_is(String arg1) throws Throwable {
                   </section>
                 </section>
 
-
-                   <section>
+                <section>
                    <section>
                      <h3>Object Oriented Testing</h3>
                      <p>Page Objects</p>
@@ -1439,8 +1440,8 @@ public static GuineaPigPage getPage(WebDriver driver) {
 }
 
 public void enterCommentText(String text){
-    this.commentsTextAreaInput.click();
-    setTextAreaInputValue(this.commentsTextAreaInput, text);
+    this.TextInput.click();
+    setTextInput(this.textInput, text);
 }
                      </code></pre>
                      <aside class="notes">
@@ -1525,7 +1526,7 @@ caps.setCapability("name","Java Remote Sample Test");
                      <section data-state="lab">
                        <h3>Lab 7: Labelling and Naming our Tests</h3>
                        <ol>
-                         <li>In Eclipse, open java-testng-simple > com.yourcompany > SampleSauceScript.java</li>
+                         <li>In Eclipse, open java-testng-simple > com.yourcompany > SampleSauceTest.java</li>
                          <li>Add a capability to name your test</li>
                          <li>Add a capability to include a build number for your test</li>
                          <li>Add a capability to include a tag for your test</li>
@@ -1535,6 +1536,31 @@ caps.setCapability("name","Java Remote Sample Test");
                        <aside class="notes">There's also a way to set your own build number as well</aside>
                      </section>
 
+		     <section>
+		       <h3>Best Practices Recap</h3>
+		       
+		       <div style="float:left;width:50%;" class="centered">
+		       <ul>
+			 <li>Keep Tests:</li>
+			 <ul>
+			   <li>Small</li>
+			   <li>Atomic</li>
+			   <li>Autonomous</li>
+			 </ul>
+		       </ul>
+		       </div>
+		       <div style="float:right;width:50%;padding-right:0px;">
+			 <ul>
+			   <li>Parallelization</li>
+			   <li>Abstracted Scripts</li>
+			   <li>Before and After methods</li>
+			 </ul>
+		       </div>
+		       <aside class="notes">
+			 <p></p>
+		       </aside>
+		     </section>
+		     
                  <section data-background="rgb(226, 35, 26)">
                    <h2>Additional Resources</h2>
                  </section>

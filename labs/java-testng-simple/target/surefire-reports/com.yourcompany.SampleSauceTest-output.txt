@@ -1,3 +1,0 @@
-Configuring TestNG with: TestNG652Configurator
-Starting ChromeDriver 2.22.397933 (1cab651507b88dec79b2b2a22d1943c01833cc1b) on port 39676
-Only local connections are allowed.

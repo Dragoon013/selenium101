@@ -16,10 +16,10 @@ import org.openqa.selenium.support.ui.WebDriverWait; //allows us to set waits on
 public class SampleSauceWaits {
 
 	//global variables required to authenticate w/ Sauce Labs and spin up new VMs to test on
-	  public static final String USERNAME = "USERNAME";
-	  public static final String ACCESS_KEY = "ACCESS_KEY";
-	  public static final String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:80/wd/hub";
-
+	public static final String USERNAME = "USERNAME";
+	public static final String ACCESS_KEY = "ACCESS_KEY";
+	public static final String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:80/wd/hub";
+	  
 	@Test
     public static void main() throws MalformedURLException {
     	 

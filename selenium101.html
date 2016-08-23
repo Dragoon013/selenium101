@@ -602,7 +602,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                   <h3>Lab 1: Running the Sample Script</h3>
                   <ol>
                     <li>Open Eclipse from the desktop shortcut.</li>
-                    <li>In the package explorer left hand side panel, open java-testng-simple > src/test/java > com.yourcompany > SampleSauceTest.java.</li>
+                    <li>In the package explorer left hand side panel, open <p style="color:rgb(87,193,232); display:inline;">java-testng-simple > src/test/java > com.yourcompany > SampleSauceTest.java</p>.</li>
                     <li>Make a note of the website we tell the driver to access.</li>
                     <li>Right click on java-testng-simple and select Run As > 9 Maven test.</li>
                   </ol>
@@ -783,7 +783,7 @@ submitButton.submit();
                 <section data-state="lab">
                   <h3>Lab 2: Writing Actions</h3>
                   <ol>
-                    <li>Open SampleSauceTest.java in the java-testng-simple project.</li>
+                    <li>Open <p style="color:rgb(87,193,232); display:inline;">SampleSauceTest.java</p> in the java-testng-simple project.</li>
                     <li>If you have not done so, change the <pre style="display:inline">driver.get("URL")</pre> to <pre style="display:inline">driver.get("http://saucelabs.github.io/training-test-page/")</pre>.</li>
                     <li>Comment out the xpath and name element locator and corresponding action(s).</li>
                     <li>Open a new Chrome browser window and open the training test page site.</li>
@@ -827,7 +827,7 @@ submitButton.submit();
                 <section>
                   <h3>Testing Script Requirements</h3>
                   <li>Remote WebDriver</li>
-                  <li>Sauce Labs Authentication (API)</li>
+                  <li>Sauce Labs Authentication</li>
                   <li>Desired Capabilities</li>
                   <aside class="notes">
                     <p>If your script is going to talk to Sauce Labs, then it needs a couple of things set first. One is the remote webdriver. This is the selenium webdriver object that facilitates commands sent to a remote browser on a selenium grid. Second, we'll need to authenticate with Sauce Labs. And lastly, we'll need to set the desired capabilities, which defines what browser and OS combination we will use.</p>
@@ -836,7 +836,7 @@ submitButton.submit();
 
                 <section>
                   <h3>Sauce Labs Authentication</h3>
-                  <p>The script uses the Sauce Labs API to authenticate the user, and record results against that user's profile</p>
+                  <p>Sauce labs authentication in your test script verifies the user and records test results against that user's profile<p>
 
                   <div style="float:left;width:100%;" class="centered">
                     <li>Environment Variables</li>
@@ -915,7 +915,7 @@ caps.setCapability("version", "43.0");
                   <section data-state="lab">
                     <h3>Lab 3: Sauce Labs Scripting</h3>
                     <ol>
-                      <li>Open the Sauce Reporting script in the Reporting project.</li>
+                      <li>Open the <p style="color:rgb(87,193,232); display:inline;">SampleSauceReportScript.java</p> script in the java-testng-simple_SL_report project.</li>
                       <li>Copy the global variables above the <pre style="display:inline;">main()</pre> function. Paste it into our SampleSauceTest.java in the java-testng-simple project.</li>
                       <li>Add in your username to the USERNAME String variable.</li>
                     </ol>
@@ -928,10 +928,10 @@ caps.setCapability("version", "43.0");
                 <h3>Lab 3: Sauce Labs Scripting (cont.)</h3>
                 <ol>
                   <li>Log into <a href="http://saucelabs.com" target="_blank">saucelabs.com</a>.</li>
-                  <li>From the lower left corner, go to Username > My Account</li>
-                  <li>Scroll down to Access Key, click Show</li>
-                  <li>Enter your password, then click Authorize</li>
-                  <li>Copy your Access Key</li>
+                  <li>From the lower left corner, go to Username > My Account.</li>
+                  <li>Scroll down to Access Key, click Show.</li>
+                  <li>Enter your password, then click Authorize.</li>
+                  <li>Copy your Access Key.</li>
                   <li>In Eclipse, paste your Access Key into the script for the value of the ACCESS_KEY String variable.</li>
                 </ol>
                 <aside class="notes">
@@ -946,7 +946,7 @@ caps.setCapability("version", "43.0");
                   <li>Select the Selenium API option.</li>
                   <li>Select a PC device.</li>
                   <li>Select a Windows 8 OS.</li>
-                  <li>Select a Chrome version 50.0 browser</li>
+                  <li>Select a Chrome version 50.0 browser.</li>
                   <li>Copy and paste the resulting Java code into your script, at the start of the main() function.</li>
                   <li>Comment out the old Chrome driver and System.setProperty() directive.</li>
                   <li>Create a new RemoteWebDriver object: <pre style="display:inline;">WebDriver driver = new RemoteWebDriver(new URL(URL), caps);</pre></li>
@@ -961,7 +961,7 @@ caps.setCapability("version", "43.0");
                 <ol>
                   <li>Run the script.</li>
                   <li>Open the Automated Tests tab on saucelabs.com.</li>
-                  <li>Click the job and view the elements of your test in the video, the logs, and the metadata</li>
+                  <li>Click the job and view the elements of your test in the video, the logs, and the metadata.</li>
                 </ol>
               </section>
               </section>
@@ -1001,7 +1001,7 @@ WebElement messageElement = wait.until(
                     <li>Open a browser and go to <a href="http://the-internet.herokuapp.com/dynamic_loading" target="_blank">http://the-internet.herokuapp.com/dynamic_loading</a>.</li>
                     <li>Select Example 2: Element rendered after the fact, then click Start.</li>
                     <li>Inspect the "Hello World" text. What is it's id?</li>
-                    <li>In Eclipse, open java-testng-simple_waits > src/test/java > com.yourcompany >SampleSauceWaits.java.</li>
+                    <li>In Eclipse, open <p style="color:rgb(87,193,232); display:inline;">java-testng-simple_waits > src/test/java > com.yourcompany >SampleSauceWaits.java</p>.</li>
                     <li>Fill in the global variables with your Sauce Labs username and access key.</li>
                     <li>Note the findElement that looks for the "finish" id.</li>
                     <li>Run the test. What happened and why?</li>
@@ -1102,9 +1102,10 @@ WebElement messageElement = wait.until(
                 <section>
                 <section>
                   <h3>Test Driven Development vs. Behavior Driven Development</h3>
-                  <p>TDD: A developer writes the test, and then writes code, and tests that code continuously, until the test passes.</p>
-                  <p>BDD: A way to plan and develop code similar to TDD, but allows teams to include non-technical members when writing tests for scenarios and features</p>
+                  <p>TDD: A developer writes the test, and then writes code until the test passes</p>
+                  <p>BDD: A way to plan and develop code for particular features/scenarios that incorporates non-technical perspectives on the team</p>
                   <aside class="notes">
+		    <p>Think functional testing vs unit testing.</p>
                     <p>In the QA/Test industry, there are a couple of different ways of thinking about how to develop applications with testing in mind. One of those is TDD, where you write a test, and then write the code until the test passes. Antoher variant is to plan the same kind of testing, but on a higher level, basically written in a more colloquial manner though.</p>
                     <p>TDD is also somewhat synonymous with "test first" development. BDD means writing tests that read like a book, almost in full sentences, so teams can understand precisely what a test is trying to accomplish.</p>
                   </aside>
@@ -1230,8 +1231,8 @@ public void the_feeling_is(String arg1) throws Throwable {
                   <section data-state="lab">
                     <h3>Lab 5: Asserting Your Greatness</h3>
                     <ol>
-                      <li>In Eclipse, go to java-testng-simple_assert > src/test/java > com.yourcompany > SampleSauceAssert.java</li>
-                      <ul><li>Notice the Assert line for <pre style="display:inline;">getTitle()</pre>.</li></ul>
+                      <li>In Eclipse, go to <p style="color:rgb(87,193,232); display:inline;">java-testng-simpleSL-report > src/test/java > com.yourcompany > SampleSauceReportScript.java</p>.</li>
+                      <ul><li>Notice the <i>assertEquals</i> line for <pre style="display:inline;">getTitle()</pre>.</li></ul>
                       <li>Run the test.</li>
                       <li>Notice the output in the Eclipse console. What happens to the test and why?</li>
                       <li>Correct the expected value that compares against the <pre style="display:inline;">getTitle()</pre>, save, and run the test again.</li>
@@ -1255,33 +1256,34 @@ public void the_feeling_is(String arg1) throws Throwable {
                 </section>
 
                 <section>
-                <section data-state="lab">
-                  <h3>Lab 6: Record Keeping</h3>
-                  <ol>
-                    <li>In Eclipse, go to java-testng-simpleSL-report > src/test/java > com.yourcompany > SampleSauceReportScript.java</li>
-                    <li>Notice the String id of the session from Sauce Labs, the Sauce Labs API object, and the pass criteria statement</li>
-                    <li>Run the test</li>
-                    <li>In the refreshed Sauce Labs Dashboard, notice the changes in how the pass criteria appear</li>
-                  </ol>
-                  <aside class="notes">
-                    <p>move the .quit() function above the api call, so that way, if the api call fails, then the test won't fail</p>
-                  </aside>
+                  <section data-state="lab">
+                    <h3>Lab 6: Record Keeping</h3>
+                    <ol>
+                      <li>Notice the String id of the session from Sauce Labs, the Sauce Labs API object, and the @AfterMethod function, after.</li>
+		      <li>Uncomment the after function, and the line where the id variable value is set.</li>
+		      <li>Run the test.</li>
+                      <li>In the refreshed Sauce Labs Dashboard, notice the changes in how the pass criteria appear.</li>
+                    </ol>
+                    <aside class="notes">
+		      <p>Here we are using the testing framework syntax to provide us with an easy way of checking our assert (test failure/pass) and then send the correct result back to Sauce labs, using the api.</p>
+                      <p>move the .quit() function above the api call, so that way, if the api call fails, then the test won't fail</p>
+                    </aside>
+                  </section>
+		  
+                  <section data-state="lab">
+                    <h3>Lab 6: Record Keeping (cont.)</h3>
+                    <ol>
+                      <li>Go back in Eclipse to the script.</li>
+                      <li>Change the if statement so that the test will pass.</li>
+                      <li>Run the test.</li>
+                      <li>In the refreshed Sauce Labs Dashboard, notice the indications for a successful test in the UI.</li>
+                    </ol>
+                    <aside class="notes">
+                    </aside>
+                  </section>
                 </section>
-
-                <section data-state="lab">
-                  <h3>Lab 6: Record Keeping (cont.)</h3>
-                  <ol>
-                    <li>Go back in Eclipse to the script</li>
-                    <li>Change the if statement so that the test will fail</li>
-                    <li>Run the test</li>
-                    <li>In the refreshed Sauce Labs Dashboard, notice the indications for a failed test in the UI</li>
-                  </ol>
-                  <aside class="notes">
-                  </aside>
-                </section>
-                </section>
+		
                 <!--Best Practices Module-->
-
                  <section data-background="rgb(226, 35, 26)">
                    <h2>Testing Strategy and Best Practices</h2>
                    <aside class="notes">General best practices, testing methodology</aside>
@@ -1526,11 +1528,11 @@ caps.setCapability("name","Java Remote Sample Test");
                      <section data-state="lab">
                        <h3>Lab 7: Labelling and Naming our Tests</h3>
                        <ol>
-                         <li>In Eclipse, open java-testng-simple > com.yourcompany > SampleSauceTest.java</li>
-                         <li>Add a capability to name your test</li>
-                         <li>Add a capability to include a build number for your test</li>
-                         <li>Add a capability to include a tag for your test</li>
-                         <li>Run the test script</li>
+                         <li>In Eclipse, open java-testng-simple > com.yourcompany > SampleSauceTest.java.</li>
+                         <li>Add a capability to name your test.</li>
+                         <li>Add a capability to include a build number for your test.</li>
+                         <li>Add a capability to include a tag for your test.</li>
+                         <li>Run the test script.</li>
                          <li>Open saucelabs.com. How does your test look different on the Automated Tests tab?</li>
                        </ol>
                        <aside class="notes">There's also a way to set your own build number as well</aside>

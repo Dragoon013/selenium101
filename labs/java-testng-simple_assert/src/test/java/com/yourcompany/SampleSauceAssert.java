@@ -28,7 +28,7 @@ public class SampleSauceAssert {
         driver.get("http://saucelabs.github.io/training-test-page/");
         
         //assert that grabs the title, compares it to the expected value, and returns true or fails the test
-        assertEquals(driver.getTitle(), "I am a page title - Sauce Lab");
+        
                
         //close the browser, ends the test
         driver.quit();

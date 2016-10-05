@@ -5,6 +5,7 @@
     <classes>
       <class name="com.yourcompany.SampleSauceReportScript">
         <methods>
+          <include name="before"/>
           <include name="after"/>
           <include name="main"/>
         </methods>

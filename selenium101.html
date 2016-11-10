@@ -135,8 +135,10 @@
                   <ul>
                     <li>ReadyTech virtual machines</li>
                     <li>Eclipse</li>
+		    <li>Java</li>
                     <li>Maven</li>
-                  </ul>
+		    <li>Sauce Labs</li>
+		  </ul>
 		  
                   <aside class="notes">
                     <p>So before we go into the different parts we need to incldue in a script, let's talk about our training environment.</p>
@@ -931,6 +933,7 @@ WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
                   </aside>
                 </section>
 
+		<section
                 <section>
                   <h3>Desired Capabilities</h3> <!-- PLatform Configurator-->
                   <div style="float:left;width:50%;" class="centered">
@@ -961,8 +964,23 @@ caps.setCapability("version", "43.0");
                   </aside>
                 </section>
 
+		<section>
+		  <h3>Browser Profiles</h3>
+		  <ul>
+		    <li>FirefoxProfile - user profiles and browser settings</li>
+		    <li>ChromeOptions</li>
+		    <li>safari.options - clean session</li>
+		    <li>DesiredCapabilities - browser-specific capabilities</li>
+		  </ul>
+		  <aside class="notes">
+		    <p>First off, there is a distinction between "Browser Profiles" (user profiles) and "Browser Settings". It's important to make these distinctions, because not all browsers have the same concepts. For instance, Firefox has user profiles that can be used by Selenium, while IE does not have the concept of user profiles. But they both have the ability to set partciular browser settings, either through the profile, or through browser options, or the desired capabilities.</p>
+		    <p>Browser profiles allow you to apply browser level settings prior to tests, so you can configure the browser to precisely what you need. this can be a good way to test how your application interacts with particular extensions or plugins, for example.</p>
+		    <p>Locally, these all make sense, as they all come with the chrome, firefox, etc drivers. The remote webdriver requires the profiles or options to be incorporated as part of the desired capabiltiies. which is fairly easy to do.</p>
+		  </aside>
+		</section>
+		</section>
+		
                 <section>
-
                   <section data-state="lab">
                     <h3>Lab 3: Sauce Labs Scripting</h3>
                     <ol>
